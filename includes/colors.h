@@ -1,7 +1,7 @@
 #ifndef COLORS_H
 # define COLORS_H
 
-# define RESET	"\e[0m"
+// # define RESET	"\e[0m"
 
 # define BOLD	"\e[1m"
 # define DIM	"\e[2m"
@@ -9,7 +9,7 @@
 # define ULINE	"\e[4m"
 
 # define BLACK	"\e[30m"
-# define RED	"\e[31m"
+// # define RED	"\e[31m"
 # define GREEN	"\e[32m"
 # define YELLOW	"\e[33m"
 # define BLUE	"\e[34m"

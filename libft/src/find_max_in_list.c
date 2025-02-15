@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "inc/libft.h"
+#include "libft.h"
 
 int	find_max_in_list(int a[], int size)
 {
