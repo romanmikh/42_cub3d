@@ -29,8 +29,6 @@
 #  define MMAP_DEBUG_MSG 0
 # endif
 
-/* # define WIN_WIDTH 960 */
-/* # define WIN_HEIGHT 720 */
 # define WIN_WIDTH 640
 # define WIN_HEIGHT 480
 
@@ -40,22 +38,13 @@
 #  define O_DIRECTORY 00200000
 # endif
 
-# define MOVESPEED 0.0125
+# define MOVESPEED 0.015
 # define ROTSPEED 0.015
 
 # define DIST_EDGE_MOUSE_WRAP 20
 
-/* MINIMAP MACROS */
-# define MMAP_PIXEL_SIZE 128
-# define MMAP_VIEW_DIST 4
-# define MMAP_COLOR_PLAYER 0x00FF00
-# define MMAP_COLOR_WALL 0x808080
-# define MMAP_COLOR_FLOOR 0xE6E6E6
-# define MMAP_COLOR_SPACE 0x404040
-
 // ERROR MESSAGES
 # define ERR_USAGE "usage: ./cub3d <path/to/map.cub>"
-
 # define ERR_FILE_NOT_CUB "Not a .cub file"
 # define ERR_FILE_NOT_XPM "Not an .xpm file"
 # define ERR_FILE_IS_DIR "Is a directory"
@@ -99,6 +88,7 @@ enum e_texture_index
 
 typedef unsigned long	t_ulong;
 
+// Structures
 typedef struct s_img
 {
 	void	*img;
@@ -125,17 +115,6 @@ typedef struct s_texinfo
 	int				x;
 	int				y;
 }	t_texinfo;
-
-typedef struct s_minimap
-{
-	char	**map;
-	t_img	*img;
-	int		size;
-	int		offset_x;
-	int		offset_y;
-	int		view_dist;
-	int		tile_size;
-}	t_minimap;
 
 typedef struct s_mapinfo
 {
@@ -197,7 +176,6 @@ typedef struct s_data
 	int			**texture_pixels;
 	int			**textures;
 	t_texinfo	texinfo;
-	t_img		minimap;
 }	t_data;
 
 /* init/init_data.c */
@@ -257,12 +235,6 @@ void	update_texture_pixels(t_data *data, t_texinfo *tex, t_ray *ray, int x);
 /* render/image_utils.c */
 void	set_image_pixel(t_img *image, int x, int y, int color);
 
-/* render/minimap_render.c */
-void	render_minimap(t_data *data);
-
-/* render/minimap_image.c */
-void	render_minimap_image(t_data *data, t_minimap *minimap);
-
 /* movement/input_handler.c */
 void	listen_for_input(t_data *data);
 
@@ -292,7 +264,6 @@ int		err_msg_val(int detail, char *str, int code);
 
 /* debug/debug.c */
 void	debug_display_data(t_data *data);
-void	debug_display_minimap(t_minimap *minimap);
 void	debug_display_player(t_data *data);
 void	debug_print_char_tab(char **tab);
 

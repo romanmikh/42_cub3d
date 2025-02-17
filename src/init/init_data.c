@@ -66,7 +66,6 @@ void	init_data(t_data *data)
 	init_texinfo(&data->texinfo);
 	data->map = NULL;
 	init_mapinfo(&data->mapinfo);
-	init_img_clean(&data->minimap);
 	data->texture_pixels = NULL;
 	data->textures = NULL;
 }

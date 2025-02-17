@@ -14,14 +14,6 @@ void	debug_print_char_tab(char **tab)
 	printf("\n");
 }
 
-void	debug_display_minimap(t_minimap *minimap)
-{
-	printf(YELLOW "\n---- MINIMAP\n" RESET);
-	printf("Minimap view distance: %d\n", minimap->view_dist);
-	printf("Minimap size: %d * %d\n", minimap->size, minimap->size);
-	debug_print_char_tab(minimap->map);
-}
-
 void	debug_display_mapinfo(t_data *data)
 {
 	printf(YELLOW "\n---- MAP\n" RESET);
