@@ -29,10 +29,6 @@
 #  define MMAP_DEBUG_MSG 0
 # endif
 
-# ifndef BONUS
-#  define BONUS 1
-# endif
-
 /* # define WIN_WIDTH 960 */
 /* # define WIN_HEIGHT 720 */
 # define WIN_WIDTH 640
@@ -68,7 +64,7 @@
 # define ERR_COLOR_CEILING "Invalid ceiling RGB color"
 # define ERR_INVALID_MAP "Map description is either wrong or incomplete"
 # define ERR_INV_LETTER "Invalid character in map"
-# define ERR_NUM_PLAYER "Map has more than one player"
+# define ERR_NUM_PLAYER "Multiple players in map"
 # define ERR_TEX_RGB_VAL "Invalid RGB value (min: 0, max: 255)"
 # define ERR_TEX_MISSING "Missing texture(s)"
 # define ERR_TEX_INVALID "Invalid texture(s)"
@@ -102,10 +98,6 @@ enum e_texture_index
 };
 
 typedef unsigned long	t_ulong;
-
-/* ---------------------------------------------------------------------------*
-							STRUCTURES
- --------------------------------------------------------------------------- */
 
 typedef struct s_img
 {
@@ -207,10 +199,6 @@ typedef struct s_data
 	t_texinfo	texinfo;
 	t_img		minimap;
 }	t_data;
-
-/* ---------------------------------------------------------------------------*
-							FUNCTIONS
- --------------------------------------------------------------------------- */
 
 /* init/init_data.c */
 void	init_data(t_data *data);

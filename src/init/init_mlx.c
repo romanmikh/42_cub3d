@@ -31,8 +31,5 @@ void	init_mlx(t_data *data)
 	data->win = mlx_new_window(data->mlx, WIN_WIDTH, WIN_HEIGHT, "Cub3D");
 	if (!data->win)
 		clean_exit(data, err_msg("mlx", ERR_MLX_WIN, 1));
-	if (BONUS)
-		mlx_mouse_move(data->mlx, data->win, data->win_width / 2,
-			data->win_height / 2);
 	return ;
 }

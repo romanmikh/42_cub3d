@@ -18,9 +18,9 @@ static bool	is_valid_pos_in_map(t_data *data, double x, double y)
 
 static bool	is_valid_pos(t_data *data, double x, double y)
 {
-	if (!BONUS && is_valid_pos_in_map(data, x, y))
+	if (is_valid_pos_in_map(data, x, y))
 		return (true);
-	if (BONUS && is_valid_pos_wall_collision(data, x, y))
+	if (is_valid_pos_wall_collision(data, x, y))
 		return (true);
 	return (false);
 }

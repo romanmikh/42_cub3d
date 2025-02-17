@@ -44,8 +44,6 @@ static void	render_raycast(t_data *data)
 void	render_images(t_data *data)
 {
 	render_raycast(data);
-	if (BONUS)
-		render_minimap(data);
 }
 
 int	render(t_data *data)

@@ -2,27 +2,21 @@
 
 static void	print_controls(void)
 {
-	printf(CYAN "\n");
-	printf("░█▀▀░█░█░█▀▄░▀▀█░█▀▄░░░█▀▀░█▀█░█▀█░▀█▀░█▀▄░█▀█░█░░░█▀▀\n");
-	printf("░█░░░█░█░█▀▄░░▀▄░█░█░░░█░░░█░█░█░█░░█░░█▀▄░█░█░█░░░▀▀█\n");
-	printf("░▀▀▀░▀▀▀░▀▀░░▀▀░░▀▀░░░░▀▀▀░▀▀▀░▀░▀░░▀░░▀░▀░▀▀▀░▀▀▀░▀▀▀\n");
 	printf(RESET "\n");
-	printf(CYAN "\tW" RESET ": move forward\t");
-	printf(CYAN "\tS" RESET ": move backward\n");
-	printf(CYAN "\tA" RESET ": strafe left\t");
-	printf(CYAN "\tD" RESET ": strafe right\n");
-	printf(CYAN "\t<" RESET ": rotate left\t");
-	printf(CYAN "\t>" RESET ": rotate right\n");
-	if (BONUS)
-		printf(CYAN "\tMouse" RESET ": rotate view\n");
+	printf(PURPLE "\tW" RESET ": move forward\n");
+	printf(PURPLE "\tA" RESET ": strafe left\n");
+	printf(PURPLE "\tS" RESET ": move backward\n");
+	printf(PURPLE "\tD" RESET ": strafe right\n");
+	printf(PURPLE "\t<" RESET ": rotate left\n");
+	printf(PURPLE "\t>" RESET ": rotate right\n");
 	printf("\n");
 }
 
-static int	parse_args(t_data *data, char **av)
+static int	parse_args(t_data *data, char **argv)
 {
-	if (check_file(av[1], true) == FAILURE)
+	if (check_file(argv[1], true) == FAILURE)
 		clean_exit(data, FAILURE);
-	parse_data(av[1], data);
+	parse_data(argv[1], data);
 	if (get_file_data(data, data->mapinfo.file) == FAILURE)
 		return (free_data(data));
 	if (check_map_validity(data, data->map) == FAILURE)
@@ -35,14 +29,14 @@ static int	parse_args(t_data *data, char **av)
 	return (0);
 }
 
-int	main(int ac, char **av)
+int	main(int argc, char **argv)
 {
 	t_data	data;
 
-	if (ac != 2)
+	if (argc != 2)
 		return (err_msg("Usage", ERR_USAGE, 1));
 	init_data(&data);
-	if (parse_args(&data, av) != 0)
+	if (parse_args(&data, argv) != 0)
 		return (1);
 	init_mlx(&data);
 	init_textures(&data);
