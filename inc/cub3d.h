@@ -17,16 +17,9 @@
 # include <X11/keysym.h>
 # include <X11/X.h>
 
-/* ---------------------------------------------------------------------------*
-							MACROS
- --------------------------------------------------------------------------- */
-
+// Macros
 # ifndef DEBUG_MSG
 #  define DEBUG_MSG 0
-# endif
-
-# ifndef MMAP_DEBUG_MSG
-#  define MMAP_DEBUG_MSG 0
 # endif
 
 # define WIN_WIDTH 640
@@ -41,9 +34,7 @@
 # define MOVESPEED 0.015
 # define ROTSPEED 0.015
 
-# define DIST_EDGE_MOUSE_WRAP 20
-
-// ERROR MESSAGES
+// Error messages
 # define ERR_USAGE "usage: ./cub3d <path/to/map.cub>"
 # define ERR_FILE_NOT_CUB "Not a .cub file"
 # define ERR_FILE_NOT_XPM "Not an .xpm file"
@@ -86,8 +77,6 @@ enum e_texture_index
 	WEST = 3
 };
 
-typedef unsigned long	t_ulong;
-
 // Structures
 typedef struct s_img
 {
@@ -106,7 +95,7 @@ typedef struct s_texinfo
 	char			*east;
 	int				*floor;
 	int				*ceiling;
-	unsigned long	hex_floor;
+	unsigned long	hex_floor;  // hex necessary for mlx_pixel_put
 	unsigned long	hex_ceiling;
 	int				size;
 	int				index;
