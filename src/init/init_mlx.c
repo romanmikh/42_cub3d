@@ -28,7 +28,7 @@ void	init_mlx(t_data *data)
 	data->mlx = mlx_init();
 	if (!data->mlx)
 		clean_exit(data, err_msg("mlx", ERR_MLX_START, 1));
-	data->win = mlx_new_window(data->mlx, WIN_WIDTH, WIN_HEIGHT, "Cub3D");
+	data->win = mlx_new_window(data->mlx, WIN_WIDTH, WIN_HEIGHT, "cub3d v0.0");
 	if (!data->win)
 		clean_exit(data, err_msg("mlx", ERR_MLX_WIN, 1));
 	return ;

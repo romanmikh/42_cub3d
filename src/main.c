@@ -3,12 +3,12 @@
 static void	print_controls(void)
 {
 	printf(RESET "\n");
-	printf(PURPLE "\tW" RESET ": move forward\n");
-	printf(PURPLE "\tA" RESET ": strafe left\n");
-	printf(PURPLE "\tS" RESET ": move backward\n");
-	printf(PURPLE "\tD" RESET ": strafe right\n");
-	printf(PURPLE "\t<" RESET ": rotate left\n");
-	printf(PURPLE "\t>" RESET ": rotate right\n");
+	printf(PURPLE "W" RESET ": forward\n");
+	printf(PURPLE "A" RESET ": left\n");
+	printf(PURPLE "S" RESET ": backward\n");
+	printf(PURPLE "D" RESET ": right\n");
+	printf(PURPLE "<" RESET ": turn left\n");
+	printf(PURPLE ">" RESET ": turn right\n");
 	printf("\n");
 }
 

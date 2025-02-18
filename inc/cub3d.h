@@ -22,8 +22,8 @@
 #  define DEBUG_MSG 0
 # endif
 
-# define WIN_WIDTH 640
-# define WIN_HEIGHT 480
+# define WIN_WIDTH 1280
+# define WIN_HEIGHT 960
 
 # define TEX_SIZE 64
 
@@ -37,20 +37,20 @@
 // Error messages
 # define ERR_INPUT "Required input format: ./cub3d maps/nature.cub"
 # define ERR_FILE_FORMAT ".cub or.xmp file required"
-# define ERR_FLOOR_CEILING "Invalid floor/ceiling RGB colours"
-# define ERR_INVALID_MAP "Map description is either wrong or incomplete"
+# define ERR_FLOOR_CEILING "Floor and/or ceiling RGB colours are invalid"
+# define ERR_INVALID_MAP "Invalid map"
 # define ERR_INV_LETTER "Invalid character in map"
-# define ERR_NUM_PLAYER "Multiple players in map"
-# define ERR_TEX_RGB_VAL "Invalid RGB value (min: 0, max: 255)"
-# define ERR_TEX_MISSING "Missing texture(s)"
-# define ERR_TEX_INVALID "Invalid texture(s)"
-# define ERR_COLOR_MISSING "Missing color(s)"
+# define ERR_NUM_PLAYER "Only one starting player location in map supported"
+# define ERR_TEX_RGB_VAL "Invalid RGB value"
+# define ERR_TEX_MISSING "Missing textures"
+# define ERR_TEX_INVALID "Invalid textures"
+# define ERR_COLOR_MISSING "Missing colours"
 # define ERR_MAP_MISSING "Missing map"
-# define ERR_MAP_TOO_SMALL "Map is not at least 3 lines high"
-# define ERR_MAP_NO_WALLS "Map is not surrounded by walls"
+# define ERR_MAP_TOO_SMALL "Map must be > 3x3"
+# define ERR_MAP_NO_WALLS "Ensure map is surrounded by 1s"
 # define ERR_MAP_LAST "Map is not the last element in file"
-# define ERR_PLAYER_POS "Invalid player position"
-# define ERR_PLAYER_DIR "Map has no player position (expected N, S, E or W)"
+# define ERR_PLAYER_POS "Invalid starting player position in map"
+# define ERR_PLAYER_DIR "Map requires player position (N, S, E or W)"
 # define ERR_MALLOC "Could not allocate memory"
 # define ERR_MLX_START "Could not start mlx"
 # define ERR_MLX_WIN "Could not create mlx window"
