@@ -35,13 +35,9 @@
 # define ROTSPEED 0.015
 
 // Error messages
-# define ERR_USAGE "usage: ./cub3d <path/to/map.cub>"
-# define ERR_FILE_NOT_CUB "Not a .cub file"
-# define ERR_FILE_NOT_XPM "Not an .xpm file"
-# define ERR_FILE_IS_DIR "Is a directory"
-# define ERR_FLOOR_CEILING "Invalid floor/ceiling RGB color(s)"
-# define ERR_COLOR_FLOOR "Invalid floor RGB color"
-# define ERR_COLOR_CEILING "Invalid ceiling RGB color"
+# define ERR_INPUT "Required input format: ./cub3d maps/nature.cub"
+# define ERR_FILE_FORMAT ".cub or.xmp file required"
+# define ERR_FLOOR_CEILING "Invalid floor/ceiling RGB colours"
 # define ERR_INVALID_MAP "Map description is either wrong or incomplete"
 # define ERR_INV_LETTER "Invalid character in map"
 # define ERR_NUM_PLAYER "Multiple players in map"
@@ -167,8 +163,8 @@ typedef struct s_data
 	t_texinfo	texinfo;
 }	t_data;
 
-/* init/init_data.c */
-void	init_data(t_data *data);
+/* init/init_main.c */
+void	init_main(t_data *data);
 void	init_img_clean(t_img *img);
 void	init_ray(t_ray *ray);
 

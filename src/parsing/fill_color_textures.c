@@ -67,13 +67,13 @@ int	fill_color_textures(t_data *data, t_texinfo *textures, char *line, int j)
 	{
 		textures->ceiling = set_rgb_colors(line + j + 1);
 		if (textures->ceiling == 0)
-			return (err_msg(data->mapinfo.path, ERR_COLOR_CEILING, ERR));
+			return (err_msg(data->mapinfo.path, ERR_FLOOR_CEILING, ERR));
 	}
 	else if (!textures->floor && line[j] == 'F')
 	{
 		textures->floor = set_rgb_colors(line + j + 1);
 		if (textures->floor == 0)
-			return (err_msg(data->mapinfo.path, ERR_COLOR_FLOOR, ERR));
+			return (err_msg(data->mapinfo.path, ERR_FLOOR_CEILING, ERR));
 	}
 	else
 		return (err_msg(data->mapinfo.path, ERR_FLOOR_CEILING, ERR));

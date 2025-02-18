@@ -34,8 +34,8 @@ int	main(int argc, char **argv)
 	t_data	data;
 
 	if (argc != 2)
-		return (err_msg("Usage", ERR_USAGE, 1));
-	init_data(&data);
+		return (err_msg("", ERR_INPUT, 1));
+	init_main(&data);
 	if (parse_args(&data, argv) != 0)
 		return (1);
 	init_mlx(&data);

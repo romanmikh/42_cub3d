@@ -56,7 +56,7 @@ static void	init_player(t_player *player)
 	player->rotate = 0;
 }
 
-void	init_data(t_data *data)
+void	init_main(t_data *data)
 {
 	data->mlx = NULL;
 	data->win = NULL;
