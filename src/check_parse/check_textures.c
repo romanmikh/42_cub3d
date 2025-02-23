@@ -7,7 +7,7 @@ static int	is_valid_rgb(int *rgb)
 	i = 0;
 	while (i < 3)
 	{
-		if (ft_is_valid_rgb(rgb[i]) == FAILURE)
+		if (!ft_is_valid_rgb(rgb[i]))
 			return (err_msg_val(rgb[i], ERR_TEX_RGB_VAL, FAILURE));
 		i++;
 	}
@@ -20,7 +20,7 @@ int	is_valid_texture(t_data *data, t_text_data *textures)
 		|| !textures->east)
 		return (err_msg(data->map_data.path, ERR_TEX_MISSING, FAILURE));
 	if (!textures->floor || !textures->ceiling)
-		return (err_msg(data->map_data.path, ERR_COLOR_MISSING, FAILURE));
+		return (err_msg(data->map_data.path, ERR_COLOUR_MISSING, FAILURE));
 	if (is_valid_file(textures->north, false) == FAILURE
 		|| is_valid_file(textures->south, false) == FAILURE
 		|| is_valid_file(textures->west, false) == FAILURE

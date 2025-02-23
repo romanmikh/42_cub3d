@@ -27,28 +27,37 @@ enum e_texture_index
 	EAST = 2,
 	WEST = 3
 };
+// Enumerations
+enum e_output
+{
+	SUCCESS = 0,
+	FAILURE = 1,
+	ERR = 2,
+	BREAK = 3,
+	CONTINUE = 4
+};
 
 // Error messages
-# define ERR_INPUT "Required input format: ./cub3d maps/nature.cub"
-# define ERR_FILE_FORMAT ".cub and.xmp file extensions required"
-# define ERR_FLOOR_CEILING "Floor and/or ceiling RGB colours are invalid"
 # define ERR_INVALID_MAP "Invalid map"
-# define ERR_INV_LETTER "Invalid character in map. {0, 1, N, S, E, W} supported."
+# define ERR_MAP_MISSING "Map data missing"
+# define ERR_MLX_START "Failed to start mlx"
+# define ERR_MALLOC "Memory allocation failed"
+# define ERR_TEX_RGB_VAL "RGB value is invalid"
+# define ERR_TEX_MISSING "Texture files missing"
+# define ERR_TEX_INVALID "Texture files invalid"
+# define ERR_MLX_IMG "Failed to create mlx image"
+# define ERR_MLX_WIN "Failed to create mlx window"
+# define ERR_COLOUR_MISSING "Colour values missing"
+# define ERR_PLAYER_POS "Invalid player start position"
+# define ERR_MAP_TOO_SMALL "Map must be larger than 3x3"
+# define ERR_MAP_LAST "Map must be last section in file"
+# define ERR_MAP_NO_WALLS "Map must be fully enclosed by walls"
+# define ERR_FILE_FORMAT ".cub and.xmp file extensions required"
+# define ERR_PLAYER_DIR "Player direction must be N, S, E, or W"
+# define ERR_INPUT "Required input format: ./cub3d ./maps/nature.cub"
+# define ERR_FLOOR_CEILING "Floor and/or ceiling RGB colours are invalid"
 # define ERR_NUM_PLAYER "Only one starting player location in map supported"
-# define ERR_TEX_RGB_VAL "Invalid RGB value"
-# define ERR_TEX_MISSING "Missing textures"
-# define ERR_TEX_INVALID "Invalid textures"
-# define ERR_COLOR_MISSING "Missing colours"
-# define ERR_MAP_MISSING "Missing map"
-# define ERR_MAP_TOO_SMALL "Map must be > 3x3"
-# define ERR_MAP_NO_WALLS "Ensure map is surrounded by 1s"
-# define ERR_MAP_LAST "Map is not the last element in file"
-# define ERR_PLAYER_POS "Invalid starting player position in map"
-# define ERR_PLAYER_DIR "Map requires player position (N, S, E or W)"
-# define ERR_MALLOC "Could not allocate memory"
-# define ERR_MLX_START "Could not start mlx"
-# define ERR_MLX_WIN "Could not create mlx window"
-# define ERR_MLX_IMG "Could not create mlx image"
+# define ERR_INV_LETTER "Invalid character in map. {0, 1, N, S, E, W} supported."
 
 // Structures
 typedef struct s_map_data
@@ -161,7 +170,6 @@ int		move_player(t_data *data);
 int		rotate_player(t_data *data, double rot_dir);
 void	graceful_exit(t_data *data, int code);
 int		handle_exit(t_data *data);
-// void	ft_free_2d_arr(void **tab);
 int		free_data(t_data *data);
 int		err_msg(char *detail, char *str, int code);
 int		err_msg_val(int detail, char *str, int code);

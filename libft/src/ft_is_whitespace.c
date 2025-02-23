@@ -16,6 +16,6 @@ int	ft_is_whitespace(char c)
 {
     if (c == ' ' || c == '\t' || c == '\r' || c == '\n' 
 		|| c == '\v' || c == '\f')
-        return (SUCCESS);
-    return (FAILURE);
+        return (1);
+    return (0);
 }

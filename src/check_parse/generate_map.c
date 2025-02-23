@@ -1,5 +1,29 @@
 #include "cub3d.h"
 
+// convert all tabs/spaces/etc inside map to walls
+static void	ensure_map_enclosure(t_data *data)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (data->map[i])
+	{
+		j = 0;
+		while (data->map[i][j] == ' ' || data->map[i][j] == '\t'
+		|| data->map[i][j] == '\r'
+		|| data->map[i][j] == '\v' || data->map[i][j] == '\f')
+			j++;
+		while (data->map[i][++j])
+		{
+			if (data->map[i][j] == ' '
+				&& j != data->map[i][ft_strlen(data->map[i]) - 1])
+				data->map[i][j] = '1';
+		}
+		i++;
+	}
+}
+
 // skip leading whitespaces
 // count only if line starts with a wall
 static int	count_map_lines(t_data *data, char **file, int i)
@@ -58,30 +82,6 @@ static int	create_map_arr(t_data *data, char **file, int i)
 	if (copy_map_arr(&data->map_data, data->map, i) == FAILURE) // copy map data
 		return (FAILURE);
 	return (SUCCESS);
-}
-
-// convert all tabs/spaces/etc inside map to walls
-static void	ensure_map_enclosure(t_data *data)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	while (data->map[i])
-	{
-		j = 0;
-		while (data->map[i][j] == ' ' || data->map[i][j] == '\t'
-		|| data->map[i][j] == '\r'
-		|| data->map[i][j] == '\v' || data->map[i][j] == '\f')
-			j++;
-		while (data->map[i][++j])
-		{
-			if (data->map[i][j] == ' '
-				&& j != data->map[i][ft_strlen(data->map[i]) - 1])
-				data->map[i][j] = '1';
-		}
-		i++;
-	}
 }
 
 int	create_map(t_data *data, char **file, int i)

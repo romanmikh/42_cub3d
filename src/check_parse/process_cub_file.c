@@ -52,29 +52,29 @@ static int	parse_texture_orientations(t_text_data *textures, char *line, int j)
 	return (SUCCESS);
 }
 
-static int	parse_cub_file(t_data *data, char **map, int i, int j)
+static int	parse_cub_file(t_data *data, char **file, int i, int j)
 {
-	while (map[i][j] == ' ' || map[i][j] == '\t' || map[i][j] == '\n') // skip whitespaces
+	while (file[i][j] == ' ' || file[i][j] == '\t' || file[i][j] == '\n') // skip whitespaces
 		j++;
-	if (ft_is_print(map[i][j]) && !ft_is_digit(map[i][j])) // if texture/colour identifier 
+	if (ft_is_print(file[i][j]) && !ft_is_digit(file[i][j])) // if texture/colour identifier 
 	{
-		if (map[i][j + 1] && ft_is_print(map[i][j + 1]) // if next also printable & not digit, it's a texture
-			&& !ft_is_digit(map[i][j]))
+		if (file[i][j + 1] && ft_is_print(file[i][j + 1]) // if next also printable & not digit, it's a texture
+			&& !ft_is_digit(file[i][j]))
 		{
-			if (parse_texture_orientations(&data->text_data, map[i], j) == ERR)
+			if (parse_texture_orientations(&data->text_data, file[i], j) == ERR)
 				return (err_msg(data->map_data.path, ERR_TEX_INVALID, FAILURE));
 			return (BREAK);
 		}	
 		else  // it's floor/ceiling
 		{
-			if (set_ceiling_floor_colours(data, &data->text_data, map[i], j) == ERR)
+			if (set_ceiling_floor_colours(data, &data->text_data, file[i], j) == ERR)
 				return (FAILURE);
 			return (BREAK);
 		}	
 	}
-	else if (ft_is_digit(map[i][j])) // then it's map layout
+	else if (ft_is_digit(file[i][j])) // then it's map layout
 	{
-		if (create_map(data, map, i) == FAILURE)
+		if (create_map(data, file, i) == FAILURE)
 			return (err_msg(data->map_data.path, ERR_INVALID_MAP, FAILURE));
 		return (SUCCESS);
 	}
@@ -82,19 +82,19 @@ static int	parse_cub_file(t_data *data, char **map, int i, int j)
 }
 
 // input is entire cub file as 2d arr 
-int	process_cub_file(t_data *data, char **map)
+int	process_cub_file(t_data *data, char **file)
 {
 	int	i;
 	int	j;
 	int	ret;
 
 	i = 0;
-	while (map[i])
+	while (file[i])
 	{
 		j = 0;
-		while (map[i][j])  // for each square on map
+		while (file[i][j])  // for each square on map
 		{
-			ret = parse_cub_file(data, map, i, j);
+			ret = parse_cub_file(data, file, i, j);
 			if (ret == BREAK)
 				break ;
 			else if (ret == FAILURE)

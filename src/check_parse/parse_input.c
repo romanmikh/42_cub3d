@@ -46,7 +46,7 @@ static void	cub_file_to_2d_arr(int row, int col, int i, t_data *data)
 		line = get_next_line(data->map_data.fd);
 	}
 	data->map_data.file[row] = NULL;
-	ft_print_2d_arr(data->map_data.file, "data->map_data.file");
+	// ft_print_2d_arr(data->map_data.file, "data->map_data.file");
 }
 
 void	parse_input(char *path, t_data *data)

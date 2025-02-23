@@ -50,15 +50,15 @@
 # define B_CYA "\033[1;36m"
 # define B_WHI "\033[1;37m"
 
-// Enumations
-enum e_output
-{
-	SUCCESS = 0,
-	FAILURE = 1,
-	ERR = 2,
-	BREAK = 3,
-	CONTINUE = 4
-};
+// // Enumerations
+// enum e_output
+// {
+// 	SUCCESS = 0,
+// 	FAILURE = 1,
+// 	ERR = 2,
+// 	BREAK = 3,
+// 	CONTINUE = 4
+// };
 
 // Function Prototypes
 int			ft_abs(int n);

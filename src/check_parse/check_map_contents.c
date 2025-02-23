@@ -38,10 +38,10 @@ static int	check_position_is_valid(t_data *data, char **map_tab)
 	j = (int)data->player.pos_x;
 	if (ft_strlen(map_tab[i - 1]) < (size_t)j
 		|| ft_strlen(map_tab[i + 1]) < (size_t)j
-		|| ft_is_whitespace(map_tab[i][j - 1]) == SUCCESS
-		|| ft_is_whitespace(map_tab[i][j + 1]) == SUCCESS
-		|| ft_is_whitespace(map_tab[i - 1][j]) == SUCCESS
-		|| ft_is_whitespace(map_tab[i + 1][j]) == SUCCESS)
+		|| ft_is_whitespace(map_tab[i][j - 1])
+		|| ft_is_whitespace(map_tab[i][j + 1])
+		|| ft_is_whitespace(map_tab[i - 1][j])
+		|| ft_is_whitespace(map_tab[i + 1][j]))
 		return (FAILURE);
 	return (SUCCESS);
 }
