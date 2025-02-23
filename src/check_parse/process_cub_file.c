@@ -56,7 +56,7 @@ static int	parse_cub_file(t_data *data, char **file, int i, int j)
 {
 	while (file[i][j] == ' ' || file[i][j] == '\t' || file[i][j] == '\n') // skip whitespaces
 		j++;
-	if (ft_is_print(file[i][j]) && !ft_is_digit(file[i][j])) // if texture/colour identifier 
+	if (ft_is_print(file[i][j]) && !ft_is_digit(file[i][j])) // if texture/rgb identifier 
 	{
 		if (file[i][j + 1] && ft_is_print(file[i][j + 1]) // if next also printable & not digit, it's a texture
 			&& !ft_is_digit(file[i][j]))
@@ -92,7 +92,7 @@ int	process_cub_file(t_data *data, char **file)
 	while (file[i])
 	{
 		j = 0;
-		while (file[i][j])  // for each square on map
+		while (file[i][j])  // for each char in cub file
 		{
 			ret = parse_cub_file(data, file, i, j);
 			if (ret == BREAK)
