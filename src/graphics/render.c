@@ -46,7 +46,7 @@ void	render_images(t_data *data)
 
 // goal: update frame when player moves & display in 3D
 // game state exists in memory, this visualises it
-int	render(t_data *data)
+int	move_and_render(t_data *data)  // used in mlx_hook only
 {
 	data->player.has_moved += move_player(data); // Update player movement status
 	if (data->player.has_moved == 0)  // if player hasn't moved, do nothing

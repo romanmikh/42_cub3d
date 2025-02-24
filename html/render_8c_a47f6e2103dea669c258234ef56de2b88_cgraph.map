@@ -1,4 +1,4 @@
-<map id="render_images" name="render_images">
+<map id="render" name="render">
 <area shape="rect" id="Node000001" title=" " alt="" coords="5,211,124,236"/>
 <area shape="rect" id="Node000002" href="$init__main_8c.html#a37370f2dcb98586748b20b713201ca82" title=" " alt="" coords="588,11,659,36"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="75,209,113,169,171,116,246,62,287,39,330,21,395,7,461,3,523,6,575,12,574,17,523,11,461,8,395,12,331,26,289,44,249,66,175,120,116,173,79,213"/>

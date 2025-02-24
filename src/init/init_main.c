@@ -1,14 +1,5 @@
 #include "cub3d.h"
 
-void	init_img_clean(t_img *img)
-{
-	img->img = NULL;
-	img->addr = NULL;
-	img->bits_per_pixel = 0;
-	img->size_line = 0;
-	img->endian = 0;
-}
-
 void	init_ray(t_ray *ray)
 {
 	ray->camera_x = 0;

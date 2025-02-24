@@ -1,4 +1,4 @@
-<map id="check_map_elements" name="check_map_elements">
+<map id="is_valid_map_contents" name="is_valid_map_contents">
 <area shape="rect" id="Node000001" title=" " alt="" coords="412,5,576,31"/>
 <area shape="rect" id="Node000002" href="$check__map__contents_8c.html#a7a14f71a5f57b475d2d29503a0f8c2b0" title=" " alt="" coords="256,5,364,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="398,21,364,21,364,15,398,15"/>

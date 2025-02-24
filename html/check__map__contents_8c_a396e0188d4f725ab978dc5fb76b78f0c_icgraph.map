@@ -1,4 +1,4 @@
-<map id="check_position_is_valid" name="check_position_is_valid">
+<map id="is_valid_player_position" name="is_valid_player_position">
 <area shape="rect" id="Node000001" title=" " alt="" coords="627,5,803,31"/>
 <area shape="rect" id="Node000002" href="$check__map__contents_8c.html#a29a955109fe6eaf146481e01e978d450" title=" " alt="" coords="412,5,579,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="613,21,579,21,579,15,613,15"/>

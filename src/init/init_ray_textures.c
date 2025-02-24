@@ -31,11 +31,12 @@ static int	*xpm_to_img(t_data *data, char *path)
 
 	init_texture_img(data, &tmp, path);
 	buffer = ft_calloc(1,
-			sizeof * buffer * data->text_data.size * data->text_data.size);
+			sizeof * buffer * data->text_data.size * data->text_data.size);  // width * height * int buffer => 2D image
 	if (!buffer)
 		graceful_exit(data, err_msg(NULL, ERR_MALLOC, 1));
+	// copy pixel data from image into buffer
 	y = 0;
-	while (y < data->text_data.size)
+	while (y < data->text_data.size)  // square texture so width = height = size
 	{
 		x = 0;
 		while (x < data->text_data.size)
@@ -46,16 +47,18 @@ static int	*xpm_to_img(t_data *data, char *path)
 		}
 		y++;
 	}
+	// free temp image after copying its data
 	mlx_destroy_image(data->mlx, tmp.img);
 	return (buffer);
 }
 
 void	init_textures(t_data *data)
 {
-	data->textures = ft_calloc(5, sizeof * data->textures);
+	data->textures = ft_calloc(5, sizeof * data->textures);  // padding
 	if (!data->textures)
 		graceful_exit(data, err_msg(NULL, ERR_MALLOC, 1));
-	data->textures[NORTH] = xpm_to_img(data, data->text_data.north);
+	// load each texture into memory
+	data->textures[NORTH] = xpm_to_img(data, data->text_data.north);  // format: 1D array of ints
 	data->textures[SOUTH] = xpm_to_img(data, data->text_data.south);
 	data->textures[EAST] = xpm_to_img(data, data->text_data.east);
 	data->textures[WEST] = xpm_to_img(data, data->text_data.west);

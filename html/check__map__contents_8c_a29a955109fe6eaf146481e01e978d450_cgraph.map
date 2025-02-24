@@ -1,4 +1,4 @@
-<map id="check_player_position" name="check_player_position">
+<map id="set_player_position" name="set_player_position">
 <area shape="rect" id="Node000001" title=" " alt="" coords="5,31,172,56"/>
 <area shape="rect" id="Node000002" href="$check__map__contents_8c.html#a396e0188d4f725ab978dc5fb76b78f0c" title=" " alt="" coords="220,5,396,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="172,31,206,27,206,32,173,36"/>
