@@ -1,6 +1,6 @@
 #include "cub3d.h"
 
-static int	check_top_or_bottom(char **map_tab, int i, int j)
+static int	is_valid_map_top_bottom(char **map_tab, int i, int j)
 {
 	if (!map_tab || !map_tab[i] || !map_tab[i][j])
 		return (FAILURE);
@@ -17,12 +17,12 @@ static int	check_top_or_bottom(char **map_tab, int i, int j)
 	return (SUCCESS);
 }
 
-int	check_map_sides(t_map_data *map, char **map_tab)
+int	is_valid_map_borders(t_map_data *map, char **map_tab)
 {
 	int	i;
 	int	j;
 
-	if (check_top_or_bottom(map_tab, 0, 0) == FAILURE)
+	if (is_valid_map_top_bottom(map_tab, 0, 0) == FAILURE)
 		return (FAILURE);
 	i = 1;
 	while (i < (map->height - 1))
@@ -32,7 +32,7 @@ int	check_map_sides(t_map_data *map, char **map_tab)
 			return (FAILURE);
 		i++;
 	}
-	if (check_top_or_bottom(map_tab, i, 0) == FAILURE)
+	if (is_valid_map_top_bottom(map_tab, i, 0) == FAILURE)
 		return (FAILURE);
 	return (SUCCESS);
 }

@@ -1,4 +1,4 @@
-<map id="check_top_or_bottom" name="check_top_or_bottom">
+<map id="is_valid_map_top_bottom" name="is_valid_map_top_bottom">
 <area shape="rect" id="Node000001" title=" " alt="" coords="597,5,760,31"/>
 <area shape="rect" id="Node000002" href="$check__map__edges_8c.html#ad86d6ab8df2279607aaf9e66aa34a841" title=" " alt="" coords="412,5,549,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="584,21,550,21,550,15,584,15"/>

@@ -155,7 +155,7 @@ int		check_input(t_data *data, char **argv);
 int		create_map(t_data *data, char **map, int i);
 int		is_valid_texture(t_data *data, t_text_data *textures);
 int		is_valid_map(t_data *data, char **map_tab);
-int		check_map_sides(t_map_data *map, char **map_tab);
+int		is_valid_map_borders(t_map_data *map, char **map_tab);
 size_t	max_line_width(t_map_data *map, int i);
 int		render(t_data *data);
 void	render_images(t_data *data);

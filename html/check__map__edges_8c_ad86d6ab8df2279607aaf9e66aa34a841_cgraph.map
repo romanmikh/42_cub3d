@@ -1,4 +1,4 @@
-<map id="check_map_sides" name="check_map_sides">
+<map id="is_valid_map_borders" name="is_valid_map_borders">
 <area shape="rect" id="Node000001" title=" " alt="" coords="5,5,143,31"/>
 <area shape="rect" id="Node000002" href="$check__map__edges_8c.html#a719508e29a1848baa828f761053ea6bb" title=" " alt="" coords="191,5,353,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="143,15,177,15,177,21,143,21"/>

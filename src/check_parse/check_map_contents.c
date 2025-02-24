@@ -100,7 +100,7 @@ int	is_valid_map(t_data *data, char **map_tab)
 {
 	if (!data->map)
 		return (err_msg(data->map_data.path, ERR_MAP_MISSING, FAILURE));
-	if (check_map_sides(&data->map_data, map_tab) == FAILURE)
+	if (is_valid_map_borders(&data->map_data, map_tab) == FAILURE)
 		return (err_msg(data->map_data.path, ERR_MAP_NO_WALLS, FAILURE));
 	if (data->map_data.height < 3)
 		return (err_msg(data->map_data.path, ERR_MAP_TOO_SMALL, FAILURE));
