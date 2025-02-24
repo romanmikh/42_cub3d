@@ -47,3 +47,5 @@
 3. https://harm-smits.github.io/42docs/projects/cub3d
 4. https://reactive.so/post/42-a-comprehensive-guide-to-cub3d/
 
+## Full Code Map
+![Full Code Map](html/documentation.png)
