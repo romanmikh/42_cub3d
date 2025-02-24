@@ -1,0 +1,14 @@
+<map id="handle_exit" name="handle_exit">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,56,104,81"/>
+<area shape="rect" id="Node000002" href="$exit_8c.html#a72dedcd9968b708d7835eff3b399327f" title=" " alt="" coords="152,56,259,81"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="104,66,138,66,138,71,104,71"/>
+<area shape="rect" id="Node000003" href="$free_8c.html#a00be8d97c71b2dec9589cdf88c49f8e3" title=" " alt="" coords="307,56,391,81"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="259,66,293,66,293,71,259,71"/>
+<area shape="rect" id="Node000004" href="$free_8c.html#a41beffccad3f5b0f455ea7b0d044823c" title=" " alt="" coords="466,5,550,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="389,53,454,32,455,37,390,58"/>
+<area shape="rect" id="Node000005" href="$free_8c.html#a4b7ff757ec2f421181461f82aa6fdf99" title=" " alt="" coords="625,31,737,56"/>
+<area shape="poly" id="edge6_Node000003_Node000005" title=" " alt="" coords="391,63,611,46,612,51,391,68"/>
+<area shape="rect" id="Node000006" href="$free_8c.html#a2736411b6d076cb79ddefa04d8f3d5e4" title=" " alt="" coords="439,107,577,132"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="390,79,455,100,454,105,389,84"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="551,21,612,31,611,36,550,27"/>
+</map>

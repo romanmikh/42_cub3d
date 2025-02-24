@@ -1,0 +1,10 @@
+<map id="set_rgb_colours" name="set_rgb_colours">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,56,129,81"/>
+<area shape="rect" id="Node000002" href="$error_8c.html#afdc9385c812c685bdb06c3d0971b6914" title=" " alt="" coords="195,5,270,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="109,53,181,31,183,36,111,58"/>
+<area shape="rect" id="Node000003" href="$free_8c.html#a4b7ff757ec2f421181461f82aa6fdf99" title=" " alt="" coords="336,81,448,107"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="130,71,322,86,322,91,129,76"/>
+<area shape="rect" id="Node000004" href="$set__ceiling__floor__colours_8c.html#a3d4a8779b09dd890fe36c396dd89c9ff" title=" " alt="" coords="177,107,288,132"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="111,79,178,100,176,105,109,84"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="288,108,322,102,323,108,289,113"/>
+</map>

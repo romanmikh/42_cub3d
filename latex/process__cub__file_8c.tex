@@ -1,0 +1,103 @@
+\doxysection{src/check\+\_\+parse/process\+\_\+cub\+\_\+file.c File Reference}
+\hypertarget{process__cub__file_8c}{}\label{process__cub__file_8c}\index{src/check\_parse/process\_cub\_file.c@{src/check\_parse/process\_cub\_file.c}}
+{\ttfamily \#include "{}cub3d.\+h"{}}\newline
+Include dependency graph for process\+\_\+cub\+\_\+file.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{process__cub__file_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{process__cub__file_8c_a4efc492f54cd467541074f515e9221b3}{parse\+\_\+texture\+\_\+path}} (char \texorpdfstring{$\ast$}{*}line, int j)
+\item 
+static int \mbox{\hyperlink{process__cub__file_8c_a8f484ead4f24ec58cd49cf743403e831}{parse\+\_\+texture\+\_\+orientations}} (t\+\_\+text\+\_\+data \texorpdfstring{$\ast$}{*}textures, char \texorpdfstring{$\ast$}{*}line, int j)
+\item 
+static int \mbox{\hyperlink{process__cub__file_8c_aa8186fb021c331240f40734bb158b57f}{parse\+\_\+cub\+\_\+file}} (t\+\_\+data \texorpdfstring{$\ast$}{*}data, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}file, int i, int j)
+\item 
+int \mbox{\hyperlink{process__cub__file_8c_a5f46e23a5aaf5eca4681848daa6195b6}{process\+\_\+cub\+\_\+file}} (t\+\_\+data \texorpdfstring{$\ast$}{*}data, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}file)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{process__cub__file_8c_aa8186fb021c331240f40734bb158b57f}\label{process__cub__file_8c_aa8186fb021c331240f40734bb158b57f} 
+\index{process\_cub\_file.c@{process\_cub\_file.c}!parse\_cub\_file@{parse\_cub\_file}}
+\index{parse\_cub\_file@{parse\_cub\_file}!process\_cub\_file.c@{process\_cub\_file.c}}
+\doxysubsubsection{\texorpdfstring{parse\_cub\_file()}{parse\_cub\_file()}}
+{\footnotesize\ttfamily static int parse\+\_\+cub\+\_\+file (\begin{DoxyParamCaption}\item[{t\+\_\+data \texorpdfstring{$\ast$}{*}}]{data,  }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{file,  }\item[{int}]{i,  }\item[{int}]{j }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{process__cub__file_8c_aa8186fb021c331240f40734bb158b57f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{process__cub__file_8c_aa8186fb021c331240f40734bb158b57f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{process__cub__file_8c_a8f484ead4f24ec58cd49cf743403e831}\label{process__cub__file_8c_a8f484ead4f24ec58cd49cf743403e831} 
+\index{process\_cub\_file.c@{process\_cub\_file.c}!parse\_texture\_orientations@{parse\_texture\_orientations}}
+\index{parse\_texture\_orientations@{parse\_texture\_orientations}!process\_cub\_file.c@{process\_cub\_file.c}}
+\doxysubsubsection{\texorpdfstring{parse\_texture\_orientations()}{parse\_texture\_orientations()}}
+{\footnotesize\ttfamily static int parse\+\_\+texture\+\_\+orientations (\begin{DoxyParamCaption}\item[{t\+\_\+text\+\_\+data \texorpdfstring{$\ast$}{*}}]{textures,  }\item[{char \texorpdfstring{$\ast$}{*}}]{line,  }\item[{int}]{j }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{process__cub__file_8c_a8f484ead4f24ec58cd49cf743403e831_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{process__cub__file_8c_a8f484ead4f24ec58cd49cf743403e831_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{process__cub__file_8c_a4efc492f54cd467541074f515e9221b3}\label{process__cub__file_8c_a4efc492f54cd467541074f515e9221b3} 
+\index{process\_cub\_file.c@{process\_cub\_file.c}!parse\_texture\_path@{parse\_texture\_path}}
+\index{parse\_texture\_path@{parse\_texture\_path}!process\_cub\_file.c@{process\_cub\_file.c}}
+\doxysubsubsection{\texorpdfstring{parse\_texture\_path()}{parse\_texture\_path()}}
+{\footnotesize\ttfamily static char \texorpdfstring{$\ast$}{*} parse\+\_\+texture\+\_\+path (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{line,  }\item[{int}]{j }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{process__cub__file_8c_a4efc492f54cd467541074f515e9221b3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{process__cub__file_8c_a5f46e23a5aaf5eca4681848daa6195b6}\label{process__cub__file_8c_a5f46e23a5aaf5eca4681848daa6195b6} 
+\index{process\_cub\_file.c@{process\_cub\_file.c}!process\_cub\_file@{process\_cub\_file}}
+\index{process\_cub\_file@{process\_cub\_file}!process\_cub\_file.c@{process\_cub\_file.c}}
+\doxysubsubsection{\texorpdfstring{process\_cub\_file()}{process\_cub\_file()}}
+{\footnotesize\ttfamily int process\+\_\+cub\+\_\+file (\begin{DoxyParamCaption}\item[{t\+\_\+data \texorpdfstring{$\ast$}{*}}]{data,  }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{file }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{process__cub__file_8c_a5f46e23a5aaf5eca4681848daa6195b6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{process__cub__file_8c_a5f46e23a5aaf5eca4681848daa6195b6_icgraph}
+\end{center}
+\end{figure}

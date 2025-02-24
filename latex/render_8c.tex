@@ -1,0 +1,110 @@
+\doxysection{src/graphics/render.c File Reference}
+\hypertarget{render_8c}{}\label{render_8c}\index{src/graphics/render.c@{src/graphics/render.c}}
+{\ttfamily \#include "{}cub3d.\+h"{}}\newline
+Include dependency graph for render.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=197pt]{render_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{render_8c_ae7ff221611973fe2a21c2bd2cc697fd3}{set\+\_\+frame\+\_\+image\+\_\+pixel}} (t\+\_\+data \texorpdfstring{$\ast$}{*}data, t\+\_\+img \texorpdfstring{$\ast$}{*}image, int x, int y)
+\item 
+static void \mbox{\hyperlink{render_8c_ad86aec14d3d904b80a4cd2f9026d5df4}{render\+\_\+frame}} (t\+\_\+data \texorpdfstring{$\ast$}{*}data)
+\item 
+void \mbox{\hyperlink{render_8c_a47f6e2103dea669c258234ef56de2b88}{render\+\_\+images}} (t\+\_\+data \texorpdfstring{$\ast$}{*}data)
+\item 
+int \mbox{\hyperlink{render_8c_a609bf39816c23947e55cf4e8373fa06e}{render}} (t\+\_\+data \texorpdfstring{$\ast$}{*}data)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{render_8c_a609bf39816c23947e55cf4e8373fa06e}\label{render_8c_a609bf39816c23947e55cf4e8373fa06e} 
+\index{render.c@{render.c}!render@{render}}
+\index{render@{render}!render.c@{render.c}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily int render (\begin{DoxyParamCaption}\item[{t\+\_\+data \texorpdfstring{$\ast$}{*}}]{data }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{render_8c_a609bf39816c23947e55cf4e8373fa06e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{render_8c_a609bf39816c23947e55cf4e8373fa06e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{render_8c_ad86aec14d3d904b80a4cd2f9026d5df4}\label{render_8c_ad86aec14d3d904b80a4cd2f9026d5df4} 
+\index{render.c@{render.c}!render\_frame@{render\_frame}}
+\index{render\_frame@{render\_frame}!render.c@{render.c}}
+\doxysubsubsection{\texorpdfstring{render\_frame()}{render\_frame()}}
+{\footnotesize\ttfamily static void render\+\_\+frame (\begin{DoxyParamCaption}\item[{t\+\_\+data \texorpdfstring{$\ast$}{*}}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{render_8c_ad86aec14d3d904b80a4cd2f9026d5df4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{render_8c_ad86aec14d3d904b80a4cd2f9026d5df4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{render_8c_a47f6e2103dea669c258234ef56de2b88}\label{render_8c_a47f6e2103dea669c258234ef56de2b88} 
+\index{render.c@{render.c}!render\_images@{render\_images}}
+\index{render\_images@{render\_images}!render.c@{render.c}}
+\doxysubsubsection{\texorpdfstring{render\_images()}{render\_images()}}
+{\footnotesize\ttfamily void render\+\_\+images (\begin{DoxyParamCaption}\item[{t\+\_\+data \texorpdfstring{$\ast$}{*}}]{data }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{render_8c_a47f6e2103dea669c258234ef56de2b88_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{render_8c_a47f6e2103dea669c258234ef56de2b88_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{render_8c_ae7ff221611973fe2a21c2bd2cc697fd3}\label{render_8c_ae7ff221611973fe2a21c2bd2cc697fd3} 
+\index{render.c@{render.c}!set\_frame\_image\_pixel@{set\_frame\_image\_pixel}}
+\index{set\_frame\_image\_pixel@{set\_frame\_image\_pixel}!render.c@{render.c}}
+\doxysubsubsection{\texorpdfstring{set\_frame\_image\_pixel()}{set\_frame\_image\_pixel()}}
+{\footnotesize\ttfamily static void set\+\_\+frame\+\_\+image\+\_\+pixel (\begin{DoxyParamCaption}\item[{t\+\_\+data \texorpdfstring{$\ast$}{*}}]{data,  }\item[{t\+\_\+img \texorpdfstring{$\ast$}{*}}]{image,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{render_8c_ae7ff221611973fe2a21c2bd2cc697fd3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{render_8c_ae7ff221611973fe2a21c2bd2cc697fd3_icgraph}
+\end{center}
+\end{figure}

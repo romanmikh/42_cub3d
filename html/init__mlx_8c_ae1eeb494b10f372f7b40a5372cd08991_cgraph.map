@@ -1,0 +1,16 @@
+<map id="init_mlx" name="init_mlx">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,32,80,57"/>
+<area shape="rect" id="Node000002" href="$error_8c.html#afdc9385c812c685bdb06c3d0971b6914" title=" " alt="" coords="144,7,219,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="80,35,130,26,131,31,81,41"/>
+<area shape="rect" id="Node000003" href="$exit_8c.html#a72dedcd9968b708d7835eff3b399327f" title=" " alt="" coords="128,56,235,81"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="81,48,115,54,114,60,80,54"/>
+<area shape="rect" id="Node000004" href="$free_8c.html#a00be8d97c71b2dec9589cdf88c49f8e3" title=" " alt="" coords="283,56,367,81"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="235,66,269,66,269,71,235,71"/>
+<area shape="rect" id="Node000005" href="$free_8c.html#a41beffccad3f5b0f455ea7b0d044823c" title=" " alt="" coords="442,5,526,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="365,53,430,32,431,37,366,58"/>
+<area shape="rect" id="Node000006" href="$free_8c.html#a4b7ff757ec2f421181461f82aa6fdf99" title=" " alt="" coords="601,31,713,56"/>
+<area shape="poly" id="edge7_Node000004_Node000006" title=" " alt="" coords="367,63,587,46,588,51,367,68"/>
+<area shape="rect" id="Node000007" href="$free_8c.html#a2736411b6d076cb79ddefa04d8f3d5e4" title=" " alt="" coords="415,107,553,132"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="366,79,431,100,430,105,365,84"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="527,21,588,31,587,36,526,27"/>
+</map>

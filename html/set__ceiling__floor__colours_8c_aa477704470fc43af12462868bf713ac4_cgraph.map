@@ -1,0 +1,13 @@
+<map id="set_ceiling_floor_colours" name="set_ceiling_floor_colours">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,188,56"/>
+<area shape="rect" id="Node000002" href="$error_8c.html#afdc9385c812c685bdb06c3d0971b6914" title=" " alt="" coords="426,5,501,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="188,34,412,19,413,24,189,40"/>
+<area shape="rect" id="Node000003" href="$set__ceiling__floor__colours_8c.html#a6a2f7f2bc00874b0ca5723679a52c4a1" title=" " alt="" coords="236,56,360,81"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="188,52,223,57,222,62,188,57"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="340,53,412,31,414,36,341,58"/>
+<area shape="rect" id="Node000004" href="$free_8c.html#a4b7ff757ec2f421181461f82aa6fdf99" title=" " alt="" coords="567,81,679,107"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="360,71,553,86,553,91,360,76"/>
+<area shape="rect" id="Node000005" href="$set__ceiling__floor__colours_8c.html#a3d4a8779b09dd890fe36c396dd89c9ff" title=" " alt="" coords="408,107,519,132"/>
+<area shape="poly" id="edge5_Node000003_Node000005" title=" " alt="" coords="341,79,409,100,407,105,340,84"/>
+<area shape="poly" id="edge6_Node000005_Node000004" title=" " alt="" coords="519,108,553,102,554,108,519,113"/>
+</map>

@@ -1,0 +1,11 @@
+<map id="move_player_forward" name="move_player_forward">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,169,56"/>
+<area shape="rect" id="Node000002" href="$position_8c.html#aeca10cfaec379f15ebb261e30739b068" title=" " alt="" coords="217,31,336,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="169,41,204,41,204,46,169,46"/>
+<area shape="rect" id="Node000003" href="$position_8c.html#ad9f71f578175a945c1a2e73c782ae9dd" title=" " alt="" coords="384,31,487,56"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="336,41,370,41,370,46,336,46"/>
+<area shape="rect" id="Node000004" href="$position_8c.html#ad0ff591c32cee4c58d1cecf4c0915a94" title=" " alt="" coords="555,5,712,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="487,34,541,27,541,32,487,39"/>
+<area shape="rect" id="Node000005" href="$position_8c.html#ab6b9d558de1d00d39f460dc12c63262b" title=" " alt="" coords="535,55,732,80"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="487,47,521,51,521,56,487,52"/>
+</map>

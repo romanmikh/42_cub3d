@@ -1,0 +1,9 @@
+<map id="init_texture_img" name="init_texture_img">
+<area shape="rect" id="Node000001" title=" " alt="" coords="411,5,540,31"/>
+<area shape="rect" id="Node000002" href="$init__ray__textures_8c.html#aec254676548e7ad4782667536ec0a35d" title=" " alt="" coords="260,5,363,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="397,21,363,21,363,15,397,15"/>
+<area shape="rect" id="Node000003" href="$init__ray__textures_8c.html#a00dbbed304462f45ec3574387b38e595" title=" " alt="" coords="108,5,212,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="246,21,212,21,212,15,246,15"/>
+<area shape="rect" id="Node000004" href="$main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,60,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="94,21,60,21,60,15,94,15"/>
+</map>
