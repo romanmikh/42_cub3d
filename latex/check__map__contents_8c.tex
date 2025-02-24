@@ -11,109 +11,110 @@ Include dependency graph for check\+\_\+map\+\_\+contents.\+c\+:\nopagebreak
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-static int \mbox{\hyperlink{check__map__contents_8c_a3f476c8785b8d10bfd3bff4f8cce1afd}{check\+\_\+map\+\_\+elements}} (t\+\_\+data \texorpdfstring{$\ast$}{*}data, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}map\+\_\+tab)
+static int \mbox{\hyperlink{check__map__contents_8c_aef36b72273347b7578100a8b063188ce}{is\+\_\+valid\+\_\+map\+\_\+contents}} (t\+\_\+data \texorpdfstring{$\ast$}{*}data, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}map\+\_\+arr)
 \item 
-static int \mbox{\hyperlink{check__map__contents_8c_a396e0188d4f725ab978dc5fb76b78f0c}{check\+\_\+position\+\_\+is\+\_\+valid}} (t\+\_\+data \texorpdfstring{$\ast$}{*}data, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}map\+\_\+tab)
+static int \mbox{\hyperlink{check__map__contents_8c_af9c3f4544abff25116e6a7bd302865e2}{is\+\_\+valid\+\_\+player\+\_\+position}} (t\+\_\+data \texorpdfstring{$\ast$}{*}data, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}map\+\_\+arr)
 \item 
-static int \mbox{\hyperlink{check__map__contents_8c_a29a955109fe6eaf146481e01e978d450}{check\+\_\+player\+\_\+position}} (t\+\_\+data \texorpdfstring{$\ast$}{*}data, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}map\+\_\+tab)
+static int \mbox{\hyperlink{check__map__contents_8c_a6f2dce6a7d31ac777e85c50185281b72}{set\+\_\+player\+\_\+position}} (t\+\_\+data \texorpdfstring{$\ast$}{*}data, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}map\+\_\+arr)
 \item 
-static int \mbox{\hyperlink{check__map__contents_8c_a85cea31dd22e9cc2d929c33d26af9f2f}{check\+\_\+map\+\_\+is\+\_\+at\+\_\+the\+\_\+end}} (t\+\_\+map\+\_\+data \texorpdfstring{$\ast$}{*}map)
+static int \mbox{\hyperlink{check__map__contents_8c_a15e1c189c646b81aa918dd7d1b271c11}{ensure\+\_\+no\+\_\+trailing\+\_\+map\+\_\+content}} (t\+\_\+map\+\_\+data \texorpdfstring{$\ast$}{*}map)
 \item 
-int \mbox{\hyperlink{check__map__contents_8c_a7a14f71a5f57b475d2d29503a0f8c2b0}{is\+\_\+valid\+\_\+map}} (t\+\_\+data \texorpdfstring{$\ast$}{*}data, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}map\+\_\+tab)
+int \mbox{\hyperlink{check__map__contents_8c_aeb1b652507aae83af168fb52c439df6e}{is\+\_\+valid\+\_\+map}} (t\+\_\+data \texorpdfstring{$\ast$}{*}data, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}map\+\_\+arr)
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
-\Hypertarget{check__map__contents_8c_a3f476c8785b8d10bfd3bff4f8cce1afd}\label{check__map__contents_8c_a3f476c8785b8d10bfd3bff4f8cce1afd} 
-\index{check\_map\_contents.c@{check\_map\_contents.c}!check\_map\_elements@{check\_map\_elements}}
-\index{check\_map\_elements@{check\_map\_elements}!check\_map\_contents.c@{check\_map\_contents.c}}
-\doxysubsubsection{\texorpdfstring{check\_map\_elements()}{check\_map\_elements()}}
-{\footnotesize\ttfamily static int check\+\_\+map\+\_\+elements (\begin{DoxyParamCaption}\item[{t\+\_\+data \texorpdfstring{$\ast$}{*}}]{data,  }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{map\+\_\+tab }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
-
-Here is the call graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=295pt]{check__map__contents_8c_a3f476c8785b8d10bfd3bff4f8cce1afd_cgraph}
-\end{center}
-\end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{check__map__contents_8c_a3f476c8785b8d10bfd3bff4f8cce1afd_icgraph}
-\end{center}
-\end{figure}
-\Hypertarget{check__map__contents_8c_a85cea31dd22e9cc2d929c33d26af9f2f}\label{check__map__contents_8c_a85cea31dd22e9cc2d929c33d26af9f2f} 
-\index{check\_map\_contents.c@{check\_map\_contents.c}!check\_map\_is\_at\_the\_end@{check\_map\_is\_at\_the\_end}}
-\index{check\_map\_is\_at\_the\_end@{check\_map\_is\_at\_the\_end}!check\_map\_contents.c@{check\_map\_contents.c}}
-\doxysubsubsection{\texorpdfstring{check\_map\_is\_at\_the\_end()}{check\_map\_is\_at\_the\_end()}}
-{\footnotesize\ttfamily static int check\+\_\+map\+\_\+is\+\_\+at\+\_\+the\+\_\+end (\begin{DoxyParamCaption}\item[{t\+\_\+map\+\_\+data \texorpdfstring{$\ast$}{*}}]{map }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+\Hypertarget{check__map__contents_8c_a15e1c189c646b81aa918dd7d1b271c11}\label{check__map__contents_8c_a15e1c189c646b81aa918dd7d1b271c11} 
+\index{check\_map\_contents.c@{check\_map\_contents.c}!ensure\_no\_trailing\_map\_content@{ensure\_no\_trailing\_map\_content}}
+\index{ensure\_no\_trailing\_map\_content@{ensure\_no\_trailing\_map\_content}!check\_map\_contents.c@{check\_map\_contents.c}}
+\doxysubsubsection{\texorpdfstring{ensure\_no\_trailing\_map\_content()}{ensure\_no\_trailing\_map\_content()}}
+{\footnotesize\ttfamily static int ensure\+\_\+no\+\_\+trailing\+\_\+map\+\_\+content (\begin{DoxyParamCaption}\item[{t\+\_\+map\+\_\+data \texorpdfstring{$\ast$}{*}}]{map }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 Here is the caller graph for this function\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{check__map__contents_8c_a85cea31dd22e9cc2d929c33d26af9f2f_icgraph}
+\includegraphics[width=350pt]{check__map__contents_8c_a15e1c189c646b81aa918dd7d1b271c11_icgraph}
 \end{center}
 \end{figure}
-\Hypertarget{check__map__contents_8c_a29a955109fe6eaf146481e01e978d450}\label{check__map__contents_8c_a29a955109fe6eaf146481e01e978d450} 
-\index{check\_map\_contents.c@{check\_map\_contents.c}!check\_player\_position@{check\_player\_position}}
-\index{check\_player\_position@{check\_player\_position}!check\_map\_contents.c@{check\_map\_contents.c}}
-\doxysubsubsection{\texorpdfstring{check\_player\_position()}{check\_player\_position()}}
-{\footnotesize\ttfamily static int check\+\_\+player\+\_\+position (\begin{DoxyParamCaption}\item[{t\+\_\+data \texorpdfstring{$\ast$}{*}}]{data,  }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{map\+\_\+tab }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
-
-Here is the call graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{check__map__contents_8c_a29a955109fe6eaf146481e01e978d450_cgraph}
-\end{center}
-\end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{check__map__contents_8c_a29a955109fe6eaf146481e01e978d450_icgraph}
-\end{center}
-\end{figure}
-\Hypertarget{check__map__contents_8c_a396e0188d4f725ab978dc5fb76b78f0c}\label{check__map__contents_8c_a396e0188d4f725ab978dc5fb76b78f0c} 
-\index{check\_map\_contents.c@{check\_map\_contents.c}!check\_position\_is\_valid@{check\_position\_is\_valid}}
-\index{check\_position\_is\_valid@{check\_position\_is\_valid}!check\_map\_contents.c@{check\_map\_contents.c}}
-\doxysubsubsection{\texorpdfstring{check\_position\_is\_valid()}{check\_position\_is\_valid()}}
-{\footnotesize\ttfamily static int check\+\_\+position\+\_\+is\+\_\+valid (\begin{DoxyParamCaption}\item[{t\+\_\+data \texorpdfstring{$\ast$}{*}}]{data,  }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{map\+\_\+tab }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
-
-Here is the caller graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{check__map__contents_8c_a396e0188d4f725ab978dc5fb76b78f0c_icgraph}
-\end{center}
-\end{figure}
-\Hypertarget{check__map__contents_8c_a7a14f71a5f57b475d2d29503a0f8c2b0}\label{check__map__contents_8c_a7a14f71a5f57b475d2d29503a0f8c2b0} 
+\Hypertarget{check__map__contents_8c_aeb1b652507aae83af168fb52c439df6e}\label{check__map__contents_8c_aeb1b652507aae83af168fb52c439df6e} 
 \index{check\_map\_contents.c@{check\_map\_contents.c}!is\_valid\_map@{is\_valid\_map}}
 \index{is\_valid\_map@{is\_valid\_map}!check\_map\_contents.c@{check\_map\_contents.c}}
 \doxysubsubsection{\texorpdfstring{is\_valid\_map()}{is\_valid\_map()}}
-{\footnotesize\ttfamily int is\+\_\+valid\+\_\+map (\begin{DoxyParamCaption}\item[{t\+\_\+data \texorpdfstring{$\ast$}{*}}]{data,  }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{map\+\_\+tab }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily int is\+\_\+valid\+\_\+map (\begin{DoxyParamCaption}\item[{t\+\_\+data \texorpdfstring{$\ast$}{*}}]{data,  }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{map\+\_\+arr }\end{DoxyParamCaption})}
 
 Here is the call graph for this function\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{check__map__contents_8c_a7a14f71a5f57b475d2d29503a0f8c2b0_cgraph}
+\includegraphics[width=350pt]{check__map__contents_8c_aeb1b652507aae83af168fb52c439df6e_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=349pt]{check__map__contents_8c_a7a14f71a5f57b475d2d29503a0f8c2b0_icgraph}
+\includegraphics[width=349pt]{check__map__contents_8c_aeb1b652507aae83af168fb52c439df6e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{check__map__contents_8c_aef36b72273347b7578100a8b063188ce}\label{check__map__contents_8c_aef36b72273347b7578100a8b063188ce} 
+\index{check\_map\_contents.c@{check\_map\_contents.c}!is\_valid\_map\_contents@{is\_valid\_map\_contents}}
+\index{is\_valid\_map\_contents@{is\_valid\_map\_contents}!check\_map\_contents.c@{check\_map\_contents.c}}
+\doxysubsubsection{\texorpdfstring{is\_valid\_map\_contents()}{is\_valid\_map\_contents()}}
+{\footnotesize\ttfamily static int is\+\_\+valid\+\_\+map\+\_\+contents (\begin{DoxyParamCaption}\item[{t\+\_\+data \texorpdfstring{$\ast$}{*}}]{data,  }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{map\+\_\+arr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{check__map__contents_8c_aef36b72273347b7578100a8b063188ce_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{check__map__contents_8c_aef36b72273347b7578100a8b063188ce_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{check__map__contents_8c_af9c3f4544abff25116e6a7bd302865e2}\label{check__map__contents_8c_af9c3f4544abff25116e6a7bd302865e2} 
+\index{check\_map\_contents.c@{check\_map\_contents.c}!is\_valid\_player\_position@{is\_valid\_player\_position}}
+\index{is\_valid\_player\_position@{is\_valid\_player\_position}!check\_map\_contents.c@{check\_map\_contents.c}}
+\doxysubsubsection{\texorpdfstring{is\_valid\_player\_position()}{is\_valid\_player\_position()}}
+{\footnotesize\ttfamily static int is\+\_\+valid\+\_\+player\+\_\+position (\begin{DoxyParamCaption}\item[{t\+\_\+data \texorpdfstring{$\ast$}{*}}]{data,  }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{map\+\_\+arr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{check__map__contents_8c_af9c3f4544abff25116e6a7bd302865e2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{check__map__contents_8c_a6f2dce6a7d31ac777e85c50185281b72}\label{check__map__contents_8c_a6f2dce6a7d31ac777e85c50185281b72} 
+\index{check\_map\_contents.c@{check\_map\_contents.c}!set\_player\_position@{set\_player\_position}}
+\index{set\_player\_position@{set\_player\_position}!check\_map\_contents.c@{check\_map\_contents.c}}
+\doxysubsubsection{\texorpdfstring{set\_player\_position()}{set\_player\_position()}}
+{\footnotesize\ttfamily static int set\+\_\+player\+\_\+position (\begin{DoxyParamCaption}\item[{t\+\_\+data \texorpdfstring{$\ast$}{*}}]{data,  }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{map\+\_\+arr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{check__map__contents_8c_a6f2dce6a7d31ac777e85c50185281b72_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{check__map__contents_8c_a6f2dce6a7d31ac777e85c50185281b72_icgraph}
 \end{center}
 \end{figure}

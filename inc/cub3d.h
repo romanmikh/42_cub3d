@@ -158,7 +158,7 @@ int		is_valid_map(t_data *data, char **map_arr);
 int		is_valid_map_borders(t_map_data *map, char **map_arr);
 size_t	max_line_width(t_map_data *map, int i);
 int		move_and_render(t_data *data);
-void	render_images(t_data *data);
+void	render(t_data *data);
 int		ray_cast(t_player *player, t_data *data);
 void	init_texture_pixels(t_data *data);
 void	update_texture_pixels(t_data *data, t_text_data *tex, t_ray *ray, int x);

@@ -36,7 +36,7 @@ static void	render_frame(t_data *data)
 
 
 // 
-void	render_images(t_data *data)
+void	render(t_data *data)
 {
 	init_texture_pixels(data);
 	init_ray(&data->ray); // Reset the ray structure
@@ -51,6 +51,6 @@ int	move_and_render(t_data *data)  // used in mlx_hook only
 	data->player.has_moved += move_player(data); // Update player movement status
 	if (data->player.has_moved == 0)  // if player hasn't moved, do nothing
 		return (0);
-	render_images(data);
+	render(data);
 	return (0);
 }

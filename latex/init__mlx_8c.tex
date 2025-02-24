@@ -11,9 +11,11 @@ Include dependency graph for init\+\_\+mlx.\+c\+:\nopagebreak
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{init__mlx_8c_a688fe455f0e4261bd5706edd2174a483}{init\+\_\+img}} (t\+\_\+data \texorpdfstring{$\ast$}{*}data, t\+\_\+img \texorpdfstring{$\ast$}{*}image, int width, int height)
+static void \mbox{\hyperlink{init__mlx_8c_ab371167ec32ad6637cbf38dd904c0d32}{init\+\_\+img\+\_\+clean}} (t\+\_\+img \texorpdfstring{$\ast$}{*}img)
 \item 
 void \mbox{\hyperlink{init__mlx_8c_acecaf69db80643b7f3f39db562f3224a}{init\+\_\+texture\+\_\+img}} (t\+\_\+data \texorpdfstring{$\ast$}{*}data, t\+\_\+img \texorpdfstring{$\ast$}{*}image, char \texorpdfstring{$\ast$}{*}path)
+\item 
+void \mbox{\hyperlink{init__mlx_8c_a688fe455f0e4261bd5706edd2174a483}{init\+\_\+img}} (t\+\_\+data \texorpdfstring{$\ast$}{*}data, t\+\_\+img \texorpdfstring{$\ast$}{*}image, int width, int height)
 \item 
 void \mbox{\hyperlink{init__mlx_8c_ae1eeb494b10f372f7b40a5372cd08991}{init\+\_\+mlx}} (t\+\_\+data \texorpdfstring{$\ast$}{*}data)
 \end{DoxyCompactItemize}
@@ -42,14 +44,27 @@ Here is the caller graph for this function\+:
 \includegraphics[width=350pt]{init__mlx_8c_a688fe455f0e4261bd5706edd2174a483_icgraph}
 \end{center}
 \end{figure}
+\Hypertarget{init__mlx_8c_ab371167ec32ad6637cbf38dd904c0d32}\label{init__mlx_8c_ab371167ec32ad6637cbf38dd904c0d32} 
+\index{init\_mlx.c@{init\_mlx.c}!init\_img\_clean@{init\_img\_clean}}
+\index{init\_img\_clean@{init\_img\_clean}!init\_mlx.c@{init\_mlx.c}}
+\doxysubsubsection{\texorpdfstring{init\_img\_clean()}{init\_img\_clean()}}
+{\footnotesize\ttfamily static void init\+\_\+img\+\_\+clean (\begin{DoxyParamCaption}\item[{t\+\_\+img \texorpdfstring{$\ast$}{*}}]{img }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{init__mlx_8c_ab371167ec32ad6637cbf38dd904c0d32_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{init__mlx_8c_ae1eeb494b10f372f7b40a5372cd08991}\label{init__mlx_8c_ae1eeb494b10f372f7b40a5372cd08991} 
 \index{init\_mlx.c@{init\_mlx.c}!init\_mlx@{init\_mlx}}
 \index{init\_mlx@{init\_mlx}!init\_mlx.c@{init\_mlx.c}}
 \doxysubsubsection{\texorpdfstring{init\_mlx()}{init\_mlx()}}
 {\footnotesize\ttfamily void init\+\_\+mlx (\begin{DoxyParamCaption}\item[{t\+\_\+data \texorpdfstring{$\ast$}{*}}]{data }\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -77,8 +92,7 @@ Here is the call graph for this function\+:
 \includegraphics[width=350pt]{init__mlx_8c_acecaf69db80643b7f3f39db562f3224a_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

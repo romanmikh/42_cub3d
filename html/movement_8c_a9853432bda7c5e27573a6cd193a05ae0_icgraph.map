@@ -1,9 +1,9 @@
 <map id="move_player_forward" name="move_player_forward">
-<area shape="rect" id="Node000001" title=" " alt="" coords="375,5,539,31"/>
-<area shape="rect" id="Node000002" href="$movement_8c.html#afc12ba6d2804f3ecacbce4def5492f0c" title=" " alt="" coords="220,5,327,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="361,21,327,21,327,15,361,15"/>
-<area shape="rect" id="Node000003" href="$render_8c.html#a609bf39816c23947e55cf4e8373fa06e" title=" " alt="" coords="108,5,172,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="207,21,172,21,172,15,207,15"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="449,5,613,31"/>
+<area shape="rect" id="Node000002" href="$movement_8c.html#afc12ba6d2804f3ecacbce4def5492f0c" title=" " alt="" coords="295,5,401,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="435,21,402,21,402,15,435,15"/>
+<area shape="rect" id="Node000003" href="$render_8c.html#ac8f2b001e6905acc424f90abb72fd544" title=" " alt="" coords="108,5,247,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="281,21,247,21,247,15,281,15"/>
 <area shape="rect" id="Node000004" href="$main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,60,31"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="94,21,60,21,60,15,94,15"/>
 </map>
