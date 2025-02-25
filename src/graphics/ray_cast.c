@@ -16,7 +16,7 @@ static void	set_dda(t_ray *ray, t_player *player)
 	if (ray->dir_x < 0)  // ray moving left
 	{
 		ray->step_x = -1;
-		ray->sidedist_x = (player->pos_x - ray->map_x) * ray->deltadist_x;
+		ray->sidedist_x = (player->pos_x - ray->map_x) * ray->deltadist_x;  // (int-rounded player pos - actial pos) * distance travelled in TOTAL (diagonal) to move 1 unit in x => distance travelled in total to get to the first vertical gridline
 	}
 	else  // ray moving right
 	{
@@ -41,14 +41,15 @@ static void	set_dda(t_ray *ray, t_player *player)
 - If the sidedistx < sidedisty, x is the closest point from the ray
 */
 // Moves the ray forward through the grid using the DDA algorithm.
-static void	perform_dda(t_data *data, t_ray *ray)
-{
+static void	perform_dda(t_data *data, t_ray *ray)// this one moves WHILE no hit, so projects the ray to the wall
+{ // returns nothing, just updates our x and y positions of the ray to where it hits the wall
 	int	hit;  // wall
 
 	hit = 0;
-	while (hit == 0)
+	while (hit == 0) // at each square of map it checks distance to x and y, takes the shortest one, so wiggles in the right direction always
 	{
-		if (ray->sidedist_x < ray->sidedist_y)  // Move in X direction
+		// total distance to get to horizontal edge line > to vertical, so:
+		if (ray->sidedist_x < ray->sidedist_y)  // ray is moving more in X direction than in Y |gradient < 1|
 		{
 			ray->sidedist_x += ray->deltadist_x;
 			ray->map_x += ray->step_x;
@@ -62,8 +63,8 @@ static void	perform_dda(t_data *data, t_ray *ray)
 		}
 		if (ray->map_y < 1
 			|| ray->map_x < 1
-			|| ray->map_y > data->map_data.height - 1  // why 0.25?
-			|| ray->map_x > data->map_data.width - 1)  // why 1.25?
+			|| ray->map_y > data->map_data.height - 1
+			|| ray->map_x > data->map_data.width - 2)
 			break ;
 		else if (data->map[ray->map_y][ray->map_x] > '0')  // wall/edge = 1, so stop
 			hit = 1;

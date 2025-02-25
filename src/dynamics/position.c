@@ -9,7 +9,7 @@ static bool	is_valid_pos_wall_collision(t_data *data, double x, double y)
 
 static bool	is_valid_pos_in_map(t_data *data, double x, double y)
 {
-	if (x < 1 || x >= data->map_data.width - 1)
+	if (x < 1 || x >= data->map_data.width - 2)
 		return (false);
 	if (y < 1 || y >= data->map_data.height -1)
 		return (false);

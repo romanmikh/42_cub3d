@@ -100,7 +100,7 @@ typedef struct s_img
 
 typedef struct s_ray
 {
-	double	camera_x;  // x position of ray in camera space
+	double	field_of_view;  // x position of ray in camera space
 	double	dir_x;
 	double	dir_y;
 	int		map_x;  // coorinates of ray

@@ -2,7 +2,7 @@
 
 void	init_ray(t_ray *ray)
 {
-	ray->camera_x = 0;
+	ray->field_of_view = 0;
 	ray->dir_x = 0;
 	ray->dir_y = 0;
 	ray->map_x = 0;

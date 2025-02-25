@@ -1,4 +1,4 @@
-<map id="init_player_east_west" name="init_player_east_west">
+<map id="init_player_direction_e_w" name="init_player_direction_e_w">
 <area shape="rect" id="Node000001" title=" " alt="" coords="459,5,623,31"/>
 <area shape="rect" id="Node000002" href="$init__directions_8c.html#ab8a3cdee541d44a5bfb724e9aaae5ad8" title=" " alt="" coords="256,5,411,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="445,21,411,21,411,15,445,15"/>
