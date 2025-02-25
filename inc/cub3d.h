@@ -113,7 +113,7 @@ typedef struct s_ray
 	double	deltadist_y;
 	double	wall_dist; 
 	double	wall_x; // x-coord of wall hit
-	int		side; // 0 = N/S, 1 = E/W / indicates if ray hits vertical or horizontal wall
+	int		hit_horiz_wall; // 0 = N/S, 1 = E/W / indicates if ray hits vertical or horizontal wall
 	int		line_height; // height of wall to draw
 	int		draw_start; 
 	int		draw_end;

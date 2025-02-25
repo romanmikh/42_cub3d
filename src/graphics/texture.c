@@ -3,7 +3,7 @@
 // Determines which texture to use based on which side of the wall was hit
 static void	get_texture_index(t_data *data, t_ray *ray)
 {
-	if (ray->side == 0)
+	if (ray->hit_horiz_wall == 0)
 	{
 		if (ray->dir_x < 0)
 			data->text_data.index = WEST;
@@ -26,8 +26,8 @@ void	update_texture_pixels(t_data *data, t_text_data *tex, t_ray *ray, int x)
 
 	get_texture_index(data, ray);
 	tex->x = (int)(ray->wall_x * tex->size);  // Calculate the x coordinate where ray hits texture
-	if ((ray->side == 0 && ray->dir_x < 0) // flip texture horizontally if needed
-		|| (ray->side == 1 && ray->dir_y > 0))
+	if ((ray->hit_horiz_wall == 0 && ray->dir_x < 0) // flip texture horizontally if needed
+		|| (ray->hit_horiz_wall == 1 && ray->dir_y > 0))
 		tex->x = tex->size - tex->x - 1;
 	tex->step = 1.0 * tex->size / ray->line_height; // Calculate how much the texture should scale per pixel
 	tex->pos = (ray->draw_start - data->win_height / 2

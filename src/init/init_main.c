@@ -15,7 +15,7 @@ void	init_ray(t_ray *ray)
 	ray->deltadist_y = 0;
 	ray->wall_dist = 0;
 	ray->wall_x = 0;
-	ray->side = 0;
+	ray->hit_horiz_wall = 0;
 	ray->line_height = 0;
 	ray->draw_start = 0;
 	ray->draw_end = 0;

@@ -53,13 +53,13 @@ static void	perform_dda(t_data *data, t_ray *ray)// this one moves WHILE no hit,
 		{
 			ray->sidedist_x += ray->deltadist_x;
 			ray->map_x += ray->step_x;
-			ray->side = 0;
+			ray->hit_horiz_wall = 0;
 		}
 		else  // Move in Y direction
 		{
 			ray->sidedist_y += ray->deltadist_y;
 			ray->map_y += ray->step_y;
-			ray->side = 1;
+			ray->hit_horiz_wall = 1;
 		}
 		if (ray->map_y < 1
 			|| ray->map_x < 1
@@ -74,22 +74,22 @@ static void	perform_dda(t_data *data, t_ray *ray)// this one moves WHILE no hit,
 // Calculates the height of the wall and where to start and end drawing it.
 static void	calculate_line_height(t_ray *ray, t_data *data, t_player *player)
 {
-	if (ray->side == 0)
-		ray->wall_dist = (ray->sidedist_x - ray->deltadist_x);
-	else
+	if (ray->hit_horiz_wall == 0) // if hits vertical wall (top down from map)
+		ray->wall_dist = (ray->sidedist_x - ray->deltadist_x);  // PERPENDICULAR DIST. entire side_dist - tail deltadist 
+	else  // exact perpendicular distance to wall (without initial delta)
 		ray->wall_dist = (ray->sidedist_y - ray->deltadist_y);
-	ray->line_height = (int)(data->win_height / ray->wall_dist);
-	ray->draw_start = -(ray->line_height) / 2 + data->win_height / 2;
+	ray->line_height = (int)(data->win_height / ray->wall_dist);  // small dist -> large height. 0 dist = inf height
+	ray->draw_start = -(ray->line_height) / 2 + data->win_height / 2; // center start with win_height
 	if (ray->draw_start < 0)
-		ray->draw_start = 0;
+		ray->draw_start = 0; // edge cases
 	ray->draw_end = ray->line_height / 2 + data->win_height / 2;
 	if (ray->draw_end >= data->win_height)
 		ray->draw_end = data->win_height - 1;
-	if (ray->side == 0)
-		ray->wall_x = player->pos_y + ray->wall_dist * ray->dir_y;
-	else
-		ray->wall_x = player->pos_x + ray->wall_dist * ray->dir_x;
-	ray->wall_x -= floor(ray->wall_x);
+	if (ray->hit_horiz_wall == 0)  // if vertical wall (top down view)
+		ray->wall_x = player->pos_y + ray->wall_dist * ray->dir_y; // get exact x coordinate of wall hit. pos_y + #units in x * y stpe size per unit x
+	else // if horizontal wall
+		ray->wall_x = player->pos_x + ray->wall_dist * ray->dir_x; // get exact y coordinate of wall hit
+	ray->wall_x -= floor(ray->wall_x); // modulo to get exact location on exactly that tile only
 }
 
 // goal: determine what the player sees
