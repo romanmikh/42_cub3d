@@ -13,7 +13,7 @@ static void	init_player_north_south(t_player *player)
 	{
 		player->dir_x = 0;
 		player->dir_y = -1;
-		player->plane_x = 0.66;
+		player->plane_x = 0.66;  // half of field of view
 		player->plane_y = 0;
 	}
 	else

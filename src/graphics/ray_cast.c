@@ -62,8 +62,8 @@ static void	perform_dda(t_data *data, t_ray *ray)
 		}
 		if (ray->map_y < 0.25
 			|| ray->map_x < 0.25
-			|| ray->map_y > data->map_data.height - 0.25
-			|| ray->map_x > data->map_data.width - 1.25)
+			|| ray->map_y > data->map_data.height - 0.25  // why 0.25?
+			|| ray->map_x > data->map_data.width - 1.25)  // why 1.25?
 			break ;
 		else if (data->map[ray->map_y][ray->map_x] > '0')  // wall/edge = 1, so stop
 			hit = 1;
@@ -91,7 +91,9 @@ static void	calculate_line_height(t_ray *ray, t_data *data, t_player *player)
 	ray->wall_x -= floor(ray->wall_x);
 }
 
-// goal: determine what the player sees in a 3D first-person view by using raycasting
+// goal: determine what the player sees
+
+// in a 3D first-person view by using raycasting
 // shoot "rays" from the player's position in different directions, check where they hit walls, and use this to draw vertical stripes on the screen
 // each ray represents a single vertical slice of the screen 
 // casts multiple rays (one per column of pixels) to render the full view
@@ -108,8 +110,8 @@ int	ray_cast(t_player *player, t_data *data)
 	while (x < data->win_width)  // Loop through every vertical screen column from left to right
 	{
 		init_ray_cast_info(x, &ray, player);
-		set_dda(&ray, player);
-		perform_dda(data, &ray); // Move ray through the grid to find a wall
+		set_dda(&ray, player); // determien direction of ray's movement
+		perform_dda(data, &ray); // detect wall collisions (from above?)
 		calculate_line_height(&ray, data, player); // Compute how tall the wall should be
 		update_texture_pixels(data, &data->text_data, &ray, x);
 		x++;

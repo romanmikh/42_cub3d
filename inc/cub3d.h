@@ -14,8 +14,8 @@
 
 // Macros
 # define TEX_SIZE 64
-# define WIN_WIDTH 1280
-# define WIN_HEIGHT 960
+# define WIN_WIDTH 600
+# define WIN_HEIGHT 450
 # define STEP_SIZE 0.015
 # define ROTATION_ANGLE 0.015
 
@@ -126,7 +126,7 @@ typedef struct s_player
 	double	pos_y;
 	double	dir_x; 
 	double	dir_y;
-	double	plane_x; // camera plane for perspective
+	double	plane_x; // half of field of view, affected by rotations only
 	double	plane_y;
 	int		has_moved;
 	int		move_x; // (-1, 0 1)
