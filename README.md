@@ -36,7 +36,7 @@
    - **maps/**: ...
    - **minilib-linux/**: ...
 
-5. Valgrind can be run using 
+5. Valgrind output saved in valgrind_out.txt after:
    ```sh
    make valgrind
    ```
