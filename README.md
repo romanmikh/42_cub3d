@@ -16,7 +16,7 @@
    git clone https://github.com/romanmikh/cub3d.git
    cd cub3d
    make
-   ./cub3d maps/nature.cub
+   ./cub3d ./maps/nature.cub
    ```
 
 3. The project uses ...
@@ -48,4 +48,4 @@
 4. https://reactive.so/post/42-a-comprehensive-guide-to-cub3d/
 
 ## Full Code Map
-![Full Code Map](html/documentation.png)
+![Full Code Map](./html/main_8c_a3c04138a5bfe5d72780bb7e82a18e627_cgraph.png)
