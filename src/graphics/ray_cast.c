@@ -60,10 +60,10 @@ static void	perform_dda(t_data *data, t_ray *ray)
 			ray->map_y += ray->step_y;
 			ray->side = 1;
 		}
-		if (ray->map_y < 0.25
-			|| ray->map_x < 0.25
-			|| ray->map_y > data->map_data.height - 0.25  // why 0.25?
-			|| ray->map_x > data->map_data.width - 1.25)  // why 1.25?
+		if (ray->map_y < 1
+			|| ray->map_x < 1
+			|| ray->map_y > data->map_data.height - 1  // why 0.25?
+			|| ray->map_x > data->map_data.width - 1)  // why 1.25?
 			break ;
 		else if (data->map[ray->map_y][ray->map_x] > '0')  // wall/edge = 1, so stop
 			hit = 1;
