@@ -86,10 +86,10 @@ static void	calculate_line_height(t_ray *ray, t_data *data, t_player *player)
 	if (ray->draw_end >= data->win_height)
 		ray->draw_end = data->win_height - 1;
 	if (ray->hit_horiz_wall == 0)  // if vertical wall (top down view)
-		ray->wall_x = player->pos_y + ray->wall_dist * ray->dir_y; // get exact x coordinate of wall hit. pos_y + #units in x * y stpe size per unit x
+		ray->wall_hit_x_coord = player->pos_y + ray->wall_dist * ray->dir_y; // get exact x coordinate of wall hit. pos_y + #units in x * y stpe size per unit x
 	else // if horizontal wall
-		ray->wall_x = player->pos_x + ray->wall_dist * ray->dir_x; // get exact y coordinate of wall hit
-	ray->wall_x -= floor(ray->wall_x); // modulo to get exact location on exactly that tile only
+		ray->wall_hit_x_coord = player->pos_x + ray->wall_dist * ray->dir_x; // get exact y coordinate of wall hit
+	ray->wall_hit_x_coord -= floor(ray->wall_hit_x_coord); // modulo to get exact location on exactly that tile only
 }
 
 // goal: determine what the player sees

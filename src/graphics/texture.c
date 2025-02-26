@@ -25,7 +25,7 @@ void	update_texture_pixels(t_data *data, t_text_data *tex, t_ray *ray, int x)
 	int			colour;
 
 	get_texture_index(data, ray);
-	tex->x = (int)(ray->wall_x * tex->size);  // Calculate the x coordinate where ray hits texture
+	tex->x = (int)(ray->wall_hit_x_coord * tex->size);  // Calculate the x coordinate where ray hits texture
 	if ((ray->hit_horiz_wall == 0 && ray->dir_x < 0) // flip texture horizontally if needed
 		|| (ray->hit_horiz_wall == 1 && ray->dir_y > 0))
 		tex->x = tex->size - tex->x - 1;
