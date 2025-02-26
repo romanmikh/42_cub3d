@@ -38,7 +38,7 @@ enum e_output
 };
 
 // Error messages
-# define ERR_INVALID_MAP "Invalid map"
+# define ERR_MAP_INVALID "Invalid map"
 # define ERR_MAP_MISSING "Map data missing"
 # define ERR_MLX_START "Failed to start mlx"
 # define ERR_MALLOC "Memory allocation failed"
@@ -47,17 +47,17 @@ enum e_output
 # define ERR_TEX_INVALID "Texture files invalid"
 # define ERR_MLX_IMG "Failed to create mlx image"
 # define ERR_MLX_WIN "Failed to create mlx window"
-# define ERR_COLOUR_MISSING "Colour values missing"
+# define ERR_RGB_COLOUR_MISSING "Colour values missing"
 # define ERR_PLAYER_POS "Invalid player start position"
 # define ERR_MAP_TOO_SMALL "Map must be larger than 3x3"
-# define ERR_MAP_LAST "Map must be last section in file"
-# define ERR_MAP_NO_WALLS "Map must be fully enclosed by walls"
+# define ERR_MAP_TRAIL "Map must be last section in file"
+# define ERR_MAP_BORDERS "Map must be fully enclosed by walls"
 # define ERR_FILE_FORMAT ".cub and.xmp file extensions required"
 # define ERR_PLAYER_DIR "Player direction must be N, S, E, or W"
 # define ERR_INPUT "Required input format: ./cub3d ./maps/nature.cub"
 # define ERR_FLOOR_CEILING "Floor and/or ceiling RGB colours are invalid"
-# define ERR_NUM_PLAYER "Only one starting player location in map supported"
-# define ERR_INV_LETTER "Invalid character in map. {0, 1, N, S, E, W} supported."
+# define ERR_NUM_PLAYERS "Only one starting player location in map supported"
+# define ERR_MAP_CHAR "Invalid character in map. {0, 1, N, S, E, W} supported."
 
 // Structures
 typedef struct s_map_data
@@ -151,39 +151,39 @@ typedef struct s_data
 
 // Function prototypes
 void	launch_msg();
-int		check_input(t_data *data, char **argv);
-int		create_map(t_data *data, char **map, int i);
-int		is_valid_texture(t_data *data, t_text_data *textures);
-int		is_valid_map(t_data *data, char **map_arr);
-int		is_valid_map_borders(t_map_data *map, char **map_arr);
-size_t	max_line_width(t_map_data *map, int i);
-int		move_and_render(t_data *data);
 void	render(t_data *data);
-int		ray_cast(t_player *player, t_data *data);
-void	init_texture_pixels(t_data *data);
-void	update_texture_pixels(t_data *data, t_text_data *tex, t_ray *ray, int x);
-void	set_image_pixel(t_img *image, int x, int y, int color);
-void	init_input_hooks(t_data *data);
-void	init_player_direction(t_data *data);
-int		is_valid_move(t_data *data, double new_x, double new_y);
-int		move_player(t_data *data);
-int		rotate_player(t_data *data, double rot_dir);
-void	graceful_exit(t_data *data, int code);
-int		handle_exit(t_data *data);
-int		free_data(t_data *data);
-int		err_msg(char *detail, char *str, int code);
-int		err_msg_val(int detail, char *str, int code);
-void	init_main(t_data *data);
 void	init_ray(t_ray *ray);
-void	init_ray_cast_info(int x, t_ray *ray, t_player *player);
 void	init_mlx(t_data *data);
-void	init_img(t_data *data, t_img *image, int width, int height);
-void	init_texture_img(t_data *data, t_img *image, char *path);
+int		free_data(t_data *data);
+void	init_main(t_data *data);
+int		move_player(t_data *data);
+int		handle_exit(t_data *data);
 void	init_textures(t_data *data);
-void	init_text_data(t_text_data *textures);
+int		move_and_render(t_data *data);
+void	init_input_hooks(t_data *data);
+void	init_texture_pixels(t_data *data);
 int		is_valid_file(char *arg, bool cub);
+void	init_player_direction(t_data *data);
+void	graceful_exit(t_data *data, int code);
+void	init_text_data(t_text_data *textures);
 void	parse_input(char *path, t_data *data);
+int		check_input(t_data *data, char **argv);
+size_t	max_line_width(t_map_data *map, int i);
+int		ray_cast(t_player *player, t_data *data);
+int		is_valid_map(t_data *data, char **map_arr);
+int		err_msg(char *detail, char *str, int code);
 int		process_cub_file(t_data *data, char **map);
+int		create_map(t_data *data, char **map, int i);
+int		rotate_player(t_data *data, double rot_dir);
+int		err_msg_val(int detail, char *str, int code);
+int		is_valid_texture(t_data *data, t_text_data *textures);
+int		is_valid_map_borders(t_map_data *map, char **map_arr);
+void	set_image_pixel(t_img *image, int x, int y, int color);
+int		is_valid_move(t_data *data, double new_x, double new_y);
+void	init_ray_cast_info(int x, t_ray *ray, t_player *player);
+void	init_texture_img(t_data *data, t_img *image, char *path);
+void	init_img(t_data *data, t_img *image, int width, int height);
+void	update_texture_pixels(t_data *data, t_text_data *tex, t_ray *ray, int x);
 int		set_ceiling_floor_colours(t_data *data, t_text_data *textures,
 			char *line, int j);
 

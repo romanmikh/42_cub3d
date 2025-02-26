@@ -17,9 +17,9 @@ static int	is_valid_map_contents(t_data *data, char **map_arr)
 			|| data->map[i][j] == '\v' || data->map[i][j] == '\f')
 				j++;
 			if (!(ft_strchr("NESW10", map_arr[i][j])))
-				return (err_msg(data->map_data.path, ERR_INV_LETTER, FAILURE));
+				return (err_msg(data->map_data.path, ERR_MAP_CHAR, FAILURE));
 			if (ft_strchr("NESW", map_arr[i][j]) && data->player.dir != '0')
-				return (err_msg(data->map_data.path, ERR_NUM_PLAYER, FAILURE));
+				return (err_msg(data->map_data.path, ERR_NUM_PLAYERS, FAILURE));
 			if (ft_strchr("NESW", map_arr[i][j]) && data->player.dir == '0')
 				data->player.dir = map_arr[i][j];
 			j++;
@@ -97,7 +97,7 @@ int	is_valid_map(t_data *data, char **map_arr)
 	if (!data->map)
 		return (err_msg(data->map_data.path, ERR_MAP_MISSING, FAILURE));
 	if (is_valid_map_borders(&data->map_data, map_arr) == FAILURE)
-		return (err_msg(data->map_data.path, ERR_MAP_NO_WALLS, FAILURE));
+		return (err_msg(data->map_data.path, ERR_MAP_BORDERS, FAILURE));
 	if (data->map_data.height < 3)
 		return (err_msg(data->map_data.path, ERR_MAP_TOO_SMALL, FAILURE));
 	if (is_valid_map_contents(data, map_arr) == FAILURE)
@@ -105,6 +105,6 @@ int	is_valid_map(t_data *data, char **map_arr)
 	if (set_player_position(data, map_arr) == FAILURE)
 		return (FAILURE);
 	if (ensure_no_trailing_map_content(&data->map_data) == FAILURE)
-		return (err_msg(data->map_data.path, ERR_MAP_LAST, FAILURE));
+		return (err_msg(data->map_data.path, ERR_MAP_TRAIL, FAILURE));
 	return (SUCCESS);
 }

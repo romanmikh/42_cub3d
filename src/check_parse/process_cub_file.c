@@ -75,7 +75,7 @@ static int	parse_cub_file(t_data *data, char **file, int i, int j)
 	else if (ft_is_digit(file[i][j])) // then it's map layout
 	{
 		if (create_map(data, file, i) == FAILURE)
-			return (err_msg(data->map_data.path, ERR_INVALID_MAP, FAILURE));
+			return (err_msg(data->map_data.path, ERR_MAP_INVALID, FAILURE));
 		return (SUCCESS);
 	}
 	return (CONTINUE);
