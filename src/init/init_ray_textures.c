@@ -80,7 +80,7 @@ void	init_text_data(t_text_data *textures)
 	textures->hex_floor = 0x0;
 	textures->hex_ceiling = 0x0;
 	textures->size = TEX_SIZE;
-	textures->step = 0.0;
+	textures->scale = 0.0;
 	textures->pos = 0.0;
 	textures->x = 0;
 	textures->y = 0;

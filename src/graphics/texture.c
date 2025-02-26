@@ -29,14 +29,14 @@ void	update_texture_pixels(t_data *data, t_text_data *tex, t_ray *ray, int x)
 	if ((ray->hit_horiz_wall == 0 && ray->dir_x < 0) // flip texture horizontally if needed
 		|| (ray->hit_horiz_wall == 1 && ray->dir_y > 0))
 		tex->x = tex->size - tex->x - 1;
-	tex->step = 1.0 * tex->size / ray->line_height; // Calculate how much the texture should scale per pixel
+	tex->scale = 1.0 * tex->size / ray->line_height; // Calculate how much the texture should scale per pixel
 	tex->pos = (ray->draw_start - data->win_height / 2
-			+ ray->line_height / 2) * tex->step;
+			+ ray->line_height / 2) * tex->scale;
 	y = ray->draw_start; // Loop through every Y pixel in the column and apply the correct texture color
 	while (y < ray->draw_end)
 	{
 		tex->y = (int)tex->pos & (tex->size - 1); // Get the texture Y coordinate
-		tex->pos += tex->step; // Move to the next texture row
+		tex->pos += tex->scale; // Move to the next texture row
 		colour = data->textures[tex->index][tex->size * tex->y + tex->x]; // Get the pixel color from the texture array
 		if (tex->index == NORTH || tex->index == EAST) // Apply shading for depth effect (darken North and East walls)
 			colour = (colour >> 1) & 8355711;

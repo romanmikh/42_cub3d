@@ -83,7 +83,7 @@ typedef struct s_text_data
 	unsigned long	hex_ceiling;
 	int				size; // texture resolution
 	int				index; // which texture 
-	double			step; // how much texture moves per pixel
+	double			scale; // how much texture moves per pixel
 	double			pos; // tracks vertical texture position
 	int				x; // pixel coordinates on the texture 
 	int				y;
