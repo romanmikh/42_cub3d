@@ -3,7 +3,7 @@
 static void	set_frame_image_pixel(t_data *data, t_img *image, int x, int y)
 {
 	if (data->texture_pixels[y][x] > 0)
-		set_image_pixel(image, x, y, data->texture_pixels[y][x]);  // Use texture
+		set_image_pixel(image, x, y, data->texture_pixels[y][x]);  // first draw textures
 	else if (y < data->win_height / 2)
 		set_image_pixel(image, x, y, data->text_data.hex_ceiling);  // Draw ceiling
 	else if (y < data->win_height -1)

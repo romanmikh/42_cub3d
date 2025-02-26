@@ -165,7 +165,7 @@ void	update_texture_pixels(t_data *data, t_text_data *tex, t_ray *ray, int x);
 void	set_image_pixel(t_img *image, int x, int y, int color);
 void	init_input_hooks(t_data *data);
 void	init_player_direction(t_data *data);
-int		validate_move(t_data *data, double new_x, double new_y);
+int		is_valid_move(t_data *data, double new_x, double new_y);
 int		move_player(t_data *data);
 int		rotate_player(t_data *data, double rot_dir);
 void	graceful_exit(t_data *data, int code);

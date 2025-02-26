@@ -1,4 +1,4 @@
-<map id="validate_move" name="validate_move">
+<map id="is_valid_move" name="is_valid_move">
 <area shape="rect" id="Node000001" title=" " alt="" coords="5,31,124,56"/>
 <area shape="rect" id="Node000002" href="$position_8c.html#ad9f71f578175a945c1a2e73c782ae9dd" title=" " alt="" coords="172,31,275,56"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="124,41,158,41,158,46,124,46"/>

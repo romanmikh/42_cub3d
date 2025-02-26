@@ -56,6 +56,7 @@ void	update_texture_pixels(t_data *data, t_text_data *tex, t_ray *ray, int x)
 	}
 }
 
+// convert 2D array to 1D row for MLX (RGBA Alpha=transarency -> 4 not 3)
 void	set_image_pixel(t_img *image, int x, int y, int colour)
 {
 	int	pixel;

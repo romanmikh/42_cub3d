@@ -25,7 +25,7 @@ static bool	is_valid_pos(t_data *data, double x, double y)
 	return (false);
 }
 
-int	validate_move(t_data *data, double new_x, double new_y)
+int	is_valid_move(t_data *data, double new_x, double new_y)
 {
 	int	moved;
 
