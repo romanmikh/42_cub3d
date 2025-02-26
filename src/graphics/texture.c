@@ -31,15 +31,25 @@ void	update_texture_pixels(t_data *data, t_text_data *tex, t_ray *ray, int x)
 		tex->x = tex->size - tex->x - 1;
 	tex->scale = 1.0 * tex->size / ray->line_height; // Calculate how much the texture should scale per pixel
 	tex->pos = (ray->draw_start - data->win_height / 2
-			+ ray->line_height / 2) * tex->scale;
+			+ ray->line_height / 2) * tex->scale; // starting vertical position IN THE TEXTURE, not the screen
+	// so if whole texture fits on screen (daw_start >= 0), start (tex->pos) will be 0
+	// if not whole texture fits, starting pos > 0
+	// sub draw_start into pos to see this mathematically
 	y = ray->draw_start; // Loop through every Y pixel in the column and apply the correct texture color
 	while (y < ray->draw_end)
 	{
-		tex->y = (int)tex->pos & (tex->size - 1); // Get the texture Y coordinate
+		// & compares binary representations of two numbers and keeps only bits that are 1 in both numbers
+		// => 1101 & 0101 = 0101
+		// 13 & 7 = 5
+		// if tex->pos = 130.8, int makes it 130. tex->size = 64, 128 etc
+		// so tex->size-1 creates a "bitmask" that is used to wrap texture coords with 2^x bounds (modulo kind of)
+		// 130 & 63 = 10000010 & 00111111 = 00000010 = 2
+		// 2 is the wrapped amount
+		// SAME AS tex->y = (int)tex->pos % (tex->size);
+		tex->y = (int)tex->pos;// & (tex->size - 1); // Get the texture Y coordinate
+		// we need to modulo because we don't wan tto look beyond the texture's bounds & cause leaks
 		tex->pos += tex->scale; // Move to the next texture row
 		colour = data->textures[tex->index][tex->size * tex->y + tex->x]; // Get the pixel color from the texture array
-		if (tex->index == NORTH || tex->index == EAST) // Apply shading for depth effect (darken North and East walls)
-			colour = (colour >> 1) & 8355711;
 		if (colour > 0) // Store the final color in the frame buffer if it's not transparent
 			data->texture_pixels[y][x] = colour;
 		y++;
