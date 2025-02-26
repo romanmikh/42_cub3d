@@ -22,7 +22,7 @@
 
 // 	moved = 0;
 // 	rot_angle = ROTATION_ANGLE * rot_dir;
-// 	moved += rotate_left_right(data, rot_angle);
+// 	moved += rotate_left_right(data, rot_angle);   
 // 	return (moved);
 // }
 
