@@ -103,12 +103,12 @@ static void	calculate_line_height(t_ray *ray, t_data *data, t_player *player)
 // Stores the wall height and texture to render the final 3D image
 int	ray_cast(t_player *player, t_data *data)
 {
-	t_ray	ray; // stores raycasting details
+	t_ray	ray;
 	int		x;  // current vertical column of screen
 
 	x = 0;
 	ray = data->ray;
-	while (x < data->win_width)  // Loop through every vertical screen column from left to right
+	while (x < data->win_width)  // Loop through every column on screen from left to right
 	{
 		init_ray_cast_info(x, &ray, player);
 		set_dda(&ray, player); // determien direction of ray's movement

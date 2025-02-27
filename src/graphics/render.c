@@ -40,7 +40,7 @@ void	render(t_data *data)
 {
 	init_texture_pixels(data);
 	init_ray(&data->ray); // Reset the ray structure
-	ray_cast(&data->player, data); // Perform raycasting to find visible walls
+	ray_cast(&data->player, data); // Project all rays till they hit a wall, get hit coords
 	render_frame(data); // Draw the computed frame to the window
 }
 

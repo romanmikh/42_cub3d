@@ -39,9 +39,8 @@ static int	*xpm_to_img(t_data *data, char *path)
 			sizeof * buffer * data->text_data.size * data->text_data.size);  // width * height * int buffer => 2D image
 	if (!buffer)
 		graceful_exit(data, err_msg(NULL, ERR_MALLOC, 1));
-	// copy pixel data from image into buffer
-	y = 0;
-	while (y < data->text_data.size)  // square texture so width = height = size
+	y = 0; // copy pixel data from image into buffer
+	while (y < data->text_data.size)
 	{
 		x = 0;
 		while (x < data->text_data.size)
@@ -59,7 +58,7 @@ static int	*xpm_to_img(t_data *data, char *path)
 
 void	init_textures(t_data *data)
 {
-	data->textures = ft_calloc(5, sizeof * data->textures);  // padding
+	data->textures = ft_calloc(5, sizeof * data->textures);  // 5 instead of 4 for padding, segfault otherwise
 	if (!data->textures)
 		graceful_exit(data, err_msg(NULL, ERR_MALLOC, 1));
 	// load each texture into memory
