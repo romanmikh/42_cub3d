@@ -34,8 +34,6 @@ static void	render_frame(t_data *data)
 	mlx_destroy_image(data->mlx, image.img);
 }
 
-
-// 
 void	render(t_data *data)
 {
 	init_texture_pixels(data);
