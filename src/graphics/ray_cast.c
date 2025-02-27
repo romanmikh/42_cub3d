@@ -61,32 +61,26 @@ static void	perform_dda(t_data *data, t_ray *ray)
 static void	calculate_line_height(t_ray *ray, t_data *data, t_player *player)
 {
 	if (ray->hit_horiz_wall == 0) // if hits vertical wall (from top down POV)
-		ray->wall_dist = (ray->side_dist_x - ray->delta_dist_x);  // entire side_dist travelled - tail deltadist = perpendicular distance to the wall
-	else  // exact perpendicular distance to wall (without initial delta)
+		ray->wall_dist = (ray->side_dist_x - ray->delta_dist_x);  // perpendicular distance to the wall from player = entire side_dist travelled - delta_dist
+	else
 		ray->wall_dist = (ray->side_dist_y - ray->delta_dist_y);
-	ray->line_height = (int)(data->win_height / ray->wall_dist);  // small dist -> large height. 0 dist = inf height
+	ray->line_height = (int)(data->win_height / ray->wall_dist);  // imagine: if small wall_dist -> large height because can see much/all of the wall (0 dist = inf height)
 	ray->draw_start = -(ray->line_height) / 2 + data->win_height / 2; // center start with win_height
-	if (ray->draw_start < 0)
-		ray->draw_start = 0; // edge cases
+	if (ray->draw_start < 0) // cap and floor start & end
+		ray->draw_start = 0;
 	ray->draw_end = ray->line_height / 2 + data->win_height / 2;
 	if (ray->draw_end >= data->win_height)
 		ray->draw_end = data->win_height - 1;
-	if (ray->hit_horiz_wall == 0)  // if vertical wall (top down view)
+	if (ray->hit_horiz_wall == 0)
 		ray->wall_hit_x_coord = player->pos_y + ray->wall_dist * ray->dir_y; // get exact x coordinate of wall hit. pos_y + #units in x * y stpe size per unit x
-	else // if horizontal wall
-		ray->wall_hit_x_coord = player->pos_x + ray->wall_dist * ray->dir_x; // get exact y coordinate of wall hit
-	ray->wall_hit_x_coord -= floor(ray->wall_hit_x_coord); // modulo to get exact location on exactly that tile only
+	else
+		ray->wall_hit_x_coord = player->pos_x + ray->wall_dist * ray->dir_x;
+	ray->wall_hit_x_coord -= floor(ray->wall_hit_x_coord); // modulo to get exact location on the tile hit (no y coord because we're looking from player's POV & only need the x=ray=column position)
 }
 
 // goal: determine what the player sees
-
-// in a 3D first-person view by using raycasting
-// shoot "rays" from the player's position in different directions, check where they hit walls, and use this to draw vertical stripes on the screen
-// each ray represents a single vertical slice of the screen 
-// casts multiple rays (one per column of pixels) to render the full view
-// Moves the ray through the grid using DDA (Digital Differential Analysis)
-// tops when the ray hits a wall and calculates the correct height for that column
-// Stores the wall height and texture to render the final 3D image
+// shoot "rays" (vertical slices of the screen) from the player's position in different directions
+// check where they hit walls, and use this to draw vertical textured stripes on the screen
 int	ray_cast(t_player *player, t_data *data)
 {
 	t_ray	ray;
@@ -98,8 +92,8 @@ int	ray_cast(t_player *player, t_data *data)
 	{
 		init_ray_cast_info(x, &ray, player);
 		set_dda(&ray, player); // determien direction of ray's movement
-		perform_dda(data, &ray); // detect wall collisions (from above?)
-		calculate_line_height(&ray, data, player); // Compute how tall the wall should be
+		perform_dda(data, &ray); // project ray until it hits a wall
+		calculate_line_height(&ray, data, player); // compute how tall the wall should be
 		update_texture_pixels(data, &data->text_data, &ray, x);
 		x++;
 	}

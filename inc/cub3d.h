@@ -92,7 +92,7 @@ typedef struct s_text_data
 
 typedef struct s_img
 {
-	void	*img;
+	void	*img;  // image buffer
 	int		*addr;
 	int		bits_per_pixel;
 	int		size_line;  // bytes per row of image
@@ -179,7 +179,6 @@ int		rotate_player(t_data *data, double rot_dir);
 int		err_msg_val(int detail, char *str, int code);
 int		is_valid_texture(t_data *data, t_text_data *textures);
 int		is_valid_map_borders(t_map_data *map, char **map_arr);
-void	set_image_pixel(t_img *image, int x, int y, int color);
 int		is_valid_move(t_data *data, double new_x, double new_y);
 void	init_ray_cast_info(int x, t_ray *ray, t_player *player);
 void	init_texture_img(t_data *data, t_img *image, char *path);

@@ -36,7 +36,7 @@ static int	is_valid_player_position(t_data *data, char **map_arr)
 
 	i = (int)data->player.pos_y;
 	j = (int)data->player.pos_x;
-	if (ft_strlen(map_arr[i - 1]) < (size_t)j  // row above or below too short
+	if (ft_strlen(map_arr[i - 1]) < (size_t)j  // if row above or below too short
 		|| ft_strlen(map_arr[i + 1]) < (size_t)j)
 		return (FAILURE);
 	return (SUCCESS);
