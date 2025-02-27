@@ -1,7 +1,7 @@
 # Project-specific
 valgrind_out.txt
 cub3d
-vscode/
+.vscode/
 # Prerequisites
 *.d
 
