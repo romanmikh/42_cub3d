@@ -5,13 +5,13 @@ static void	init_player_direction_n_s(t_player *player)
 	if (player->dir == 'N')
 	{
 		player->dir_x = 0;
-		player->dir_y = -1;  // starting facing north -> -1 in y direction
-		player->plane_x = 0.66;  // so plane of view will be the x axis (perpendicular to dir_y). 0.66 = half of field of view. Change to other values & recompile to visualise this
+		player->dir_y = -1;
+		player->plane_x = 0.66;
 		player->plane_y = 0;
 	}
 	else if (player->dir == 'S')
 	{
-		player->dir_x = 0; 
+		player->dir_x = 0;
 		player->dir_y = 1;
 		player->plane_x = -0.66;
 		player->plane_y = 0;

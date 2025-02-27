@@ -3,10 +3,10 @@
 static void	init_img_clean(t_img *img)
 {
 	img->img = NULL;
-	img->addr = NULL;
-	img->bits_per_pixel = 0;
-	img->size_line = 0;
 	img->endian = 0;
+	img->addr = NULL;
+	img->size_line = 0;
+	img->bits_per_pixel = 0;
 }
 
 void	init_texture_img(t_data *data, t_img *image, char *path)
