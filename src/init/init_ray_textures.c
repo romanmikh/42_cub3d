@@ -15,11 +15,11 @@ void	init_ray_cast_info(int x, t_ray *ray, t_player *player)
 	ray->dir_y = player->dir_y + player->plane_y * ray->field_of_view;
 	ray->map_x = (int)player->pos_x; // Convert player's floating-point position to integer map coordinates
 	ray->map_y = (int)player->pos_y; // tells us in which grid cell the ray starts in
-	// deltadist_x/_y is how far the ray moves in x and y per step (distance to next grid line in x/y direction)
+	// delta_dist_x/_y is how far the ray moves in x and y per step (distance to next grid line in x/y direction)
 	// suppose dir_x = 1, then 1/1 = 1 and we need to walk 1 unit from ray's POV to reach grid vertical line
 	// suppose dir_x = 0, 1/0 = inf so we never get to the next verical grid line
-	ray->deltadist_x = fabs(1 / ray->dir_x);
-	ray->deltadist_y = fabs(1 / ray->dir_y); 
+	ray->delta_dist_x = fabs(1 / ray->dir_x);
+	ray->delta_dist_y = fabs(1 / ray->dir_y); 
 }
 
 static int	*xpm_to_img(t_data *data, char *path)

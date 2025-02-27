@@ -9,10 +9,10 @@ void	init_ray(t_ray *ray)
 	ray->map_y = 0;
 	ray->step_x = 0;
 	ray->step_y = 0;
-	ray->sidedist_x = 0;
-	ray->sidedist_y = 0;
-	ray->deltadist_x = 0;
-	ray->deltadist_y = 0;
+	ray->side_dist_x = 0;
+	ray->side_dist_y = 0;
+	ray->delta_dist_x = 0;
+	ray->delta_dist_y = 0;
 	ray->wall_dist = 0;
 	ray->wall_hit_x_coord = 0;
 	ray->hit_horiz_wall = 0;

@@ -108,10 +108,10 @@ typedef struct s_ray
 	double	dir_y;
 	int		step_x; // horiz/vert unit step ray takes during DDA
 	int		step_y;
-	double	sidedist_x; // dist to next grid line
-	double	sidedist_y;
-	double	deltadist_x; // step size
-	double	deltadist_y;
+	double	side_dist_x; // dist to next grid line
+	double	side_dist_y;
+	double	delta_dist_x; // step size
+	double	delta_dist_y;
 	double	wall_dist; 
 	double	wall_hit_x_coord; // x-coord of wall hit on texture
 	int		hit_horiz_wall; // whether ray hits vert/horiz wall -> 0 = vert, 1 = horiz

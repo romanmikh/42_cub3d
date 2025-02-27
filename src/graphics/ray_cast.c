@@ -1,74 +1,69 @@
 #include "cub3d.h"
 
-// Determines whether to step left or right (x) and up or down (y)
-// Computes the initial side distances for stepping
+// Decides whether to step left or right (x) and up or down (y)
+// Computes distances to firs gridlines in x and y
 static void	set_dda(t_ray *ray, t_player *player)
 {
 	if (ray->dir_x < 0)  // ray moving left
 	{
 		ray->step_x = -1;
-		ray->sidedist_x = (player->pos_x - ray->map_x) * ray->deltadist_x;  // (int-rounded player pos - actual pos) * distance travelled in x per diagonal step = total distance to first vertical gridline
+		ray->side_dist_x = (player->pos_x - ray->map_x) * ray->delta_dist_x;  // (int-rounded player pos - actual pos) * distance travelled in x per diagonal step = total distance to first vertical gridline
 	}
 	else  // ray moving right
 	{
 		ray->step_x = 1;
-		ray->sidedist_x = (ray->map_x + 1.0 - player->pos_x) * ray->deltadist_x;
+		ray->side_dist_x = (ray->map_x + 1.0 - player->pos_x) * ray->delta_dist_x;
 	}
 	if (ray->dir_y < 0) // ray moving up
 	{
 		ray->step_y = -1;
-		ray->sidedist_y = (player->pos_y - ray->map_y) * ray->deltadist_y;
+		ray->side_dist_y = (player->pos_y - ray->map_y) * ray->delta_dist_y;
 	}
 	else // ray moving down
 	{
 		ray->step_y = 1;
-		ray->sidedist_y = (ray->map_y + 1.0 - player->pos_y) * ray->deltadist_y;
+		ray->side_dist_y = (ray->map_y + 1.0 - player->pos_y) * ray->delta_dist_y;
 	}
 }
 
-/*
-- We implement the DDA algorithm -> the loop will increment 1 square 
--   until we hit a wall
-- If the sidedistx < sidedisty, x is the closest point from the ray
-*/
-// Moves the ray forward through the grid using the DDA algorithm.
-static void	perform_dda(t_data *data, t_ray *ray)// this one moves WHILE no hit, so projects the ray to the wall
-{ // returns nothing, just updates our x and y positions of the ray to where it hits the wall
-	int	hit;  // wall
+// Moves the ray forward (incrementing 1 map square at a time) using the DDA algorithm
+// updates ray->map_x/_y until it hits a wall, so gives us the exact x and y coordinates of the wall hit
+static void	perform_dda(t_data *data, t_ray *ray)
+{
+	int	hit;
 
 	hit = 0;
-	while (hit == 0) // at each square of map it checks distance to x and y, takes the shortest one, so wiggles in the right direction always
+	while (hit == 0) // at each square of map it checks distance to x and y, takes the shortest one, so wiggles in the right direction in a discrete grid
 	{
-		// total distance to get to horizontal edge line > to vertical, so:
-		if (ray->sidedist_x < ray->sidedist_y)  // ray is moving more in X direction than in Y |gradient < 1|
+		if (ray->side_dist_x < ray->side_dist_y)  // = total distance to get to horizontal edge line > to vertical edge, so ray goes horizontally first
 		{
-			ray->sidedist_x += ray->deltadist_x;
+			ray->side_dist_x += ray->delta_dist_x;
 			ray->map_x += ray->step_x;
 			ray->hit_horiz_wall = 0;
 		}
-		else  // Move in Y direction
+		else  // move vertically
 		{
-			ray->sidedist_y += ray->deltadist_y;
+			ray->side_dist_y += ray->delta_dist_y;
 			ray->map_y += ray->step_y;
 			ray->hit_horiz_wall = 1;
 		}
 		if (ray->map_y < 1
 			|| ray->map_x < 1
 			|| ray->map_y > data->map_data.height - 1
-			|| ray->map_x > data->map_data.width - 2)
+			|| ray->map_x > data->map_data.width - 2)  // outside of map
 			break ;
 		else if (data->map[ray->map_y][ray->map_x] > '0')  // wall/edge = 1, so stop
 			hit = 1;
 	}
 }
 
-// Calculates the height of the wall and where to start and end drawing it.
+// Calculates the height of the wall and where to start and end drawing it on the screen
 static void	calculate_line_height(t_ray *ray, t_data *data, t_player *player)
 {
-	if (ray->hit_horiz_wall == 0) // if hits vertical wall (top down from map)
-		ray->wall_dist = (ray->sidedist_x - ray->deltadist_x);  // PERPENDICULAR DIST. entire side_dist - tail deltadist 
+	if (ray->hit_horiz_wall == 0) // if hits vertical wall (from top down POV)
+		ray->wall_dist = (ray->side_dist_x - ray->delta_dist_x);  // entire side_dist travelled - tail deltadist = perpendicular distance to the wall
 	else  // exact perpendicular distance to wall (without initial delta)
-		ray->wall_dist = (ray->sidedist_y - ray->deltadist_y);
+		ray->wall_dist = (ray->side_dist_y - ray->delta_dist_y);
 	ray->line_height = (int)(data->win_height / ray->wall_dist);  // small dist -> large height. 0 dist = inf height
 	ray->draw_start = -(ray->line_height) / 2 + data->win_height / 2; // center start with win_height
 	if (ray->draw_start < 0)
