@@ -13,7 +13,7 @@ WHITE		=	\033[0;97m
 NAME	= cub3d
 
 # Compilation flags
-CC		= gcc
+CC		= cc
 CFLAGS	= -Werror -Wextra -Wall -g3 #-fsanitize=address
 MAKEFLAGS 		+= --silent
 
