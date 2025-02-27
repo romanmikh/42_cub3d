@@ -1,6 +1,6 @@
 #include "cub3d.h"
 
-// convert all tabs/spaces/etc inside map to walls
+// convert whitespace in map to walls
 static void	ensure_map_enclosure(t_data *data)
 {
 	int	i;
@@ -38,7 +38,7 @@ static int	count_map_lines(t_data *data, char **file, int i)
 		while (file[i][j] == ' ' || file[i][j] == '\t' || file[i][j] == '\r'
 		|| file[i][j] == '\v' || file[i][j] == '\f')
 			j++;
-		if (file[i][j] != '1') // count only if line starts with a wall
+		if (file[i][j] != '1')
 			break ;
 		i++;
 	}
@@ -56,7 +56,7 @@ static int	copy_map_arr(t_map_data *map_data, char **map_arr, int index)
 	while (i < map_data->height) // loop through rows
 	{
 		j = 0;
-		map_arr[i] = malloc(sizeof(char) * (map_data->width + 1));
+		map_arr[i] = malloc(sizeof(char) * (map_data->width + 1));  // malloc for cols
 		if (!map_arr[i])
 			return (err_msg(NULL, ERR_MALLOC, FAILURE));
 		while (map_data->file[index][j] && map_data->file[index][j] != '\n') // copy from file to map_arr
@@ -76,7 +76,7 @@ static int	copy_map_arr(t_map_data *map_data, char **map_arr, int index)
 static int	create_map_arr(t_data *data, char **file, int i)
 {
 	data->map_data.height = count_map_lines(data, file, i);
-	data->map = malloc(sizeof(char *) * (data->map_data.height + 1)); //malloc for rows
+	data->map = malloc(sizeof(char *) * (data->map_data.height + 1)); // malloc for rows
 	if (!data->map)
 		return (err_msg(NULL, ERR_MALLOC, FAILURE));
 	if (copy_map_arr(&data->map_data, data->map, i) == FAILURE) // copy map data

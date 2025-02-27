@@ -9,7 +9,7 @@ static int	count_lines(char *path)
 	line_count = 0;
 	fd = open(path, O_RDONLY);
 	if (fd < 0)
-		err_msg(path, strerror(errno), errno);
+		err_msg(path, strerror(errno), errno);  // strerror converts err code into human readable string
 	else
 	{
 		line = get_next_line(fd);
@@ -59,9 +59,9 @@ void	parse_input(char *path, t_data *data)
 	row = 0;
 	col = 0;
 	data->map_data.path = path;
-	data->map_data.line_count = count_lines(path);
+	data->map_data.line_count = count_lines(path); // entire cub file, not map only
 	data->map_data.file = ft_calloc(data->map_data.line_count \
-			+ 1, sizeof(char *));
+			+ 1, sizeof(char *));  // calloc to avoid undefined behaviour when accessing uninitialized pointers
 	if (!(data->map_data.file))
 	{
 		err_msg(NULL, ERR_MALLOC, 0);

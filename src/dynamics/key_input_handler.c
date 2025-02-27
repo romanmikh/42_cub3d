@@ -13,9 +13,9 @@ static int	key_press_event(int key, t_data *data)
 	if (key == XK_w)
 		data->player.move_y = 1;
 	if (key == XK_Left)
-		data->player.rotate -= 1;
+		data->player.rot_dir -= 1;
 	if (key == XK_Right)
-		data->player.rotate += 1;
+		data->player.rot_dir += 1;
 	return (0);
 }
 
@@ -31,10 +31,10 @@ static int	key_release_event(int key, t_data *data)
 		data->player.move_y = 0;
 	if (key == XK_s && data->player.move_y == -1)
 		data->player.move_y = 0;
-	if (key == XK_Left && data->player.rotate <= 1)
-		data->player.rotate = 0;
-	if (key == XK_Right && data->player.rotate >= -1)
-		data->player.rotate = 0;
+	if (key == XK_Left && data->player.rot_dir <= 1)
+		data->player.rot_dir = 0;
+	if (key == XK_Right && data->player.rot_dir >= -1)
+		data->player.rot_dir = 0;
 	return (0);
 }
 

@@ -6,7 +6,7 @@ static char	*parse_texture_path(char *line, int j)
 	int		i;
 	char	*path;
 
-	while (line[j] && (line[j] == ' ' || line[j] == '\t'))
+	while (line[j] && (line[j] == ' ' || line[j] == '\t')) // skip leading whitespaces 
 		j++;
 	len = j;
 	while (line[len] && (line[len] != ' ' && line[len] != '\t'))
@@ -18,9 +18,9 @@ static char	*parse_texture_path(char *line, int j)
 	while (line[j] && (line[j] != ' ' && line[j] != '\t' && line[j] != '\n'))
 		path[i++] = line[j++];
 	path[i] = '\0';
-	while (line[j] && (line[j] == ' ' || line[j] == '\t')) // skip trailing spaces 
+	while (line[j] && (line[j] == ' ' || line[j] == '\t')) // skip trailing whitespaces 
 		j++;
-	if (line[j] && line[j] != '\n')  // if extra content after path, it's an error
+	if (line[j] && line[j] != '\n')  // if extra content after path, error
 	{
 		free(path);
 		path = NULL;
@@ -52,11 +52,32 @@ static int	parse_texture_orientations(t_text_data *textures, char *line, int j)
 	return (SUCCESS);
 }
 
+/*
+Example .cub file to help understand this function:
+-------------------------------------------------------------------------------
+NO textures/sunset.xpm
+SO textures/lake.xpm
+WE textures/ruins.xpm
+EA textures/mountain.xpm
+
+F 164,169,u20
+C 153,204,255
+
+111111111111111111111
+100000000000000000001
+100000000000000000001
+100000000100000000001
+1000 0000000000000001
+1001N0000000000000001
+100000000000000000001
+111111111111111111111
+-------------------------------------------------------------------------------
+*/
 static int	parse_cub_file(t_data *data, char **file, int i, int j)
 {
 	while (file[i][j] == ' ' || file[i][j] == '\t' || file[i][j] == '\n') // skip whitespaces
 		j++;
-	if (ft_is_print(file[i][j]) && !ft_is_digit(file[i][j])) // if texture/rgb identifier 
+	if (ft_is_print(file[i][j]) && !ft_is_digit(file[i][j])) // if texture/rgb part of cub file (not map)
 	{
 		if (file[i][j + 1] && ft_is_print(file[i][j + 1]) // if next also printable & not digit, it's a texture
 			&& !ft_is_digit(file[i][j]))
@@ -92,7 +113,7 @@ int	process_cub_file(t_data *data, char **file)
 	while (file[i])
 	{
 		j = 0;
-		while (file[i][j])  // for each char in cub file
+		while (file[i][j])
 		{
 			ret = parse_cub_file(data, file, i, j);
 			if (ret == BREAK)

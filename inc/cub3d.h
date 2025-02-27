@@ -27,7 +27,7 @@ enum e_texture_index
 	EAST = 2,
 	WEST = 3
 };
-// Enumerations
+
 enum e_output
 {
 	SUCCESS = 0,
@@ -47,6 +47,7 @@ enum e_output
 # define ERR_TEX_INVALID "Texture files invalid"
 # define ERR_MLX_IMG "Failed to create mlx image"
 # define ERR_MLX_WIN "Failed to create mlx window"
+# define ERR_FILE_MISSING "No such file or directory"
 # define ERR_RGB_COLOUR_MISSING "Colour values missing"
 # define ERR_PLAYER_POS "Invalid player start position"
 # define ERR_MAP_TOO_SMALL "Map must be larger than 3x3"
@@ -73,18 +74,18 @@ typedef struct s_map_data
 
 typedef struct s_text_data
 {
-	char			*north;  // paths
+	char			*north;  // paths to textures
 	char			*south;
 	char			*west;
 	char			*east;
-	int				*floor; // colours in RGB
+	int				*floor; // RGB colours
 	int				*ceiling;
-	unsigned long	hex_floor;  // hex colour for mlx_pixel_put
+	unsigned long	hex_floor;  // hex RGB colours for mlx
 	unsigned long	hex_ceiling;
 	int				size; // texture resolution
 	int				index; // which texture 
-	double			scale; // how much texture moves per pixel
-	double			pos; // tracks vertical texture position
+	double			scale; // how much texture to use per pixel
+	double			pos; // where tex starts (starting from top of screen)
 	int				x; // pixel coordinates on the texture 
 	int				y;
 }	t_text_data;
@@ -100,20 +101,20 @@ typedef struct s_img
 
 typedef struct s_ray
 {
-	double	field_of_view;  // x position of ray in camera space
-	double	dir_x;
-	double	dir_y;
+	double	field_of_view;  // all cols of screen. Left -> -1, right -> +1
 	int		map_x;  // coorinates of ray
 	int		map_y;
-	int		step_x; // step direction for DDA
+	double	dir_x;  // horiz/vert fractional step ray takes during DDA
+	double	dir_y;
+	int		step_x; // horiz/vert unit step ray takes during DDA
 	int		step_y;
 	double	sidedist_x; // dist to next grid line
 	double	sidedist_y;
 	double	deltadist_x; // step size
 	double	deltadist_y;
 	double	wall_dist; 
-	double	wall_hit_x_coord; // x-coord of wall hit
-	int		hit_horiz_wall; // 0 = N/S, 1 = E/W / indicates if ray hits vertical or horizontal wall
+	double	wall_hit_x_coord; // x-coord of wall hit on texture
+	int		hit_horiz_wall; // whether ray hits vert/horiz wall -> 0 = vert, 1 = horiz
 	int		line_height; // height of wall to draw
 	int		draw_start; 
 	int		draw_end;
@@ -131,7 +132,7 @@ typedef struct s_player
 	int		has_moved;
 	int		move_x; // (-1, 0 1)
 	int		move_y;
-	int		rotate;
+	int		rot_dir;
 }	t_player;
 
 typedef struct s_data
@@ -140,12 +141,12 @@ typedef struct s_data
 	void		*win; // MLX window pointer
 	int			win_height; 
 	int			win_width;
-	t_map_data	map_data;
 	char		**map; // 2D map array
-	t_player	player;
-	t_ray		ray;
-	int			**texture_pixels; // 2D buffer array of texture pixels
+	int			**texture_pixels; // 2D buffer array
 	int			**textures; // loaded texture data
+	t_ray		ray;
+	t_player	player;
+	t_map_data	map_data;
 	t_text_data	text_data;
 }	t_data;
 

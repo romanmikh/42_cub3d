@@ -44,7 +44,7 @@ static void	init_player(t_player *player)
 	player->has_moved = 0;
 	player->move_x = 0;
 	player->move_y = 0;
-	player->rotate = 0;
+	player->rot_dir = 0;
 }
 
 void	init_main(t_data *data)

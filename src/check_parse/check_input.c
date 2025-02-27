@@ -14,7 +14,7 @@ int is_valid_file(char *arg, bool cub)
 
     fd = open(arg, O_RDONLY);
     if (fd == -1)
-        return (err_msg(arg, strerror(errno), FAILURE));  // why?
+        return (err_msg(arg, ERR_FILE_MISSING, FAILURE));
     close(fd);
     if ((cub && !is_valid_extension(arg, ".cub")) ||
         (!cub && !is_valid_extension(arg, ".xpm")))

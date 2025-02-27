@@ -53,7 +53,7 @@ int	move_player(t_data *data)
 		moved += move_player_left(data);
 	if (data->player.move_x == 1)
 		moved += move_player_right(data);
-	if (data->player.rotate != 0)
-		moved += rotate_player(data, data->player.rotate);
+	if (data->player.rot_dir != 0)
+		moved += rotate_player(data, data->player.rot_dir);
 	return (moved);
 }
