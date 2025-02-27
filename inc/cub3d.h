@@ -63,87 +63,87 @@ enum e_output
 // Structures
 typedef struct s_map_data
 {
-	int			fd;  // of .cub file
-	int			line_count;
+	int			fd;
 	char		*path;
+	int			width;
 	char		**file;
 	int			height;
-	int			width;
-	int			end_of_map_line_index; // 	Marks end of the map in the file
+	int			line_count;
+	int			end_of_map_line_index;
 }	t_map_data;
 
 typedef struct s_text_data
 {
-	char			*north;  // paths to textures
-	char			*south;
+	int				x;
+	int				y;
+	double			pos;
+	int				size;
 	char			*west;
 	char			*east;
-	int				*floor; // RGB colours
+	int				index;
+	double			scale;
+	char			*north;
+	char			*south;
+	int				*floor;
 	int				*ceiling;
-	unsigned long	hex_floor;  // hex RGB colours for mlx
+	unsigned long	hex_floor;
 	unsigned long	hex_ceiling;
-	int				size; // texture resolution
-	int				index; // which texture 
-	double			scale; // how much texture to use per pixel
-	double			pos; // where tex starts (starting from top of screen)
-	int				x; // pixel coordinates on the texture 
-	int				y;
 }	t_text_data;
 
 typedef struct s_img
 {
-	void	*img;  // image buffer
+	void	*img;
 	int		*addr;
+	int		endian;
+	int		size_line;
 	int		bits_per_pixel;
-	int		size_line;  // bytes per row of image
-	int		endian; // byte order of pixels
 }	t_img;
 
 typedef struct s_ray
 {
-	double	field_of_view;  // all columns of screen. Left -> -1, right -> +1
-	int		map_x;  // coorinates of ray
+	int		map_x;
 	int		map_y;
-	double	dir_x;  // horiz/vert fractional step ray takes during DDA
+	double	dir_x;
 	double	dir_y;
-	int		step_x; // horiz/vert unit step ray takes during DDA
+	int		step_x;
 	int		step_y;
-	double	side_dist_x; // dist to next grid line
-	double	side_dist_y;
-	double	delta_dist_x; // step size
-	double	delta_dist_y;
-	double	wall_dist; 
-	double	wall_hit_x_coord; // x-coord of wall hit on texture
-	int		hit_horiz_wall; // whether ray hits vert/horiz wall -> 0 = vert, 1 = horiz
-	int		line_height; // height of wall to draw
-	int		draw_start; 
 	int		draw_end;
+	double	wall_dist;
+	int		draw_start;
+	int		line_height;
+	double	side_dist_x;
+	double	side_dist_y;
+	double	delta_dist_x;
+	double	delta_dist_y;
+	double	field_of_view;
+	int		hit_horiz_wall;
+	double	wall_hit_x_coord;
 }	t_ray;
 
 typedef struct s_player
 {
-	char	dir; // N, S, E, W at start
-	double	pos_x; 
+	char	dir;
+	double	pos_x;
 	double	pos_y;
-	double	dir_x; 
+	double	dir_x;
 	double	dir_y;
-	double	plane_x; // half of field of view, affected by rotations only
-	double	plane_y;
-	int		has_moved;
-	int		move_x; // (-1, 0 1)
+	int		move_x;
 	int		move_y;
 	int		rot_dir;
+	double	plane_x;
+	double	plane_y;
+	int		has_moved;
 }	t_player;
 
 typedef struct s_data
 {
-	void		*mlx;  // main mlx struct
-	void		*win; // MLX window pointer
-	int			win_height; 
+	void		*mlx;
+	void		*win;
+	char		**map;
 	int			win_width;
-	char		**map; // 2D map array
-	int			**texture_pixels; // 2D buffer array
-	int			**textures; // loaded texture data
+	int			**textures;
+	int			win_height;
+	int			**texture_pixels;
 	t_ray		ray;
 	t_player	player;
 	t_map_data	map_data;
@@ -151,7 +151,7 @@ typedef struct s_data
 }	t_data;
 
 // Function prototypes
-void	launch_msg();
+void	launch_msg(void);
 void	render(t_data *data);
 void	init_ray(t_ray *ray);
 void	init_mlx(t_data *data);
@@ -183,7 +183,8 @@ int		is_valid_move(t_data *data, double new_x, double new_y);
 void	init_ray_cast_info(int x, t_ray *ray, t_player *player);
 void	init_texture_img(t_data *data, t_img *image, char *path);
 void	init_img(t_data *data, t_img *image, int width, int height);
-void	update_texture_pixels(t_data *data, t_text_data *tex, t_ray *ray, int x);
+void	update_texture_pixels(t_data *data, t_text_data *tex, t_ray *ray, \
+			int x);
 int		set_ceiling_floor_colours(t_data *data, t_text_data *textures,
 			char *line, int j);
 
