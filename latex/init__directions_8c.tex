@@ -1,7 +1,8 @@
 \doxysection{src/init/init\+\_\+directions.c File Reference}
 \hypertarget{init__directions_8c}{}\label{init__directions_8c}\index{src/init/init\_directions.c@{src/init/init\_directions.c}}
 {\ttfamily \#include "{}cub3d.\+h"{}}\newline
-Include dependency graph for init\+\_\+directions.\+c\+:\nopagebreak
+Include dependency graph for init\+\_\+directions.\+c\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -11,9 +12,9 @@ Include dependency graph for init\+\_\+directions.\+c\+:\nopagebreak
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-static void \mbox{\hyperlink{init__directions_8c_a8c7770aca278d0c2d4545da4d8bdbd40}{init\+\_\+player\+\_\+north\+\_\+south}} (t\+\_\+player \texorpdfstring{$\ast$}{*}player)
+static void \mbox{\hyperlink{init__directions_8c_a40f09b99ea44aeb5fe408de3f163df88}{init\+\_\+player\+\_\+direction\+\_\+n\+\_\+s}} (t\+\_\+player \texorpdfstring{$\ast$}{*}player)
 \item 
-static void \mbox{\hyperlink{init__directions_8c_aabdbd4aeef0d6fd480653b83ec96516f}{init\+\_\+player\+\_\+east\+\_\+west}} (t\+\_\+player \texorpdfstring{$\ast$}{*}player)
+static void \mbox{\hyperlink{init__directions_8c_a4e0b2877f20e66bef3a574f1e01469e5}{init\+\_\+player\+\_\+direction\+\_\+e\+\_\+w}} (t\+\_\+player \texorpdfstring{$\ast$}{*}player)
 \item 
 void \mbox{\hyperlink{init__directions_8c_ab8a3cdee541d44a5bfb724e9aaae5ad8}{init\+\_\+player\+\_\+direction}} (t\+\_\+data \texorpdfstring{$\ast$}{*}data)
 \end{DoxyCompactItemize}
@@ -26,43 +27,47 @@ void \mbox{\hyperlink{init__directions_8c_ab8a3cdee541d44a5bfb724e9aaae5ad8}{ini
 \doxysubsubsection{\texorpdfstring{init\_player\_direction()}{init\_player\_direction()}}
 {\footnotesize\ttfamily void init\+\_\+player\+\_\+direction (\begin{DoxyParamCaption}\item[{t\+\_\+data \texorpdfstring{$\ast$}{*}}]{data }\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{init__directions_8c_ab8a3cdee541d44a5bfb724e9aaae5ad8_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{init__directions_8c_ab8a3cdee541d44a5bfb724e9aaae5ad8_icgraph}
 \end{center}
 \end{figure}
-\Hypertarget{init__directions_8c_aabdbd4aeef0d6fd480653b83ec96516f}\label{init__directions_8c_aabdbd4aeef0d6fd480653b83ec96516f} 
-\index{init\_directions.c@{init\_directions.c}!init\_player\_east\_west@{init\_player\_east\_west}}
-\index{init\_player\_east\_west@{init\_player\_east\_west}!init\_directions.c@{init\_directions.c}}
-\doxysubsubsection{\texorpdfstring{init\_player\_east\_west()}{init\_player\_east\_west()}}
-{\footnotesize\ttfamily static void init\+\_\+player\+\_\+east\+\_\+west (\begin{DoxyParamCaption}\item[{t\+\_\+player \texorpdfstring{$\ast$}{*}}]{player }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+\Hypertarget{init__directions_8c_a4e0b2877f20e66bef3a574f1e01469e5}\label{init__directions_8c_a4e0b2877f20e66bef3a574f1e01469e5} 
+\index{init\_directions.c@{init\_directions.c}!init\_player\_direction\_e\_w@{init\_player\_direction\_e\_w}}
+\index{init\_player\_direction\_e\_w@{init\_player\_direction\_e\_w}!init\_directions.c@{init\_directions.c}}
+\doxysubsubsection{\texorpdfstring{init\_player\_direction\_e\_w()}{init\_player\_direction\_e\_w()}}
+{\footnotesize\ttfamily static void init\+\_\+player\+\_\+direction\+\_\+e\+\_\+w (\begin{DoxyParamCaption}\item[{t\+\_\+player \texorpdfstring{$\ast$}{*}}]{player }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{init__directions_8c_aabdbd4aeef0d6fd480653b83ec96516f_icgraph}
+\includegraphics[width=350pt]{init__directions_8c_a4e0b2877f20e66bef3a574f1e01469e5_icgraph}
 \end{center}
 \end{figure}
-\Hypertarget{init__directions_8c_a8c7770aca278d0c2d4545da4d8bdbd40}\label{init__directions_8c_a8c7770aca278d0c2d4545da4d8bdbd40} 
-\index{init\_directions.c@{init\_directions.c}!init\_player\_north\_south@{init\_player\_north\_south}}
-\index{init\_player\_north\_south@{init\_player\_north\_south}!init\_directions.c@{init\_directions.c}}
-\doxysubsubsection{\texorpdfstring{init\_player\_north\_south()}{init\_player\_north\_south()}}
-{\footnotesize\ttfamily static void init\+\_\+player\+\_\+north\+\_\+south (\begin{DoxyParamCaption}\item[{t\+\_\+player \texorpdfstring{$\ast$}{*}}]{player }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+\Hypertarget{init__directions_8c_a40f09b99ea44aeb5fe408de3f163df88}\label{init__directions_8c_a40f09b99ea44aeb5fe408de3f163df88} 
+\index{init\_directions.c@{init\_directions.c}!init\_player\_direction\_n\_s@{init\_player\_direction\_n\_s}}
+\index{init\_player\_direction\_n\_s@{init\_player\_direction\_n\_s}!init\_directions.c@{init\_directions.c}}
+\doxysubsubsection{\texorpdfstring{init\_player\_direction\_n\_s()}{init\_player\_direction\_n\_s()}}
+{\footnotesize\ttfamily static void init\+\_\+player\+\_\+direction\+\_\+n\+\_\+s (\begin{DoxyParamCaption}\item[{t\+\_\+player \texorpdfstring{$\ast$}{*}}]{player }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{init__directions_8c_a8c7770aca278d0c2d4545da4d8bdbd40_icgraph}
+\includegraphics[width=350pt]{init__directions_8c_a40f09b99ea44aeb5fe408de3f163df88_icgraph}
 \end{center}
 \end{figure}

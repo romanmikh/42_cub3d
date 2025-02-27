@@ -2,6 +2,7 @@
 valgrind_out.txt
 cub3d
 .vscode/
+
 # Prerequisites
 *.d
 

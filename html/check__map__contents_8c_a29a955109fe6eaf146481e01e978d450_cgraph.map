@@ -1,7 +1,0 @@
-<map id="set_player_position" name="set_player_position">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,172,56"/>
-<area shape="rect" id="Node000002" href="$check__map__contents_8c.html#a396e0188d4f725ab978dc5fb76b78f0c" title=" " alt="" coords="220,5,396,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="172,31,206,27,206,32,173,36"/>
-<area shape="rect" id="Node000003" href="$error_8c.html#afdc9385c812c685bdb06c3d0971b6914" title=" " alt="" coords="271,55,345,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="173,50,257,59,256,64,172,55"/>
-</map>

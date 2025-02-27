@@ -119,8 +119,8 @@ $(function() {
 <li>init_mlx()&#160;:&#160;<a class="el" href="init__mlx_8c.html#ae1eeb494b10f372f7b40a5372cd08991">init_mlx.c</a></li>
 <li>init_player()&#160;:&#160;<a class="el" href="init__main_8c.html#ab46388d28c07bc1484365b792d0b6560">init_main.c</a></li>
 <li>init_player_direction()&#160;:&#160;<a class="el" href="init__directions_8c.html#ab8a3cdee541d44a5bfb724e9aaae5ad8">init_directions.c</a></li>
-<li>init_player_direction_e_w()&#160;:&#160;<a class="el" href="init__directions_8c.html#aabdbd4aeef0d6fd480653b83ec96516f">init_directions.c</a></li>
-<li>init_player_direction_n_s()&#160;:&#160;<a class="el" href="init__directions_8c.html#a8c7770aca278d0c2d4545da4d8bdbd40">init_directions.c</a></li>
+<li>init_player_direction_e_w()&#160;:&#160;<a class="el" href="init__directions_8c.html#a4e0b2877f20e66bef3a574f1e01469e5">init_directions.c</a></li>
+<li>init_player_direction_n_s()&#160;:&#160;<a class="el" href="init__directions_8c.html#a40f09b99ea44aeb5fe408de3f163df88">init_directions.c</a></li>
 <li>init_ray()&#160;:&#160;<a class="el" href="init__main_8c.html#a37370f2dcb98586748b20b713201ca82">init_main.c</a></li>
 <li>init_ray_cast_info()&#160;:&#160;<a class="el" href="init__ray__textures_8c.html#af5590791c8ce9d5d14866ac5cd180489">init_ray_textures.c</a></li>
 <li>init_text_data()&#160;:&#160;<a class="el" href="init__ray__textures_8c.html#a7a7017dd07903bc3f32a296e8af82b77">init_ray_textures.c</a></li>
@@ -133,6 +133,7 @@ $(function() {
 <li>is_valid_map_borders()&#160;:&#160;<a class="el" href="check__map__borders_8c.html#af9c09cb56ed00e40a07460e19652d949">check_map_borders.c</a></li>
 <li>is_valid_map_contents()&#160;:&#160;<a class="el" href="check__map__contents_8c.html#aef36b72273347b7578100a8b063188ce">check_map_contents.c</a></li>
 <li>is_valid_map_top_bottom()&#160;:&#160;<a class="el" href="check__map__borders_8c.html#aed49ac32637cdc35b8ea95e0fe3f9178">check_map_borders.c</a></li>
+<li>is_valid_move()&#160;:&#160;<a class="el" href="position_8c.html#a3f5a49e2586f6e017cf4a92250aaa6f4">position.c</a></li>
 <li>is_valid_player_position()&#160;:&#160;<a class="el" href="check__map__contents_8c.html#af9c3f4544abff25116e6a7bd302865e2">check_map_contents.c</a></li>
 <li>is_valid_pos()&#160;:&#160;<a class="el" href="position_8c.html#ad9f71f578175a945c1a2e73c782ae9dd">position.c</a></li>
 <li>is_valid_pos_in_map()&#160;:&#160;<a class="el" href="position_8c.html#ad0ff591c32cee4c58d1cecf4c0915a94">position.c</a></li>
@@ -180,7 +181,6 @@ $(function() {
 <li>render()&#160;:&#160;<a class="el" href="render_8c.html#a0bab68b55433c6e5fe3e920a15a73e10">render.c</a></li>
 <li>render_frame()&#160;:&#160;<a class="el" href="render_8c.html#ad86aec14d3d904b80a4cd2f9026d5df4">render.c</a></li>
 <li>rgb_str_to_int()&#160;:&#160;<a class="el" href="set__ceiling__floor__colours_8c.html#a3d4a8779b09dd890fe36c396dd89c9ff">set_ceiling_floor_colours.c</a></li>
-<li>rotate_left_right()&#160;:&#160;<a class="el" href="rotation_8c.html#a0341cd6b9db36a93de71186c6049b72e">rotation.c</a></li>
 <li>rotate_player()&#160;:&#160;<a class="el" href="rotation_8c.html#adb16e7c9b33d51577c6bce11ca0fcffc">rotation.c</a></li>
 </ul>
 
@@ -189,7 +189,7 @@ $(function() {
 <li>set_ceiling_floor_colours()&#160;:&#160;<a class="el" href="set__ceiling__floor__colours_8c.html#aa477704470fc43af12462868bf713ac4">set_ceiling_floor_colours.c</a></li>
 <li>set_dda()&#160;:&#160;<a class="el" href="ray__cast_8c.html#a474ce0dc8538d3b094c5ec6e1f5d57d5">ray_cast.c</a></li>
 <li>set_frame_image_pixel()&#160;:&#160;<a class="el" href="render_8c.html#ae7ff221611973fe2a21c2bd2cc697fd3">render.c</a></li>
-<li>set_image_pixel()&#160;:&#160;<a class="el" href="texture_8c.html#a37c9efa8cce62ddacb64d9d173fd2812">texture.c</a></li>
+<li>set_image_pixel()&#160;:&#160;<a class="el" href="render_8c.html#abbd7909cdc6fe9d18af84a1e545ff198">render.c</a></li>
 <li>set_player_position()&#160;:&#160;<a class="el" href="check__map__contents_8c.html#a6f2dce6a7d31ac777e85c50185281b72">check_map_contents.c</a></li>
 <li>set_rgb_colours()&#160;:&#160;<a class="el" href="set__ceiling__floor__colours_8c.html#a6a2f7f2bc00874b0ca5723679a52c4a1">set_ceiling_floor_colours.c</a></li>
 </ul>
@@ -197,11 +197,6 @@ $(function() {
 
 <h3><a id="index_u" name="index_u"></a>- u -</h3><ul>
 <li>update_texture_pixels()&#160;:&#160;<a class="el" href="texture_8c.html#a9038c7ecd66fc34325d2613133864351">texture.c</a></li>
-</ul>
-
-
-<h3><a id="index_v" name="index_v"></a>- v -</h3><ul>
-<li>is_valid_move()&#160;:&#160;<a class="el" href="position_8c.html#aeca10cfaec379f15ebb261e30739b068">position.c</a></li>
 </ul>
 
 

@@ -1,7 +1,7 @@
 <map id="init_player_direction" name="init_player_direction">
 <area shape="rect" id="Node000001" title=" " alt="" coords="5,31,160,56"/>
-<area shape="rect" id="Node000002" href="$init__directions_8c.html#aabdbd4aeef0d6fd480653b83ec96516f" title=" " alt="" coords="213,5,377,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="160,31,199,27,200,32,161,37"/>
-<area shape="rect" id="Node000003" href="$init__directions_8c.html#a8c7770aca278d0c2d4545da4d8bdbd40" title=" " alt="" coords="208,55,383,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="161,49,195,53,194,59,160,55"/>
+<area shape="rect" id="Node000002" href="$init__directions_8c.html#a4e0b2877f20e66bef3a574f1e01469e5" title=" " alt="" coords="208,5,396,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="160,32,194,28,195,33,161,37"/>
+<area shape="rect" id="Node000003" href="$init__directions_8c.html#a40f09b99ea44aeb5fe408de3f163df88" title=" " alt="" coords="210,55,394,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="161,49,196,53,196,58,160,54"/>
 </map>

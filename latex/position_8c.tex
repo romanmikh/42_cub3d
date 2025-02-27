@@ -1,7 +1,8 @@
 \doxysection{src/dynamics/position.c File Reference}
 \hypertarget{position_8c}{}\label{position_8c}\index{src/dynamics/position.c@{src/dynamics/position.c}}
 {\ttfamily \#include "{}cub3d.\+h"{}}\newline
-Include dependency graph for position.\+c\+:\nopagebreak
+Include dependency graph for position.\+c\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -17,18 +18,41 @@ static bool \mbox{\hyperlink{position_8c_ad0ff591c32cee4c58d1cecf4c0915a94}{is\+
 \item 
 static bool \mbox{\hyperlink{position_8c_ad9f71f578175a945c1a2e73c782ae9dd}{is\+\_\+valid\+\_\+pos}} (t\+\_\+data \texorpdfstring{$\ast$}{*}data, double x, double y)
 \item 
-int \mbox{\hyperlink{position_8c_aeca10cfaec379f15ebb261e30739b068}{validate\+\_\+move}} (t\+\_\+data \texorpdfstring{$\ast$}{*}data, double new\+\_\+x, double new\+\_\+y)
+int \mbox{\hyperlink{position_8c_a3f5a49e2586f6e017cf4a92250aaa6f4}{is\+\_\+valid\+\_\+move}} (t\+\_\+data \texorpdfstring{$\ast$}{*}data, double new\+\_\+x, double new\+\_\+y)
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
+\Hypertarget{position_8c_a3f5a49e2586f6e017cf4a92250aaa6f4}\label{position_8c_a3f5a49e2586f6e017cf4a92250aaa6f4} 
+\index{position.c@{position.c}!is\_valid\_move@{is\_valid\_move}}
+\index{is\_valid\_move@{is\_valid\_move}!position.c@{position.c}}
+\doxysubsubsection{\texorpdfstring{is\_valid\_move()}{is\_valid\_move()}}
+{\footnotesize\ttfamily int is\+\_\+valid\+\_\+move (\begin{DoxyParamCaption}\item[{t\+\_\+data \texorpdfstring{$\ast$}{*}}]{data,  }\item[{double}]{new\+\_\+x,  }\item[{double}]{new\+\_\+y }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{position_8c_a3f5a49e2586f6e017cf4a92250aaa6f4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{position_8c_a3f5a49e2586f6e017cf4a92250aaa6f4_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{position_8c_ad9f71f578175a945c1a2e73c782ae9dd}\label{position_8c_ad9f71f578175a945c1a2e73c782ae9dd} 
 \index{position.c@{position.c}!is\_valid\_pos@{is\_valid\_pos}}
 \index{is\_valid\_pos@{is\_valid\_pos}!position.c@{position.c}}
 \doxysubsubsection{\texorpdfstring{is\_valid\_pos()}{is\_valid\_pos()}}
 {\footnotesize\ttfamily static bool is\+\_\+valid\+\_\+pos (\begin{DoxyParamCaption}\item[{t\+\_\+data \texorpdfstring{$\ast$}{*}}]{data,  }\item[{double}]{x,  }\item[{double}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -69,26 +93,5 @@ Here is the caller graph for this function\+:
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{position_8c_ab6b9d558de1d00d39f460dc12c63262b_icgraph}
-\end{center}
-\end{figure}
-\Hypertarget{position_8c_aeca10cfaec379f15ebb261e30739b068}\label{position_8c_aeca10cfaec379f15ebb261e30739b068} 
-\index{position.c@{position.c}!validate\_move@{validate\_move}}
-\index{validate\_move@{validate\_move}!position.c@{position.c}}
-\doxysubsubsection{\texorpdfstring{validate\_move()}{validate\_move()}}
-{\footnotesize\ttfamily int validate\+\_\+move (\begin{DoxyParamCaption}\item[{t\+\_\+data \texorpdfstring{$\ast$}{*}}]{data,  }\item[{double}]{new\+\_\+x,  }\item[{double}]{new\+\_\+y }\end{DoxyParamCaption})}
-
-Here is the call graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{position_8c_aeca10cfaec379f15ebb261e30739b068_cgraph}
-\end{center}
-\end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{position_8c_aeca10cfaec379f15ebb261e30739b068_icgraph}
 \end{center}
 \end{figure}
