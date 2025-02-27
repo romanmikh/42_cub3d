@@ -11,7 +11,7 @@
 
 
 #
-# Generate a .c file with encoded colours, from the XFree86 rgb.txt file.
+# Generate a .c file with encoded colors, from the XFree86 rgb.txt file.
 #
 
 open(RGB, "/usr/X11/lib/X11/rgb.txt");

@@ -1,8 +1,8 @@
 /* XPM */
 static char *open[] = {
-/* width height num_colours chars_per_pixel */
+/* width height num_colors chars_per_pixel */
 "    45    55      168            2",
-/* colours */
+/* colors */
 ".. s None c None",
 ".# c #450304",
 ".a c #ce7e7c",

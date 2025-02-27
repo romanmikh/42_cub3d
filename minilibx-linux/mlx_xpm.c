@@ -14,8 +14,8 @@
 extern struct s_col_name mlx_col_name[];
 
 
-#define	RETURN	{ if (colours) free(colours); if (tab) free(tab); \
-		tab = (void *)0; if (colours_direct) free(colours_direct); \
+#define	RETURN	{ if (colors) free(colors); if (tab) free(tab); \
+		tab = (void *)0; if (colors_direct) free(colors_direct); \
 		if (img) {XDestroyImage(img->image); \
 				XFreePixmap(xvar->display,img->pix);free(img);} \
 		return ((void *)0);}
@@ -149,16 +149,16 @@ void	*mlx_int_parse_xpm(t_xvar *xvar,void *info,int info_size,char *(*f)())
 		int		i;
 		int		j;
 		t_img	*img;
-		t_xpm_col	*colours;
-		int		*colours_direct;
+		t_xpm_col	*colors;
+		int		*colors_direct;
 		int		width;
 		int		height;
 		XImage	*clip_img;
 		XGCValues	xgcv;
 		Pixmap	clip_pix;
 
-		colours = 0;
-		colours_direct = 0;
+		colors = 0;
+		colors_direct = 0;
 		img = 0;
 		tab = 0;
 		pos = 0;
@@ -174,11 +174,11 @@ void	*mlx_int_parse_xpm(t_xvar *xvar,void *info,int info_size,char *(*f)())
 		if (cpp<=2)
 		{
 				method = 1;
-				if (!(colours_direct = malloc((cpp==2?65536:256)*sizeof(int))))
+				if (!(colors_direct = malloc((cpp==2?65536:256)*sizeof(int))))
 						RETURN;
 		}
 		else
-				if (!(colours = malloc(nc*sizeof(*colours))))
+				if (!(colors = malloc(nc*sizeof(*colors))))
 						RETURN;
 
 		clip_data = 0;
@@ -207,12 +207,12 @@ void	*mlx_int_parse_xpm(t_xvar *xvar,void *info,int info_size,char *(*f)())
 				}
 				*/
 				if (method)
-						colours_direct[mlx_int_get_col_name(line,cpp)] = rgb_col;
+						colors_direct[mlx_int_get_col_name(line,cpp)] = rgb_col;
 								// rgb_col>=0?mlx_get_color_value(xvar, rgb_col):rgb_col;
 				else
 				{
-						colours[i].name = mlx_int_get_col_name(line,cpp);
-						colours[i].col = rgb_col; //rgb_col>=0?mlx_get_color_value(xvar,rgb_col):rgb_col;
+						colors[i].name = mlx_int_get_col_name(line,cpp);
+						colors[i].col = rgb_col; //rgb_col>=0?mlx_get_color_value(xvar,rgb_col):rgb_col;
 				}
 				free(tab);
 				tab = (void *)0;
@@ -235,14 +235,14 @@ void	*mlx_int_parse_xpm(t_xvar *xvar,void *info,int info_size,char *(*f)())
 						col = 0;
 						col_name = mlx_int_get_col_name(line+cpp*x,cpp);
 						if (method)
-								col = colours_direct[col_name];
+								col = colors_direct[col_name];
 						else
 						{
 								j = nc;
 								while (j--)
-										if (colours[j].name==col_name)
+										if (colors[j].name==col_name)
 										{
-												col = colours[j].col;
+												col = colors[j].col;
 												j = 0;
 										}
 						}
@@ -279,10 +279,10 @@ void	*mlx_int_parse_xpm(t_xvar *xvar,void *info,int info_size,char *(*f)())
 				XDestroyImage(clip_img);
 		}
 		*/
-		if (colours)
-				free(colours);
-		if (colours_direct)
-				free(colours_direct);
+		if (colors)
+				free(colors);
+		if (colors_direct)
+				free(colors_direct);
 		return (img);
 }
 

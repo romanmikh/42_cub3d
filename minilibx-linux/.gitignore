@@ -37,7 +37,7 @@ Makefile.gen
 *.la
 *.lo
 
-# Shared obj (inc. Windows DLLs)
+# Shared objects (inc. Windows DLLs)
 *.dll
 *.so
 *.so.*
