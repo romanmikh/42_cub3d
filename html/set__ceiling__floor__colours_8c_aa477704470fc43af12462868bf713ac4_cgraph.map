@@ -1,4 +1,4 @@
-<map id="set_ceiling_floor_colours" name="set_ceiling_floor_colours">
+<map id="set_ceiling_floor" name="set_ceiling_floor">
 <area shape="rect" id="Node000001" title=" " alt="" coords="5,31,188,56"/>
 <area shape="rect" id="Node000002" href="$error_8c.html#afdc9385c812c685bdb06c3d0971b6914" title=" " alt="" coords="426,5,501,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="188,34,412,19,413,24,189,40"/>

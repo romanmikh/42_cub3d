@@ -6,7 +6,7 @@ static char	*parse_texture_path(char *line, int j)
 	int		i;
 	char	*path;
 
-	while (line[j] && (line[j] == ' ' || line[j] == '\t')) // skip leading whitespaces 
+	while (line[j] && (line[j] == ' ' || line[j] == '\t'))
 		j++;
 	len = j;
 	while (line[len] && (line[len] != ' ' && line[len] != '\t'))
@@ -14,13 +14,13 @@ static char	*parse_texture_path(char *line, int j)
 	path = malloc(sizeof(char) * (len - j + 1));
 	if (!path)
 		return (NULL);
-	i = 0;  // copy texture path
+	i = 0;
 	while (line[j] && (line[j] != ' ' && line[j] != '\t' && line[j] != '\n'))
 		path[i++] = line[j++];
 	path[i] = '\0';
-	while (line[j] && (line[j] == ' ' || line[j] == '\t')) // skip trailing whitespaces 
+	while (line[j] && (line[j] == ' ' || line[j] == '\t'))
 		j++;
-	if (line[j] && line[j] != '\n')  // if extra content after path, error
+	if (line[j] && line[j] != '\n')
 	{
 		free(path);
 		path = NULL;
@@ -30,10 +30,10 @@ static char	*parse_texture_path(char *line, int j)
 
 static int	parse_texture_orientations(t_text_data *textures, char *line, int j)
 {
-	char **tex;
-	
+	char	**tex;
+
 	tex = NULL;
-	if (line[j + 2] && ft_is_print(line[j + 2])) 
+	if (line[j + 2] && ft_is_print(line[j + 2]))
 		return (ERR);
 	if (ft_strncmp(&line[j], "NO", 2) == 0)
 		tex = &textures->north;
@@ -75,25 +75,25 @@ C 153,204,255
 */
 static int	parse_cub_file(t_data *data, char **file, int i, int j)
 {
-	while (file[i][j] == ' ' || file[i][j] == '\t' || file[i][j] == '\n') // skip whitespaces
+	while (file[i][j] == ' ' || file[i][j] == '\t' || file[i][j] == '\n')
 		j++;
-	if (ft_is_print(file[i][j]) && !ft_is_digit(file[i][j])) // if texture/rgb part of cub file (not map)
+	if (ft_is_print(file[i][j]) && !ft_is_digit(file[i][j]))
 	{
-		if (file[i][j + 1] && ft_is_print(file[i][j + 1]) // if next also printable & not digit, it's a texture
+		if (file[i][j + 1] && ft_is_print(file[i][j + 1])
 			&& !ft_is_digit(file[i][j]))
 		{
 			if (parse_texture_orientations(&data->text_data, file[i], j) == ERR)
 				return (err_msg(data->map_data.path, ERR_TEX_INVALID, FAILURE));
 			return (BREAK);
-		}	
-		else  // it's floor/ceiling
+		}
+		else
 		{
-			if (set_ceiling_floor_colours(data, &data->text_data, file[i], j) == ERR)
+			if (set_ceiling_floor(data, &data->text_data, file[i], j) == ERR)
 				return (FAILURE);
 			return (BREAK);
-		}	
+		}
 	}
-	else if (ft_is_digit(file[i][j])) // then it's map layout
+	else if (ft_is_digit(file[i][j]))
 	{
 		if (create_map(data, file, i) == FAILURE)
 			return (err_msg(data->map_data.path, ERR_MAP_INVALID, FAILURE));
@@ -102,7 +102,6 @@ static int	parse_cub_file(t_data *data, char **file, int i, int j)
 	return (CONTINUE);
 }
 
-// input is entire cub file as 2d arr 
 int	process_cub_file(t_data *data, char **file)
 {
 	int	i;

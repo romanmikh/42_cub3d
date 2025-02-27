@@ -12,7 +12,7 @@ int	main(int argc, char **argv)
 	init_mlx(&data);
 	init_textures(&data);
 	launch_msg();
-	render(&data); // otherwise black screen on launch
+	render(&data);
 	init_input_hooks(&data);
 	mlx_loop_hook(data.mlx, move_and_render, &data);
 	mlx_loop(data.mlx);

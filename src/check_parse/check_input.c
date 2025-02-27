@@ -1,25 +1,27 @@
 #include "cub3d.h"
 
-static bool is_valid_extension(char *arg, char *ext)
+static bool	is_valid_extension(char *arg, char *ext)
 {
-    size_t len = ft_strlen(arg);
-    size_t ext_len = ft_strlen(ext);
+	size_t	len;
+	size_t	ext_len;
 
-    return (len > ext_len && ft_strcmp(arg + len - ext_len, ext) == 0);
+	len = ft_strlen(arg);
+	ext_len = ft_strlen(ext);
+	return (len > ext_len && ft_strcmp(arg + len - ext_len, ext) == 0);
 }
 
-int is_valid_file(char *arg, bool cub)
+int	is_valid_file(char *arg, bool cub)
 {
-    int fd;
+	int	fd;
 
-    fd = open(arg, O_RDONLY);
-    if (fd == -1)
-        return (err_msg(arg, ERR_FILE_MISSING, FAILURE));
-    close(fd);
-    if ((cub && !is_valid_extension(arg, ".cub")) ||
-        (!cub && !is_valid_extension(arg, ".xpm")))
-        return (err_msg(arg, ERR_FILE_FORMAT, FAILURE));
-    return (SUCCESS);
+	fd = open(arg, O_RDONLY);
+	if (fd == -1)
+		return (err_msg(arg, ERR_FILE_MISSING, FAILURE));
+	close(fd);
+	if ((cub && !is_valid_extension(arg, ".cub"))
+		|| (!cub && !is_valid_extension(arg, ".xpm")))
+		return (err_msg(arg, ERR_FILE_FORMAT, FAILURE));
+	return (SUCCESS);
 }
 
 size_t	max_line_width(t_map_data *map, int i)

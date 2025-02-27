@@ -43,10 +43,7 @@ static int	*set_rgb_colours(char *line)
 	return (rgb_str_to_int(rgb_str, rgb_int));
 }
 
-// check for invalid characters 
-// convert RGB from str to int
-// set int RGB for floor & ceiling in texture->floor & texture->ceiling
-int	set_ceiling_floor_colours(t_data *data, t_text_data *textures, \
+int	set_ceiling_floor(t_data *data, t_text_data *textures, \
 	char *line, int j)
 {
 	if (line[j + 1] && ft_is_print(line[j + 1]))

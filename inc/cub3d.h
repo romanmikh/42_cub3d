@@ -185,7 +185,7 @@ void	init_texture_img(t_data *data, t_img *image, char *path);
 void	init_img(t_data *data, t_img *image, int width, int height);
 void	update_texture_pixels(t_data *data, t_text_data *tex, t_ray *ray, \
 			int x);
-int		set_ceiling_floor_colours(t_data *data, t_text_data *textures,
+int		set_ceiling_floor(t_data *data, t_text_data *textures,
 			char *line, int j);
 
 #endif
