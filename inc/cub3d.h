@@ -101,7 +101,7 @@ typedef struct s_img
 
 typedef struct s_ray
 {
-	double	field_of_view;  // all cols of screen. Left -> -1, right -> +1
+	double	field_of_view;  // all columns of screen. Left -> -1, right -> +1
 	int		map_x;  // coorinates of ray
 	int		map_y;
 	double	dir_x;  // horiz/vert fractional step ray takes during DDA

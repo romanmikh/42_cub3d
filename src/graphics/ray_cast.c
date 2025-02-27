@@ -1,22 +1,13 @@
 #include "cub3d.h"
 
-/*
-- We are doing the initial set up for the dda
-- dda algorithm will jump one square in each loop eiter in a x or y direction
-- ray->sidedist_x or y = distance from the ray start position to the
-	next x or y position
-- if x or y < 0 go the next x or y to the left
-- if x or y > 0 go the next x or y to the right
-*/
-
-// Determines whether to step left or right (x) and up or down (y).
-// Computes the initial side distances for stepping.
+// Determines whether to step left or right (x) and up or down (y)
+// Computes the initial side distances for stepping
 static void	set_dda(t_ray *ray, t_player *player)
 {
 	if (ray->dir_x < 0)  // ray moving left
 	{
 		ray->step_x = -1;
-		ray->sidedist_x = (player->pos_x - ray->map_x) * ray->deltadist_x;  // (int-rounded player pos - actial pos) * distance travelled in TOTAL (diagonal) to move 1 unit in x => distance travelled in total to get to the first vertical gridline
+		ray->sidedist_x = (player->pos_x - ray->map_x) * ray->deltadist_x;  // (int-rounded player pos - actual pos) * distance travelled in x per diagonal step = total distance to first vertical gridline
 	}
 	else  // ray moving right
 	{
