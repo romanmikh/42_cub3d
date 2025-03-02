@@ -50,7 +50,7 @@
 
 ## Documentation
 
-**/local/path/to/cub3d/html/index.html** into your browser > Fules > main.c, opens the interactive function graph, which can be helpful to understand the code.
+**/local/path/to/cub3d/html/index.html** into your browser > Files > main.c, opens the interactive function graph, which can help illustrate the function call hierarchy.
 
 Full code map:
 
