@@ -48,5 +48,10 @@
 3. https://reactive.so/post/42-a-comprehensive-guide-to-cub3d/ (code example)
 4. https://harm-smits.github.io/42docs/projects/cub3d (detailed explanation)
 
-## Full Code Map
+## Documentation
+
+**/local/path/to/cub3d/html/index.html** into your browser > Fules > main.c, opens the interactive function graph, which can be helpful to understand the code.
+
+Full code map:
+
 ![Full Code Map](./html/main_8c_a3c04138a5bfe5d72780bb7e82a18e627_cgraph.png)
