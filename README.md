@@ -52,6 +52,6 @@
 
 **/local/path/to/cub3d/html/index.html** into your browser > Files > main.c, opens the interactive function graph, which can help illustrate the function call hierarchy.
 
-Full code map:
+Full code map (almost):
 
 ![Full Code Map](./html/main_8c_a3c04138a5bfe5d72780bb7e82a18e627_cgraph.png)
