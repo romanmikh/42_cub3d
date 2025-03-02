@@ -49,8 +49,10 @@
 4. https://harm-smits.github.io/42docs/projects/cub3d (detailed explanation)
 
 ## Documentation
-
-**/local/path/to/cub3d/html/index.html** into your browser > Files > main.c, opens the interactive function graph, which can help illustrate the function call hierarchy.
+   ```sh
+   /local/path/to/cub3d/html/index.html  # > Files > main.c (in browser)
+   ```
+Opens the interactive function graph, which can help illustrate the function call hierarchy.
 
 Full code map (almost):
 
