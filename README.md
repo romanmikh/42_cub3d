@@ -2,6 +2,8 @@
 
 **Cub3D** is a **Wolfenstein 3D-inspired** raycasting project developed as part of the 42 curriculum. It provides a **basic 3D rendering engine** using **raycasting**
 
+![](./cub3d.gif)
+
 ## Features
 
 - **Raycasting Engine**: Implements a first-person perspective using raycasting.

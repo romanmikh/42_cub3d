@@ -28,8 +28,8 @@
 # define TEX_SIZE 64
 # define WIN_WIDTH 600
 # define WIN_HEIGHT 450
-# define STEP_SIZE 0.01
-# define ROTATION_ANGLE 0.01
+# define STEP_SIZE 0.005
+# define ROTATION_ANGLE 0.005
 
 // Enumerations
 enum e_texture_index
