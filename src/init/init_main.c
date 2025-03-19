@@ -23,15 +23,15 @@ void	init_ray(t_ray *ray)
 
 void	init_floor_data(t_floor_data *floor)
 {
-	floor->ceilingColor = 0;
-	floor->currentDist = 0;
-	floor->currentFloorX = 0;
-	floor->currentFloorY = 0;
-	floor->floorColor = 0;
-	floor->floorTexX = 0;
-	floor->floorTexY = 0;
-	floor->floorXWall = 0;
-	floor->floorYWall = 0;
+	floor->c_color = 0;
+	floor->current_dist = 0;
+	floor->current_f_x = 0;
+	floor->current_f_y = 0;
+	floor->f_color = 0;
+	floor->f_tex_x = 0;
+	floor->f_tex_y = 0;
+	floor->f_x_wall = 0;
+	floor->f_y_wall = 0;
 	floor->weight = 0;
 }
 

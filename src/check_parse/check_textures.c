@@ -30,8 +30,8 @@ int	is_valid_texture(t_data *data, t_text_data *textures)
 		return (FAILURE);
 	if (data->text_data.floort && data->text_data.ceilingt)
 		if (is_valid_file(textures->floort, false) == FAILURE
-		|| is_valid_file(textures->ceilingt, false) == FAILURE)
-		return (FAILURE);
+			|| is_valid_file(textures->ceilingt, false) == FAILURE)
+			return (FAILURE);
 	textures->hex_floor = ft_rgb_to_hex(textures->floor);
 	textures->hex_ceiling = ft_rgb_to_hex(textures->ceiling);
 	return (SUCCESS);

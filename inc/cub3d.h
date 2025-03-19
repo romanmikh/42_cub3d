@@ -25,7 +25,7 @@ enum e_texture_index
 	NORTH = 0,
 	SOUTH = 1,
 	EAST = 2,
-	WEST = 3, 
+	WEST = 3,
 	FLOOR = 4,
 	CEILING = 5
 };
@@ -76,17 +76,17 @@ typedef struct s_map_data
 
 typedef struct s_floor_data
 {
-	double	floorXWall;
-	double	floorYWall;
-	double	currentDist;
-	int		floorColor; 
-	int		ceilingColor;
+	double	f_x_wall;
+	double	f_y_wall;
+	double	current_dist;
+	int		f_color;
+	int		c_color;
 	double	weight;
-	double	currentFloorX;
-	double	currentFloorY;
-	int		floorTexX;
-    int		floorTexY;
-} t_floor_data;
+	double	current_f_x;
+	double	current_f_y;
+	int		f_tex_x;
+	int		f_tex_y;
+}	t_floor_data;
 
 typedef struct s_text_data
 {
@@ -197,12 +197,14 @@ int		process_cub_file(t_data *data, char **map);
 int		create_map(t_data *data, char **map, int i);
 int		rotate_player(t_data *data, double rot_dir);
 int		err_msg_val(int detail, char *str, int code);
+void	render_floor(t_data *data, t_ray *ray, int y, int x);
 int		is_valid_texture(t_data *data, t_text_data *textures);
 int		is_valid_map_borders(t_map_data *map, char **map_arr);
 int		is_valid_move(t_data *data, double new_x, double new_y);
 void	init_ray_cast_info(int x, t_ray *ray, t_player *player);
 void	init_texture_img(t_data *data, t_img *image, char *path);
 void	init_img(t_data *data, t_img *image, int width, int height);
+void	update_floor_pixels(t_data *data, t_ray *ray, int y, int x);
 void	update_texture_pixels(t_data *data, t_text_data *tex, t_ray *ray, \
 			int x);
 int		set_ceiling_floor(t_data *data, t_text_data *textures,

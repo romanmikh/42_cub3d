@@ -30,12 +30,10 @@ static int	is_valid_map_borders_vertically(t_map_data *map, char **map_arr)
 			i++;
 		while (i < map->height)
 		{
-			if (map_arr[i][j]) {
+			if (map_arr[i][j])
 				i++;
-			}
-			else {
+			else
 				break ;
-			}
 		}
 		i -= 1;
 		if (map_arr[i][j] != '1')
@@ -45,11 +43,11 @@ static int	is_valid_map_borders_vertically(t_map_data *map, char **map_arr)
 	return (SUCCESS);
 }
 
-
 int	is_valid_map_borders(t_map_data *map, char **map_arr)
 {
 	int	i;
 	int	j;
+
 	if (is_valid_map_top_bottom(map_arr, 0, 0) == FAILURE)
 		return (FAILURE);
 	i = 1;

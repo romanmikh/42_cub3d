@@ -60,7 +60,7 @@ static int	is_valid_contents(char *str)
 int	set_ceiling_floor(t_data *data, t_text_data *textures, \
 	char *line, int j)
 {
-	if (is_valid_contents(&line[j+1]))
+	if (is_valid_contents(&line[j + 1]))
 		return (err_msg(data->map_data.path, ERR_FLOOR_CEILING, ERR));
 	if (!textures->ceiling && line[j] == 'C')
 	{

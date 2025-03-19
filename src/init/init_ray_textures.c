@@ -67,7 +67,8 @@ void	init_textures(t_data *data)
 	data->textures[SOUTH] = xpm_to_img(data, data->text_data.south);
 	data->textures[EAST] = xpm_to_img(data, data->text_data.east);
 	data->textures[WEST] = xpm_to_img(data, data->text_data.west);
-	if (data->text_data.floort && data->text_data.ceilingt) {
+	if (data->text_data.floort && data->text_data.ceilingt)
+	{
 		data->textures[FLOOR] = xpm_to_img(data, data->text_data.floort);
 		data->textures[CEILING] = xpm_to_img(data, data->text_data.ceilingt);
 	}
