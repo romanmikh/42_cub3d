@@ -1,10 +1,9 @@
 NO textures/sunset.xpm
 SO textures/lake.xpm
 WE textures/ruins.xpm
-EA textures/mountain.xpm
-FL textures/mario.xpm
+EA textures/mountain.xp
+FL textures/floor.xpm
 CE textures/ceiling.xpm
-
 
 F 164,169,120
 C 153,204,255
@@ -13,7 +12,7 @@ C 153,204,255
 100000000000000000001
 101000000001000010001
 100000000000000000001
-100000100000000000001
+10000010000000000001
 10N000000000001000001
 100000000000000000001
 100111111111111111111

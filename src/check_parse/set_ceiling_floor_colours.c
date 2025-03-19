@@ -43,10 +43,24 @@ static int	*set_rgb_colours(char *line)
 	return (rgb_str_to_int(rgb_str, rgb_int));
 }
 
+static int	is_valid_contents(char *str)
+{
+	if (!str || *str == '\0')
+		return (0);
+	while (*str)
+	{
+		if ((*str < '0' || *str > '9') && *str != ' ' && *str != ',' \
+															&& *str != '\n')
+			return (1);
+		str++;
+	}
+	return (0);
+}
+
 int	set_ceiling_floor(t_data *data, t_text_data *textures, \
 	char *line, int j)
 {
-	if (line[j + 1] && ft_is_print(line[j + 1]))
+	if (is_valid_contents(&line[j+1]))
 		return (err_msg(data->map_data.path, ERR_FLOOR_CEILING, ERR));
 	if (!textures->ceiling && line[j] == 'C')
 	{

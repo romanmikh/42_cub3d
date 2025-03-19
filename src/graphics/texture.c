@@ -54,46 +54,49 @@ void	update_texture_pixels(t_data *data, t_text_data *tex, t_ray *ray, int x)
 	// ========== FLOOR & CEILING CASTING ==========
 
 	// Determine the floor point at the bottom of the wall based on direction
-	if (ray->hit_horiz_wall == 0 && ray->dir_x > 0) // East wall
-	{
-		data->floor_data.floorXWall = ray->map_x;
-		data->floor_data.floorYWall = ray->map_y + ray->wall_hit_x_coord;
-	}
-	else if (ray->hit_horiz_wall == 0 && ray->dir_x < 0) // West wall
-	{
-		data->floor_data.floorXWall = ray->map_x + 1.0;
-		data->floor_data.floorYWall = ray->map_y + ray->wall_hit_x_coord;
-	}
-	else if (ray->hit_horiz_wall == 1 && ray->dir_y > 0) // South wall
-	{
-		data->floor_data.floorXWall = ray->map_x + ray->wall_hit_x_coord;
-		data->floor_data.floorYWall = ray->map_y;
-	}
-	else // North wall
-	{
-		data->floor_data.floorXWall = ray->map_x + ray->wall_hit_x_coord;
-		data->floor_data.floorYWall = ray->map_y + 1.0;
-	}
+	if (data->text_data.floort && data->text_data.ceilingt) {
+		if (ray->hit_horiz_wall == 0 && ray->dir_x > 0) // East wall
+		{
+			data->floor_data.floorXWall = ray->map_x;
+			data->floor_data.floorYWall = ray->map_y + ray->wall_hit_x_coord;
+		}
+		else if (ray->hit_horiz_wall == 0 && ray->dir_x < 0) // West wall
+		{
+			data->floor_data.floorXWall = ray->map_x + 1.0;
+			data->floor_data.floorYWall = ray->map_y + ray->wall_hit_x_coord;
+		}
+		else if (ray->hit_horiz_wall == 1 && ray->dir_y > 0) // South wall
+		{
+			data->floor_data.floorXWall = ray->map_x + ray->wall_hit_x_coord;
+			data->floor_data.floorYWall = ray->map_y;
+		}
+		else // North wall
+		{
+			data->floor_data.floorXWall = ray->map_x + ray->wall_hit_x_coord;
+			data->floor_data.floorYWall = ray->map_y + 1.0;
+		}
 
-	y = ray->draw_end;
-while (y < data->win_height)
-{
-    // Compute distance of this row from player
-    data->floor_data.currentDist = (data->win_height) / (2.0 * y - data->win_height);
-    // Compute weight for interpolation
-    data->floor_data.weight = data->floor_data.currentDist / ray->wall_dist;
-    // Compute actual floor and ceiling world positions
-    data->floor_data.currentFloorX = data->floor_data.weight * data->floor_data.floorXWall + (1.0 - data->floor_data.weight) * data->player.pos_x;
-    data->floor_data.currentFloorY = data->floor_data.weight * data->floor_data.floorYWall + (1.0 - data->floor_data.weight) * data->player.pos_y;
-     // Scale world coordinates to texture space
-	data->floor_data.floorTexX = (int)(data->floor_data.currentFloorX * (64.0)) % 64;
-    data->floor_data.floorTexY = (int)(data->floor_data.currentFloorY * (64.0)) % 64;
-    // Sample colors from textures
-    data->floor_data.floorColor = data->textures[FLOOR][(data->floor_data.floorTexY * 64) + data->floor_data.floorTexX];
-    data->floor_data.ceilingColor = data->textures[CEILING][(data->floor_data.floorTexY * 64) + data->floor_data.floorTexX];
-     // Set pixel colors
-     data->texture_pixels[y][x] = data->floor_data.floorColor;           // Floor
-     data->texture_pixels[data->win_height - y][x] = data->floor_data.ceilingColor;  // Ceiling (mirrored)
-	 y++;
-}
+		y = ray->draw_end + 1;
+		while (y < data->win_height)
+		{
+			// Compute distance of this row from player
+			data->floor_data.currentDist = (data->win_height) / (2.0 * y - data->win_height);
+			// Compute weight for interpolation
+			data->floor_data.weight = data->floor_data.currentDist / ray->wall_dist;
+			// Compute actual floor and ceiling world positions
+			data->floor_data.currentFloorX = data->floor_data.weight * data->floor_data.floorXWall + (1.0 - data->floor_data.weight) * data->player.pos_x;
+			data->floor_data.currentFloorY = data->floor_data.weight * data->floor_data.floorYWall + (1.0 - data->floor_data.weight) * data->player.pos_y;
+			// Scale world coordinates to texture space
+			data->floor_data.floorTexX = (int)(data->floor_data.currentFloorX * (64.0)) % 64;
+			data->floor_data.floorTexY = (int)(data->floor_data.currentFloorY * (64.0)) % 64;
+			// Sample colors from textures
+			data->floor_data.floorColor = data->textures[FLOOR][(data->floor_data.floorTexY * 64) + data->floor_data.floorTexX];
+			data->floor_data.ceilingColor = data->textures[CEILING][(data->floor_data.floorTexY * 64) + data->floor_data.floorTexX];
+			// Set pixel colors
+			data->texture_pixels[y-1][x] = data->floor_data.floorColor;           // Floor
+			data->texture_pixels[data->win_height - y][x] = data->floor_data.ceilingColor;  // Ceiling (mirrored) y-1 makes ceiling shift up by 1 (red line below)
+			y++;
+		}
+		data->texture_pixels[data->win_height - y][x] = data->floor_data.ceilingColor;  // Ceiling (mirrored) y-1 makes ceiling shift up by 1 (red line below)
+	}
 }

@@ -67,7 +67,6 @@ clean:
 	rm -rf $(OBJ_PATH)
 	make -C $(LIBFT_PATH) clean
 	make -C $(MLX_PATH) clean
-	rm valgrind_out.txt
 
 fclean: clean
 	rm -f $(NAME)
@@ -77,6 +76,6 @@ re: fclean all
 
 # Valgrind rule
 valgrind: $(NAME)
-	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --track-fds=yes --trace-children=yes --num-callers=20 --log-file=valgrind_out.txt ./cub3D maps/nature.cub
+	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --track-fds=yes --trace-children=yes --num-callers=20 --log-file=valgrind_out.txt ./cub3D ./maps/fail/invalid_extensions.cub
 
 .PHONY: all re clean fclean bonus test valgrind

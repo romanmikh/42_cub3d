@@ -19,8 +19,6 @@
 # define STEP_SIZE 0.015
 # define ROTATION_ANGLE 0.015
 
-// # define BONUS 0
-
 // Enumerations
 enum e_texture_index
 {
@@ -59,7 +57,7 @@ enum e_output
 # define ERR_MAP_BORDERS "Map must be fully enclosed by walls"
 # define ERR_FILE_FORMAT ".cub and.xmp file extensions required"
 # define ERR_PLAYER_DIR "Player direction must be N, S, E, or W"
-# define ERR_INPUT "Required input format: ./cub3d ./maps/nature.cub"
+# define ERR_INPUT "Required input format: ./cub3D ./maps/pass/nature.cub"
 # define ERR_FLOOR_CEILING "Floor and/or ceiling RGB colours are invalid"
 # define ERR_NUM_PLAYERS "Only one starting player location in map supported"
 # define ERR_MAP_CHAR "Invalid character in map. {0, 1, N, S, E, W} supported."

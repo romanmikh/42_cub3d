@@ -25,7 +25,6 @@ static char	*parse_texture_path(char *line, int j)
 		free(path);
 		path = NULL;
 	}
-	printf("%s\n", path);
 	return (path);
 }
 

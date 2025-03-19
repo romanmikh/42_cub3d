@@ -67,6 +67,7 @@ static int	copy_map_arr(t_map_data *map_data, char **map_arr, int index)
 		index++;
 	}
 	map_arr[i] = NULL;
+	// ft_print_2d_arr(map_arr, "map_arr");
 	return (SUCCESS);
 }
 
