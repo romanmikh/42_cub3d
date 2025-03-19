@@ -50,7 +50,7 @@ $(OBJ_PATH)%.o: $(SRC_PATH)%.c
 	$(CC) $(CFLAGS) -c $< -o $@ $(INC)
 
 # Project file rule
-$(NAME): $(OBJS)
+$(NAME): $(OBJS) $(LIBFT) $(MLX)
 	$(CC) $(CFLAGS) $(OBJS) -o $@ $(INC) $(LIBFT) $(MLX) -lXext -lX11 -lm
 	@printf "$(B)$(GREEN)$(NAME) binaries compiled$(D)\n"
 
