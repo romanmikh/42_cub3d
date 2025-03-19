@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_input.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rmikhayl <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/19 20:11:34 by rmikhayl          #+#    #+#             */
+/*   Updated: 2025/03/19 20:11:39 by rmikhayl         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "cub3d.h"
 
 static bool	is_valid_extension(char *arg, char *ext)
@@ -41,13 +53,16 @@ size_t	max_line_width(t_map_data *map, int i)
 void	launch_msg(void)
 {
 	ft_printf(RESET "\n");
-	ft_printf(MAG "W" RESET ": forward\n");
-	ft_printf(MAG "A" RESET ": left\n");
-	ft_printf(MAG "S" RESET ": backward\n");
-	ft_printf(MAG "D" RESET ": right\n");
-	ft_printf(MAG "<" RESET ": turn left\n");
-	ft_printf(MAG ">" RESET ": turn right\n");
-	ft_printf("\n");
+	ft_printf(CYA "====================================\n" RESET);
+	ft_printf(CYA "||" MAG "         Welcome to Cub3D!      " CYA "||\n" RESET);
+	ft_printf(CYA "====================================\n\n" RESET);
+	ft_printf(MAG "\t W" RESET "  : Move Forward\n");
+	ft_printf(MAG "\t A" RESET "  : Move Left\n");
+	ft_printf(MAG "\t S" RESET "  : Move Backward\n");
+	ft_printf(MAG "\t D" RESET "  : Move Right\n");
+	ft_printf(MAG "\t <" RESET "  : Turn Left\n");
+	ft_printf(MAG "\t >" RESET "  : Turn Right\n\n");
+	ft_printf(CYA "====================================\n\n" RESET);
 }
 
 int	check_input(t_data *data, char **argv)
