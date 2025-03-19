@@ -60,13 +60,17 @@ static int	*xpm_to_img(t_data *data, char *path)
 
 void	init_textures(t_data *data)
 {
-	data->textures = ft_calloc(5, sizeof * data->textures);
+	// data->text_data.floort = "textures/mario.xpm";
+	// data->text_data.ceilingt = "textures/ceiling.xpm";
+	data->textures = ft_calloc(7, sizeof * data->textures);
 	if (!data->textures)
 		graceful_exit(data, err_msg(NULL, ERR_MALLOC, 1));
 	data->textures[NORTH] = xpm_to_img(data, data->text_data.north);
 	data->textures[SOUTH] = xpm_to_img(data, data->text_data.south);
 	data->textures[EAST] = xpm_to_img(data, data->text_data.east);
 	data->textures[WEST] = xpm_to_img(data, data->text_data.west);
+	data->textures[FLOOR] = xpm_to_img(data, data->text_data.floort);
+	data->textures[CEILING] = xpm_to_img(data, data->text_data.ceilingt);
 }
 
 void	init_text_data(t_text_data *textures)
@@ -75,6 +79,8 @@ void	init_text_data(t_text_data *textures)
 	textures->south = NULL;
 	textures->west = NULL;
 	textures->east = NULL;
+	textures->floor = NULL;
+	textures->ceiling = NULL;
 	textures->floor = 0;
 	textures->ceiling = 0;
 	textures->hex_floor = 0x0;

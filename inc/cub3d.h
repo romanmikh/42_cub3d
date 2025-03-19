@@ -19,13 +19,17 @@
 # define STEP_SIZE 0.015
 # define ROTATION_ANGLE 0.015
 
+// # define BONUS 0
+
 // Enumerations
 enum e_texture_index
 {
 	NORTH = 0,
 	SOUTH = 1,
 	EAST = 2,
-	WEST = 3
+	WEST = 3, 
+	FLOOR = 4,
+	CEILING = 5
 };
 
 enum e_output
@@ -72,6 +76,20 @@ typedef struct s_map_data
 	int			end_of_map_line_index;
 }	t_map_data;
 
+typedef struct s_floor_data
+{
+	double	floorXWall;
+	double	floorYWall;
+	double	currentDist;
+	int		floorColor; 
+	int		ceilingColor;
+	double	weight;
+	double	currentFloorX;
+	double	currentFloorY;
+	int		floorTexX;
+    int		floorTexY;
+} t_floor_data;
+
 typedef struct s_text_data
 {
 	int				x;
@@ -80,6 +98,8 @@ typedef struct s_text_data
 	int				size;
 	char			*west;
 	char			*east;
+	char			*floort;
+	char			*ceilingt;
 	int				index;
 	double			scale;
 	char			*north;
@@ -137,17 +157,18 @@ typedef struct s_player
 
 typedef struct s_data
 {
-	void		*mlx;
-	void		*win;
-	char		**map;
-	int			win_width;
-	int			**textures;
-	int			win_height;
-	int			**texture_pixels;
-	t_ray		ray;
-	t_player	player;
-	t_map_data	map_data;
-	t_text_data	text_data;
+	void			*mlx;
+	void			*win;
+	char			**map;
+	int				win_width;
+	int				**textures;
+	int				win_height;
+	int				**texture_pixels;
+	t_ray			ray;
+	t_player		player;
+	t_map_data		map_data;
+	t_text_data		text_data;
+	t_floor_data	floor_data;	
 }	t_data;
 
 // Function prototypes
@@ -165,6 +186,7 @@ void	init_input_hooks(t_data *data);
 void	init_texture_pixels(t_data *data);
 int		is_valid_file(char *arg, bool cub);
 void	init_player_direction(t_data *data);
+void	init_floor_data(t_floor_data *floor);
 void	graceful_exit(t_data *data, int code);
 void	init_text_data(t_text_data *textures);
 void	parse_input(char *path, t_data *data);

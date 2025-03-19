@@ -1,14 +1,5 @@
 #include "cub3d.h"
 
-static bool	is_valid_map_position(t_data *data, double x, double y)
-{
-	if (x < 1 || x >= data->map_data.width - 2)
-		return (false);
-	if (y < 1 || y >= data->map_data.height -1)
-		return (false);
-	return (true);
-}
-
 static bool	is_valid_wall_collision(t_data *data, double x, double y)
 {
 	if (data->map[(int)y][(int)x] == '0')
@@ -18,8 +9,6 @@ static bool	is_valid_wall_collision(t_data *data, double x, double y)
 
 static bool	is_valid_position(t_data *data, double x, double y)
 {
-	if (is_valid_map_position(data, x, y))
-		return (true);
 	if (is_valid_wall_collision(data, x, y))
 		return (true);
 	return (false);

@@ -10,7 +10,7 @@ CYAN		=	\033[0;96m
 WHITE		=	\033[0;97m
 
 # Program
-NAME	= cub3d
+NAME	= cub3D
 
 # Compilation flags
 CC		= cc
@@ -67,6 +67,7 @@ clean:
 	rm -rf $(OBJ_PATH)
 	make -C $(LIBFT_PATH) clean
 	make -C $(MLX_PATH) clean
+	rm valgrind_out.txt
 
 fclean: clean
 	rm -f $(NAME)
@@ -76,6 +77,6 @@ re: fclean all
 
 # Valgrind rule
 valgrind: $(NAME)
-	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --track-fds=yes --trace-children=yes --num-callers=20 --log-file=valgrind_out.txt ./cub3d maps/nature.cub
+	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --track-fds=yes --trace-children=yes --num-callers=20 --log-file=valgrind_out.txt ./cub3D maps/nature.cub
 
 .PHONY: all re clean fclean bonus test valgrind

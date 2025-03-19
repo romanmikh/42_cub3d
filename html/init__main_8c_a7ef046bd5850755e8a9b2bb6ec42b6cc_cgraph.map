@@ -1,9 +1,0 @@
-<map id="init_main" name="init_main">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,55,88,80"/>
-<area shape="rect" id="Node000002" href="$init__main_8c.html#a420e962668cfad027339091267309880" title=" " alt="" coords="136,5,251,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="84,52,141,33,142,38,86,57"/>
-<area shape="rect" id="Node000003" href="$init__main_8c.html#ab46388d28c07bc1484365b792d0b6560" title=" " alt="" coords="148,55,239,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="88,65,134,65,134,70,88,70"/>
-<area shape="rect" id="Node000004" href="$init__ray__textures_8c.html#a7a7017dd07903bc3f32a296e8af82b77" title=" " alt="" coords="137,104,249,129"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="86,78,142,97,141,102,84,83"/>
-</map>

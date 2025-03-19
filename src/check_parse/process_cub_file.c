@@ -25,6 +25,7 @@ static char	*parse_texture_path(char *line, int j)
 		free(path);
 		path = NULL;
 	}
+	printf("%s\n", path);
 	return (path);
 }
 
@@ -43,6 +44,10 @@ static int	parse_texture_orientations(t_text_data *textures, char *line, int j)
 		tex = &textures->west;
 	else if (ft_strncmp(&line[j], "EA", 2) == 0)
 		tex = &textures->east;
+	else if (ft_strncmp(&line[j], "FL", 2) == 0)
+		tex = &textures->floort;
+	else if (ft_strncmp(&line[j], "CE", 2) == 0)
+		tex = &textures->ceilingt;
 	else
 		return (ERR);
 	if (!*tex)

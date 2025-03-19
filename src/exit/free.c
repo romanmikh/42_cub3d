@@ -14,6 +14,10 @@ static void	free_texture_data(t_text_data *textures)
 		free(textures->floor);
 	if (textures->ceiling)
 		free(textures->ceiling);
+	if (textures->ceilingt)
+		free(textures->ceilingt);
+	if (textures->floort)
+		free(textures->floort);
 }
 
 void	ft_free_2d_arr(void **arr)

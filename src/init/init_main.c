@@ -21,6 +21,20 @@ void	init_ray(t_ray *ray)
 	ray->draw_end = 0;
 }
 
+void	init_floor_data(t_floor_data *floor)
+{
+	floor->ceilingColor = 0;
+	floor->currentDist = 0;
+	floor->currentFloorX = 0;
+	floor->currentFloorY = 0;
+	floor->floorColor = 0;
+	floor->floorTexX = 0;
+	floor->floorTexY = 0;
+	floor->floorXWall = 0;
+	floor->floorYWall = 0;
+	floor->weight = 0;
+}
+
 static void	init_map_data(t_map_data *map_data)
 {
 	map_data->fd = 0;
@@ -57,6 +71,7 @@ void	init_main(t_data *data)
 	init_text_data(&data->text_data);
 	data->map = NULL;
 	init_map_data(&data->map_data);
+	init_floor_data(&data->floor_data);
 	data->texture_pixels = NULL;
 	data->textures = NULL;
 }
