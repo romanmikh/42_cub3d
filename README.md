@@ -1,6 +1,6 @@
 # 42 Cub3D 🧊
 
-**Cub3D** is a **Wolfenstein 3D-inspired** raycasting project developed as part of the 42 curriculum. It provides a **basic 3D rendering engine** using **raycasting**
+**Cub3D** is a **Wolfenstein/Doom 3D-inspired** raycasting project developed entirely in C as part of the 42 curriculum. It provides a **basic 3D rendering engine** using **raycasting**
 
 ![](./cub3d.gif)
 
