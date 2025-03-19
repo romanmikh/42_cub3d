@@ -40,8 +40,6 @@ INC			=	-I ./inc/\
 
 # Main rule
 all: $(OBJ_PATH) $(MLX) $(LIBFT) $(NAME)
-all:
-	@printf "$(B)$(GREEN)$(NAME) binaries compiled$(D)\n"
 
 # Create object directories
 $(OBJ_PATH):
@@ -54,6 +52,7 @@ $(OBJ_PATH)%.o: $(SRC_PATH)%.c
 # Project file rule
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $@ $(INC) $(LIBFT) $(MLX) -lXext -lX11 -lm
+	@printf "$(B)$(GREEN)$(NAME) binaries compiled$(D)\n"
 
 # Other rules
 $(LIBFT):
