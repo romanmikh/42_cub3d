@@ -8,7 +8,7 @@
 
 - **Raycasting Engine**: Implements a first-person perspective using raycasting.
 - **Textured Walls & Floor Casting**: Supports wall textures and basic floor and ceiling rendering.
-- **Player Movement**: Includes rotation and movement with some collision detection.
+- **Player Movement**: Includes rotation and movement with collision detection.
 - **Configurable Map Parsing**: Reads `.cub` files defining walls, textures, and player spawn.
 
 ## Installation and Usage
