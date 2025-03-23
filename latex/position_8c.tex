@@ -1,8 +1,7 @@
 \doxysection{src/dynamics/position.c File Reference}
 \hypertarget{position_8c}{}\label{position_8c}\index{src/dynamics/position.c@{src/dynamics/position.c}}
 {\ttfamily \#include "{}cub3d.\+h"{}}\newline
-Include dependency graph for position.\+c\+:
-\nopagebreak
+Include dependency graph for position.\+c\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -12,11 +11,9 @@ Include dependency graph for position.\+c\+:
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-static bool \mbox{\hyperlink{position_8c_ab6b9d558de1d00d39f460dc12c63262b}{is\+\_\+valid\+\_\+pos\+\_\+wall\+\_\+collision}} (t\+\_\+data \texorpdfstring{$\ast$}{*}data, double x, double y)
+static bool \mbox{\hyperlink{position_8c_aaebb0ae71f7d1c1186805daf8b259708}{is\+\_\+valid\+\_\+wall\+\_\+collision}} (t\+\_\+data \texorpdfstring{$\ast$}{*}data, double x, double y)
 \item 
-static bool \mbox{\hyperlink{position_8c_ad0ff591c32cee4c58d1cecf4c0915a94}{is\+\_\+valid\+\_\+pos\+\_\+in\+\_\+map}} (t\+\_\+data \texorpdfstring{$\ast$}{*}data, double x, double y)
-\item 
-static bool \mbox{\hyperlink{position_8c_ad9f71f578175a945c1a2e73c782ae9dd}{is\+\_\+valid\+\_\+pos}} (t\+\_\+data \texorpdfstring{$\ast$}{*}data, double x, double y)
+static bool \mbox{\hyperlink{position_8c_ae8a6133b3f13cade8025ac30390b8296}{is\+\_\+valid\+\_\+position}} (t\+\_\+data \texorpdfstring{$\ast$}{*}data, double x, double y)
 \item 
 int \mbox{\hyperlink{position_8c_a3f5a49e2586f6e017cf4a92250aaa6f4}{is\+\_\+valid\+\_\+move}} (t\+\_\+data \texorpdfstring{$\ast$}{*}data, double new\+\_\+x, double new\+\_\+y)
 \end{DoxyCompactItemize}
@@ -37,26 +34,25 @@ Here is the call graph for this function\+:
 \includegraphics[width=350pt]{position_8c_a3f5a49e2586f6e017cf4a92250aaa6f4_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{position_8c_a3f5a49e2586f6e017cf4a92250aaa6f4_icgraph}
 \end{center}
 \end{figure}
-\Hypertarget{position_8c_ad9f71f578175a945c1a2e73c782ae9dd}\label{position_8c_ad9f71f578175a945c1a2e73c782ae9dd} 
-\index{position.c@{position.c}!is\_valid\_pos@{is\_valid\_pos}}
-\index{is\_valid\_pos@{is\_valid\_pos}!position.c@{position.c}}
-\doxysubsubsection{\texorpdfstring{is\_valid\_pos()}{is\_valid\_pos()}}
-{\footnotesize\ttfamily static bool is\+\_\+valid\+\_\+pos (\begin{DoxyParamCaption}\item[{t\+\_\+data \texorpdfstring{$\ast$}{*}}]{data,  }\item[{double}]{x,  }\item[{double}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+\Hypertarget{position_8c_ae8a6133b3f13cade8025ac30390b8296}\label{position_8c_ae8a6133b3f13cade8025ac30390b8296} 
+\index{position.c@{position.c}!is\_valid\_position@{is\_valid\_position}}
+\index{is\_valid\_position@{is\_valid\_position}!position.c@{position.c}}
+\doxysubsubsection{\texorpdfstring{is\_valid\_position()}{is\_valid\_position()}}
+{\footnotesize\ttfamily static bool is\+\_\+valid\+\_\+position (\begin{DoxyParamCaption}\item[{t\+\_\+data \texorpdfstring{$\ast$}{*}}]{data,  }\item[{double}]{x,  }\item[{double}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 Here is the call graph for this function\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=341pt]{position_8c_ad9f71f578175a945c1a2e73c782ae9dd_cgraph}
+\includegraphics[width=339pt]{position_8c_ae8a6133b3f13cade8025ac30390b8296_cgraph}
 \end{center}
 \end{figure}
 Here is the caller graph for this function\+:
@@ -64,34 +60,20 @@ Here is the caller graph for this function\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{position_8c_ad9f71f578175a945c1a2e73c782ae9dd_icgraph}
+\includegraphics[width=350pt]{position_8c_ae8a6133b3f13cade8025ac30390b8296_icgraph}
 \end{center}
 \end{figure}
-\Hypertarget{position_8c_ad0ff591c32cee4c58d1cecf4c0915a94}\label{position_8c_ad0ff591c32cee4c58d1cecf4c0915a94} 
-\index{position.c@{position.c}!is\_valid\_pos\_in\_map@{is\_valid\_pos\_in\_map}}
-\index{is\_valid\_pos\_in\_map@{is\_valid\_pos\_in\_map}!position.c@{position.c}}
-\doxysubsubsection{\texorpdfstring{is\_valid\_pos\_in\_map()}{is\_valid\_pos\_in\_map()}}
-{\footnotesize\ttfamily static bool is\+\_\+valid\+\_\+pos\+\_\+in\+\_\+map (\begin{DoxyParamCaption}\item[{t\+\_\+data \texorpdfstring{$\ast$}{*}}]{data,  }\item[{double}]{x,  }\item[{double}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+\Hypertarget{position_8c_aaebb0ae71f7d1c1186805daf8b259708}\label{position_8c_aaebb0ae71f7d1c1186805daf8b259708} 
+\index{position.c@{position.c}!is\_valid\_wall\_collision@{is\_valid\_wall\_collision}}
+\index{is\_valid\_wall\_collision@{is\_valid\_wall\_collision}!position.c@{position.c}}
+\doxysubsubsection{\texorpdfstring{is\_valid\_wall\_collision()}{is\_valid\_wall\_collision()}}
+{\footnotesize\ttfamily static bool is\+\_\+valid\+\_\+wall\+\_\+collision (\begin{DoxyParamCaption}\item[{t\+\_\+data \texorpdfstring{$\ast$}{*}}]{data,  }\item[{double}]{x,  }\item[{double}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 Here is the caller graph for this function\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{position_8c_ad0ff591c32cee4c58d1cecf4c0915a94_icgraph}
-\end{center}
-\end{figure}
-\Hypertarget{position_8c_ab6b9d558de1d00d39f460dc12c63262b}\label{position_8c_ab6b9d558de1d00d39f460dc12c63262b} 
-\index{position.c@{position.c}!is\_valid\_pos\_wall\_collision@{is\_valid\_pos\_wall\_collision}}
-\index{is\_valid\_pos\_wall\_collision@{is\_valid\_pos\_wall\_collision}!position.c@{position.c}}
-\doxysubsubsection{\texorpdfstring{is\_valid\_pos\_wall\_collision()}{is\_valid\_pos\_wall\_collision()}}
-{\footnotesize\ttfamily static bool is\+\_\+valid\+\_\+pos\+\_\+wall\+\_\+collision (\begin{DoxyParamCaption}\item[{t\+\_\+data \texorpdfstring{$\ast$}{*}}]{data,  }\item[{double}]{x,  }\item[{double}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
-
-Here is the caller graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{position_8c_ab6b9d558de1d00d39f460dc12c63262b_icgraph}
+\includegraphics[width=350pt]{position_8c_aaebb0ae71f7d1c1186805daf8b259708_icgraph}
 \end{center}
 \end{figure}
