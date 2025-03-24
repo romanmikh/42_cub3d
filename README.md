@@ -23,7 +23,7 @@
 
 3. Valgrind output saved in valgrind_out.txt after:
    ```sh
-   ulimit -n 2014 # necessary once only, to address 'file descriptor too high' error
+   ulimit -n 1024 # necessary once only, to address 'file descriptor too high' error
    make valgrind
    ```
 
