@@ -15,10 +15,10 @@
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/romanmikh/cub3d.git
-   cd cub3d
+   git clone https://github.com/romanmikh/42_cub3d.git cub3D
+   cd cub3D
    make
-   ./cub3d ./maps/nature.cub
+   ./cub3D ./maps/pass/corridors.cub
    ```
 
 3. Valgrind output saved in valgrind_out.txt after:
