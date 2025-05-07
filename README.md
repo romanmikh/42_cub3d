@@ -1,6 +1,6 @@
 # 42 Cub3D 🧊
 
-**Cub3D** is a **Wolfenstein/Doom 3D-inspired** raycasting project developed entirely in C as part of the 42 curriculum. It provides a **basic 3D rendering engine** using **raycasting**
+A **1993 Doom**-inspired basic 3D rendering engine using raycasting developed entirely in C.
 
 ![](./cub3d.gif)
 
@@ -32,6 +32,8 @@
 2. https://www.youtube.com/watch?v=W5P8GlaEOSI&ab_channel=AbdulBari (detailed introduction)
 3. https://reactive.so/post/42-a-comprehensive-guide-to-cub3d/ (code example)
 4. https://harm-smits.github.io/42docs/projects/cub3d (detailed explanation)
+5. https://store.steampowered.com/app/2280/DOOM__DOOM_II/ (the OG game)
+6. https://www.youtube.com/watch?v=_SvLXy74Jr4&ab_channel=ModPunchtree (**minecraft-built** CPU running Doom!!!)
 
 ## Documentation
 
